@@ -1,0 +1,1 @@
+{"ast":null,"code":"import gql from \"graphql-tag\";\nconst COUNT_VIEW_AD_SELL_LEASE = gql`\n  mutation adSellLeaseViewUpdate ($input: UpdateAdSellLeaseViewInput!) {\n    adSellLeaseViewUpdate (input: $input) {\n      id\n    }\n  }\n`;\nexport { COUNT_VIEW_AD_SELL_LEASE };","map":null,"metadata":{},"sourceType":"module"}

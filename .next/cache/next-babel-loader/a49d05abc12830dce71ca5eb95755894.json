@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from './CommentBubble';","map":{"version":3,"sources":["C:/Users/manh nhan/Desktop/Nhadatmoi/components/PostCard/components/CommentBubble/index.tsx"],"names":["default"],"mappings":"AAAA,SAASA,OAAT,QAAwB,iBAAxB","sourcesContent":["export { default } from './CommentBubble';\n"]},"metadata":{},"sourceType":"module"}

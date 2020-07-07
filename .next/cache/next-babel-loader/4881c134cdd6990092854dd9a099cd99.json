@@ -1,0 +1,1 @@
+{"ast":null,"code":"import gql from \"graphql-tag\";\nconst COUNT_VIEW_PROJECT = gql`\n  mutation projectViewUpdate ($input: UpdateProjectViewInput!) {\n    projectViewUpdate (input: $input) {\n      id\n      view_count\n    }\n  }\n`;\nexport { COUNT_VIEW_PROJECT };","map":null,"metadata":{},"sourceType":"module"}

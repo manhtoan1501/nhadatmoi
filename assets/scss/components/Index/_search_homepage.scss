@@ -1,0 +1,203 @@
+@import "../../_variables.scss";
+.search_homepage__banner {
+  width: 100%;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  opacity: 1;
+  position: relative;
+  @include breakpoint(lgDown) {
+    background-size: unset;
+    min-height: 400px;
+  }
+  .search_homepage__body {
+    position: absolute;
+    width: 800px;
+    max-width: 100%;
+    .search_homepage__body_title {
+      text-align: center;
+      width: 100%;
+      float: left;
+      font-size: 40px;
+      color: #fff;
+      font-family: $fontFamily;
+      font-weight: 900;
+      @include breakpoint(lgDown) {
+        padding: 0 20px 0 20px;
+        font-size: 30px;
+      }
+      @include breakpoint(smDown) {
+        font-size: 26px;
+      }
+    }
+    .search_homepage__body_description {
+      text-align: center;
+      width: 100%;
+      float: left;
+      font-size: 20px;
+      color: #fff;
+      font-family: $fontFamily;
+      font-weight: 400;
+      margin: 5px 0 15px 0;
+      @include breakpoint(lgDown) {
+        font-size: 15px;
+        padding: 0 20px 0 20px;
+        color: #f0f0f0;
+      }
+    }
+    .search_homepage__body_example {
+      text-align: center;
+      width: 100%;
+      float: left;
+      font-size: 15px;
+      color: #f0f0f0;
+      font-family: $fontFamily;
+      font-weight: 400;
+      margin: 25px 0 0 0;
+      @include breakpoint(lgDown) {
+        padding: 0 20px 0 20px;
+        font-size: 15px;
+        color: #f0f0f0;
+      }
+    }
+  }
+}
+
+.search_homepage__body__box {
+  width: 100%;
+  background-color: #fff;
+  height: 60px;
+  border-radius: 4px 5px 5px 4px;
+  float: left;
+  color: $baseTitleColor;
+  @include breakpoint(lgDown) {
+    width: calc(100% - 40px);
+    margin: 0 20px 0 20px;
+  }
+  @include breakpoint(smDown) {
+    height: 50px;
+  }
+  &__select {
+    width: 202px;
+    float: left;
+    height: 60px;
+    margin: 0 -2px 0 0;
+    padding: 0;
+    line-height: 60px;
+    font-size: 14px;
+    font-family: $fontFamily;
+    font-weight: 700;
+    color: $baseTitleColor;
+    position: relative;
+    button {
+      width: 100%!important;
+      height: 60px;
+      margin: 0 0 0 -1px!important;
+      padding: 0 30px 0 30px!important;
+      border-radius: 0;
+      font-size: 14px!important;
+      font-family: $fontFamily!important;
+      font-weight: 700!important;
+      color: $baseTitleColor!important;
+      text-transform: unset!important;
+      text-align: left;
+      .MuiButton-label {
+        display: unset!important;
+        justify-content: unset!important;
+      }
+      &:hover {
+        background-color: unset!important;
+      }
+    }
+    @include breakpoint(smDown) {
+      display: none;
+    }
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: $baseTitleColor;
+      margin: 5px 8px -3px 0;
+      float: right;
+    }
+  }
+  .search_homepage__body_box_input {
+    width: calc(100% - 200px - 60px);
+    float: left;
+    @include breakpoint(smDown) {
+      width: calc(100% - 50px);
+    }
+    .search_homepage__body_box_input_base {
+      height: 30px;
+      width: 100%;
+      padding: 0 15px 0 15px;
+      border-left: 1px rgb(224, 224, 224) solid;
+      margin: 15px 0 15px 0;
+      @include breakpoint(smDown) {
+        margin: 10px 0 10px 0;
+        padding: 0 15px 0 20px;
+        font-size: 16px;
+        border-left: 0;
+      }
+    }
+  }
+  .search_homepage__body_box_button {
+    width: 60px;
+    background-color: $baseColor;
+    height: 60px;
+    float: left;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: unset;
+    border-radius: 0 4px 4px 0;
+    @include breakpoint(smDown) {
+      background: unset;
+      width: 50px;
+      height: 50px;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      margin: 15px;
+      @include breakpoint(smDown) {
+        fill: $baseColor;
+        margin: 10px;
+      }
+    }
+  }
+}
+.search_homepage__body__box__select__popup {
+  top: 1px!important;
+  position: absolute;
+  width: 840px;
+  margin: 0 auto;
+  max-width: 100%;
+  @include breakpoint(lgDown) {
+    width: 800px;
+  }
+  .MuiPaper-root {
+    left: 20px!important;
+  }
+  .MuiListItemText-multiline {
+    padding-right: 20px;
+  }
+  .MuiButtonBase-root {
+    padding-left: 20px;
+    padding-right: 20px;
+    .MuiListItemIcon-root {
+      min-width: 40px;
+    }
+    .MuiListItemText-root {
+      width: 120px;
+      span {
+        color: $baseTitleColor;
+        font-weight: 400;
+        font-size: 15px;
+        font-family: $fontFamily;
+      }
+    }
+  }
+}
