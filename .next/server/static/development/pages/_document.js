@@ -427,6 +427,39 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/extends.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/extends.js ***!
@@ -1545,13 +1578,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
-/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! url */ "url");
-/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/validator */ "./modules/validator.tsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
+/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! url */ "url");
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/validator */ "./modules/validator.tsx");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -1559,8 +1595,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\pages\\_document.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\pages\\_document.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -1572,22 +1609,48 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 const Querystring = __webpack_require__(/*! querystring */ "querystring");
 
+
  // @ts-ignore
 
-class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_8___default.a {
+class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_9___default.a {
   static async getInitialProps(ctx) {
-    let urlObject = url__WEBPACK_IMPORTED_MODULE_9___default.a.parse(ctx.asPath);
+    let urlObject = url__WEBPACK_IMPORTED_MODULE_10___default.a.parse(ctx.asPath);
     let dataUrl = '';
 
     if (typeof urlObject.query === "string") {
       let urlString = Querystring.parse(urlObject.query);
 
-      if (urlString && !_modules_validator__WEBPACK_IMPORTED_MODULE_10__["default"].isBlank(urlString.url)) {
+      if (urlString && !_modules_validator__WEBPACK_IMPORTED_MODULE_11__["default"].isBlank(urlString.url)) {
         dataUrl = urlString.url;
       }
     }
 
-    const initialProps = await next_document__WEBPACK_IMPORTED_MODULE_8___default.a.getInitialProps(ctx);
+    const sheets = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__["ServerStyleSheets"]();
+    const originalRenderPage = ctx.renderPage;
+
+    ctx.renderPage = () => originalRenderPage({
+      enhanceApp: App => props => sheets.collect(__jsx(App, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, props, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 66
+        }
+      })))
+    });
+
+    let initialProps = await next_document__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(ctx);
+    initialProps = _objectSpread({}, initialProps, {
+      styles: [__jsx(react__WEBPACK_IMPORTED_MODULE_8___default.a.Fragment, {
+        key: "styles",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32,
+          columnNumber: 9
+        }
+      }, initialProps.styles, sheets.getStyleElement())]
+    });
 
     let dataReturn = _objectSpread({
       url_string: ''
@@ -1602,175 +1665,198 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_8___default.a {
     let urlString = this.props.url_string;
     return __jsx("html", {
       lang: "vi-VN",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Head"], {
+        lineNumber: 49,
+        columnNumber: 7
+      }
+    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_9__["Head"], {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
+        lineNumber: 50,
+        columnNumber: 9
+      }
     }), __jsx("div", {
       className: "zalo_share",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
+        lineNumber: 51,
+        columnNumber: 9
+      }
     }, __jsx("div", {
       className: "zalo-share__logo",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
+        lineNumber: 52,
+        columnNumber: 11
+      }
     }, __jsx("svg", {
       viewBox: "0 0 173.7 40",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
+        lineNumber: 53,
+        columnNumber: 13
+      }
     }, __jsx("g", {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
+        lineNumber: 54,
+        columnNumber: 15
+      }
     }, __jsx("path", {
       className: "st0",
       d: "M15.9,38c-1.9-1.4-6.5-4.6-7.5-10.1c-0.5-2.7,0.2-5.5,1.9-7.7c1.8-2.2,4.5-3.5,7.4-3.7c0.1,0,0.2,0,0.3,0c2.7,0,5.3,1.2,7,3.3c1.9,2.2,2.7,5.1,2.3,7.9c-0.9,5.3-5,8.4-7.4,10.2l-2,1.5L15.9,38z M18,20.3c-0.1,0-0.1,0-0.2,0c-1.9,0.1-3.6,0.9-4.7,2.3c-1.1,1.3-1.5,3-1.2,4.7c0.7,3.5,3.3,5.8,5.8,7.7c2.8-2.1,5.3-4.2,5.8-7.7c0.3-1.7-0.3-3.6-1.4-5C21.2,21,19.7,20.3,18,20.3z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
+        lineNumber: 55,
+        columnNumber: 17
+      }
     }), __jsx("path", {
       className: "st0",
       d: "M17.9,22.7c1.9,0,3.4,1.6,3.4,3.4c0,1.9-1.6,3.4-3.4,3.4c-1.9,0-3.5-1.6-3.5-3.4C14.5,24.2,16,22.7,17.9,22.7z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
+        lineNumber: 57,
+        columnNumber: 17
+      }
     }), __jsx("g", {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
+        lineNumber: 59,
+        columnNumber: 17
+      }
     }, __jsx("path", {
       className: "st1",
       d: "M54.2,34.1v-7.5c0-0.9-0.1-1.6-0.4-2c-0.3-0.6-0.9-0.8-1.8-0.8c-0.9,0-1.5,0.3-1.9,0.8c-0.3,0.4-0.5,1.1-0.5,2v7.4h-4.1V20.4h3.8v1.5h0.1c0.8-1.3,2-1.9,3.7-1.9c1.4,0,2.6,0.4,3.5,1.2c0.6,0.5,1,1.2,1.3,2c0.2,0.7,0.3,1.5,0.3,2.4v8.6H54.2z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
+        lineNumber: 60,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M68.8,34.1v-7.4c0-0.9-0.1-1.5-0.4-2c-0.4-0.6-1-0.9-1.8-0.9c-0.8,0-1.4,0.3-1.8,0.8c-0.3,0.4-0.5,1.1-0.5,1.9v7.6h-4.1V15.8h4.1v5.8h0c0.3-0.6,0.8-1.1,1.5-1.3c0.6-0.3,1.2-0.4,2-0.4c1.6,0,2.9,0.5,3.7,1.5c0.6,0.7,1,1.5,1.1,2.4c0.1,0.4,0.1,0.8,0.1,1.3c0,0.2,0,0.4,0,0.7v8.3H68.8z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
+        lineNumber: 62,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M85,34.1v-1.5h0c-0.3,0.7-0.9,1.2-1.7,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2.1,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.8,1.9-5.2c1.3-1.4,3-2.2,5-2.2c0.8,0,1.6,0.2,2.3,0.5c0.8,0.3,1.3,0.8,1.7,1.5h0v-1.5h4.1v13.7H85z M84.1,24.7c-0.6-0.7-1.5-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.5-0.9,2.5c0,1,0.3,1.8,1,2.4c0.7,0.7,1.5,1,2.4,1c1,0,1.8-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C85,26.2,84.7,25.4,84.1,24.7z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
+        lineNumber: 64,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M101.5,34.1v-1.5h0c-0.4,0.7-1,1.2-1.8,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.7,1.8-5.1c1.3-1.4,2.9-2.2,4.9-2.2c1.6,0,3,0.5,4,1.6v-5.7h4.1v18.2H101.5z M100.5,24.7c-0.7-0.6-1.5-1-2.5-1c-1,0-1.8,0.3-2.5,1c-0.7,0.6-1,1.5-1,2.5c0,1,0.3,1.8,1,2.5c0.6,0.7,1.5,1,2.5,1c1,0,1.9-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C101.5,26.2,101.2,25.4,100.5,24.7z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
+        lineNumber: 66,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M117.6,34.1v-1.5h0c-0.3,0.7-0.9,1.2-1.7,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2.1,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.8,1.9-5.2c1.3-1.4,3-2.2,5-2.2c0.8,0,1.6,0.2,2.3,0.5c0.8,0.3,1.3,0.8,1.7,1.5h0v-1.5h4.1v13.7H117.6z M116.6,24.7c-0.6-0.7-1.5-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.5-0.9,2.5c0,1,0.3,1.8,1,2.4c0.7,0.7,1.5,1,2.4,1c1,0,1.8-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C117.6,26.2,117.3,25.4,116.6,24.7z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
+        lineNumber: 68,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M128.6,23.5v10.6h-4.1V23.5h-2v-3.1h2v-4.6h4.1v4.6h2v3.1H128.6z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
+        lineNumber: 70,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M148.3,34.1v-7.3c0-0.9-0.1-1.6-0.3-2.1c-0.3-0.6-0.9-1-1.8-1c-0.8,0-1.4,0.3-1.8,0.8c-0.3,0.5-0.5,1.1-0.5,2v7.5h-4.1v-7.4c0-0.9-0.1-1.5-0.4-2c-0.3-0.6-0.9-0.9-1.7-0.9c-0.9,0-1.5,0.3-1.9,0.9c-0.3,0.5-0.4,1.2-0.4,2.1v7.3h-4.1V20.4h3.8v1.5h0.1c0.4-0.7,0.9-1.2,1.6-1.5c0.6-0.3,1.3-0.4,2.2-0.4c1.7,0,3.1,0.8,3.9,2.4c1-1.6,2.5-2.4,4.3-2.4c1.5,0,2.7,0.5,3.6,1.4c0.7,0.7,1.1,1.5,1.3,2.5c0.1,0.4,0.1,0.8,0.1,1.4c0,0.2,0,0.4,0,0.7v8.2H148.3z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
+        lineNumber: 71,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M166.2,32.4c-1.4,1.4-3.2,2.1-5.3,2.1c-2.1,0-3.9-0.7-5.2-2.1c-1.4-1.4-2.1-3.1-2.1-5.2c0-2.1,0.7-3.8,2.1-5.2c1.4-1.4,3.1-2.1,5.2-2.1c2.1,0,3.9,0.7,5.3,2.1c1.4,1.4,2.1,3.1,2.1,5.2C168.3,29.3,167.6,31.1,166.2,32.4z M163.3,24.8c-0.6-0.7-1.4-1-2.4-1c-0.9,0-1.7,0.3-2.3,1c-0.6,0.7-0.9,1.5-0.9,2.4c0,0.9,0.3,1.7,0.9,2.4c0.6,0.7,1.4,1,2.3,1c0.9,0,1.7-0.3,2.4-1c0.6-0.7,0.9-1.5,0.9-2.4C164.2,26.3,163.9,25.5,163.3,24.8z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
+        lineNumber: 73,
+        columnNumber: 19
+      }
     }), __jsx("path", {
       className: "st1",
       d: "M169.7,19v-3.1h4.1V19H169.7z M169.7,34.1V20.4h4.1v13.7H169.7z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
+        lineNumber: 75,
+        columnNumber: 19
+      }
     })), __jsx("path", {
       className: "st0",
       d: "M34.6,13.3L20,0.8c-1.2-1.1-3-1.1-4.3,0L1.2,13.3C0.4,13.9,0,14.8,0,15.8v21C0,38.5,1.5,40,3.3,40h12.6l-0.9-0.6c-1.1-0.8-3-2.2-4.8-4.2h-2c-1.8,0-3.3-1.5-3.3-3.3V18c0-1,0.4-1.9,1.2-2.5l9.7-8.3c1.2-1.1,3-1.1,4.3,0l9.6,8.3c0.7,0.6,1.1,1.5,1.1,2.5v13.8c0,1.8-1.5,3.3-3.3,3.3h-2c-1.6,1.9-3.4,3.2-4.7,4.2L19.9,40h12.5c1.8,0,3.3-1.5,3.3-3.3v-21C35.7,14.8,35.3,13.9,34.6,13.3z",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
+        lineNumber: 77,
+        columnNumber: 17
+      }
     })))), __jsx("div", {
       className: "zalo-share__input",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
+        lineNumber: 82,
+        columnNumber: 11
+      }
     }, __jsx("input", {
       type: "text",
       value: urlString,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
+        lineNumber: 83,
+        columnNumber: 13
+      }
     })), __jsx("div", {
       className: "zalo-share__title",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
+        lineNumber: 85,
+        columnNumber: 11
+      }
     }, "Chia s\u1EBB B\xE0i vi\u1EBFt n\xE0y l\xEAn Zalo c\u1EE7a b\u1EA1n"), __jsx("div", {
       className: "zalo-share__click",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
+        lineNumber: 86,
+        columnNumber: 11
+      }
     }, __jsx("div", {
       className: "zalo-share-button",
       "data-href": urlString,
@@ -1779,43 +1865,49 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_8___default.a {
       "data-layout": "2",
       "data-color": "blue",
       "data-customize": true,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
+        lineNumber: 87,
+        columnNumber: 13
+      }
     }, "CHIA S\u1EBA"), __jsx("a", {
       href: urlString,
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
+        lineNumber: 90,
+        columnNumber: 13
+      }
     }, __jsx("div", {
       className: "zalo-share__close",
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
+        lineNumber: 90,
+        columnNumber: 33
+      }
     }, "QUAY L\u1EA0I")))), __jsx("body", {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["Main"], {
+        lineNumber: 93,
+        columnNumber: 9
+      }
+    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_9__["Main"], {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_8__["NextScript"], {
+        lineNumber: 94,
+        columnNumber: 11
+      }
+    }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_9__["NextScript"], {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
+        lineNumber: 95,
+        columnNumber: 11
+      }
     })));
   }
 
@@ -1834,6 +1926,17 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_8___default.a {
 
 module.exports = __webpack_require__(/*! private-next-pages/_document.tsx */"./pages/_document.tsx");
 
+
+/***/ }),
+
+/***/ "@material-ui/core/styles":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/styles" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 

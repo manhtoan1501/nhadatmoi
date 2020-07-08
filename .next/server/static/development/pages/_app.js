@@ -104,1754 +104,6 @@ module.exports =
 
 /***/ }),
 
-/***/ "./components/Chat/Index.tsx":
-/*!***********************************!*\
-  !*** ./components/Chat/Index.tsx ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Popper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Popper */ "@material-ui/core/Popper");
-/* harmony import */ var _material_ui_core_Popper__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Popper__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_scroll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-scroll */ "react-scroll");
-/* harmony import */ var react_scroll__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_scroll__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Search */ "@material-ui/icons/Search");
-/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_icons_AddCircleOutline__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/AddCircleOutline */ "@material-ui/icons/AddCircleOutline");
-/* harmony import */ var _material_ui_icons_AddCircleOutline__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AddCircleOutline__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _material_ui_icons_TagFaces__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/TagFaces */ "@material-ui/icons/TagFaces");
-/* harmony import */ var _material_ui_icons_TagFaces__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_TagFaces__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/ExpandMore */ "@material-ui/icons/ExpandMore");
-/* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/Close */ "@material-ui/icons/Close");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/Send */ "@material-ui/icons/Send");
-/* harmony import */ var _material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./constant */ "./components/Chat/constant.tsx");
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! jss */ "jss");
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(jss__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var jss_rtl__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! jss-rtl */ "jss-rtl");
-/* harmony import */ var jss_rtl__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(jss_rtl__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../constants */ "./constants/index.ts");
-/* harmony import */ var cross_fetch_polyfill__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! cross-fetch/polyfill */ "cross-fetch/polyfill");
-/* harmony import */ var cross_fetch_polyfill__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(cross_fetch_polyfill__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "@material-ui/core/Tooltip");
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../utils */ "./utils/index.ts");
-/* harmony import */ var _graphql_chat_mutation__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../graphql/chat/mutation */ "./graphql/chat/mutation/index.ts");
-/* harmony import */ var _graphql_chat_queries__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../graphql/chat/queries */ "./graphql/chat/queries/index.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var moment_locale_es__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! moment/locale/es */ "moment/locale/es");
-/* harmony import */ var moment_locale_es__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(moment_locale_es__WEBPACK_IMPORTED_MODULE_26__);
-
-
-
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Chat\\Index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const client = axios__WEBPACK_IMPORTED_MODULE_18___default.a.create({
-  baseURL: _constants__WEBPACK_IMPORTED_MODULE_19__["apiBaseURL"],
-  timeout: 30000
-});
-
-
-moment__WEBPACK_IMPORTED_MODULE_25___default.a.locale('vi'); // @ts-ignore
-
-
-const jss = Object(jss__WEBPACK_IMPORTED_MODULE_16__["create"])({
-  plugins: [...Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["jssPreset"])().plugins, jss_rtl__WEBPACK_IMPORTED_MODULE_17___default()()]
-});
-
-function BootstrapTooltip(props) {
-  const classes = Object(_constant__WEBPACK_IMPORTED_MODULE_15__["useStylesBootstrap"])();
-  return __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_21___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
-    arrow: true,
-    classes: classes
-  }, props, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
-  }));
-}
-
-;
-;
-;
-;
-;
-[];
-
-const Chat = props => {
-  const classes = Object(_constant__WEBPACK_IMPORTED_MODULE_15__["useStyles"])();
-  const [open, setOpen] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false);
-  const [placement, setPlacement] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState();
-  const [internet, setInternet] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(true);
-  const [texting, setTexting] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false);
-  const [giphyData, setGiphyData] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState();
-  const [openEmojiGiphy, setOpenEmojiGiphy] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false);
-  const [valueSearchGiphy, setValueSearchGiphy] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-  const [avatarImage, setAvatarImage] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("https://image.crisp.chat/avatar/operator/da8d4459-5ea3-4119-bca1-9170f49ee69c/240/?1585999578742&quot");
-  let [valueInput, setValueInput] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-  const [viewEmoji, setViewEmoji] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false);
-  const [reload, setReload] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(true);
-  const [checkLogin, setCheckLogin] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(true);
-  const [userId, setUserId] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-  const [conversations, setConversations] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState();
-  const [conversation, setConversation] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState();
-  const [chat, setChat] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState([]);
-  const [name, setName] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-  const [last_activity, setLastActivity] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-  const [chatId, setChatId] = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState("");
-
-  const onCloseChat = () => {
-    setOpenEmojiGiphy(false);
-    setOpen(false);
-  };
-
-  const checkUserLogin = () => {
-    if (props.userLogin) {
-      setCheckLogin(true);
-    } else {
-      setCheckLogin(false);
-    }
-  };
-
-  const sendMessageChat = async (value, url) => {
-    chat.push({
-      id: chatId,
-      send_user_id: props.userLogin,
-      message: {
-        text: value,
-        attachment: {
-          type: "",
-          payload: {
-            url: url
-          }
-        }
-      },
-      status_check: 0,
-      send_at: String(new Date().getTime()),
-      read_at: String(new Date().getTime())
-    });
-    setChat(chat);
-    _utils__WEBPACK_IMPORTED_MODULE_22__["apolloClient"].mutate({
-      mutation: _graphql_chat_mutation__WEBPACK_IMPORTED_MODULE_23__["CREATE_MESSAGE"],
-      variables: {
-        "input": {
-          "target": userId,
-          "message": {
-            "text": `${value}`,
-            "attachment": {
-              "type": "",
-              "payload": {
-                "url": `${url}`
-              }
-            }
-          }
-        }
-      }
-    }).then(response => {});
-    setReload(!reload);
-    setValueInput("");
-    setScrollTo();
-  };
-
-  const renderHeader = () => {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 190
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["CardHeader"], {
-      className: classes.header,
-      avatar: __jsx(_constant__WEBPACK_IMPORTED_MODULE_15__["StyledBadge"], {
-        overlap: "circle",
-        anchorOrigin: {
-          vertical: 'bottom',
-          horizontal: 'right'
-        },
-        variant: "standard",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 194
-        },
-        __self: undefined
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Avatar"], {
-        src: avatarImage,
-        className: classes.sizeAvatarSmall,
-        alt: "nhadatmoi.net",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 199
-        },
-        __self: undefined
-      })),
-      title: name,
-      subheader: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Typography"], {
-        variant: "caption",
-        align: "center",
-        className: classes.timeWork,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 204
-        },
-        __self: undefined
-      }, "Ho\u1EA1t \u0111\u1ED9ng: ", moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(last_activity)).format('DD/MM/YYYY')),
-      action: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["IconButton"], {
-        color: "inherit",
-        "aria-label": "settings",
-        onClick: () => onCloseChat(),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 209
-        },
-        __self: undefined
-      }, __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_13___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 210
-        },
-        __self: undefined
-      })),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 191
-      },
-      __self: undefined
-    }));
-  };
-
-  const searchGiphy = async event => {
-    setValueSearchGiphy(event.target.value);
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=UgTMyvovmg74m8fPN6qYiB623nwS1IPc&q=${event.target.value}&limit=20&offset=0&rating=G&lang=vi`.then(function (response) {
-      setGiphyData(response.data.data);
-    });
-  };
-
-  let dataSearch = [];
-
-  if (_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1___default()(giphyData)) {
-    giphyData.map((item, index) => {
-      dataSearch.push({
-        image: {
-          url: item.images.fixed_width.url,
-          height: item.images.fixed_width.height,
-          width: item.images.fixed_width.width
-        }
-      });
-    });
-  }
-
-  ; // Gửi ảnh emoji giphy 
-
-  const setItemGiphy = (index, name) => {
-    setOpenEmojiGiphy(!openEmojiGiphy);
-
-    if (name == "giphyDefault") {
-      sendMessageChat("", _constant__WEBPACK_IMPORTED_MODULE_15__["giphyDefault"][index].image.url);
-    } else if (name == "dataSearch") {
-      sendMessageChat("", dataSearch[index].image.url);
-    }
-  };
-
-  const onClickEmoji = index => {
-    valueInput = valueInput + _constant__WEBPACK_IMPORTED_MODULE_15__["dataEmoji"][index].native;
-    setValueInput(valueInput);
-  };
-
-  const renderEmoji = () => {
-    return __jsx("div", {
-      className: classes.overflowHeightEmoji,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 255
-      },
-      __self: undefined
-    }, _constant__WEBPACK_IMPORTED_MODULE_15__["dataEmoji"].map((item, index) => {
-      return __jsx("div", {
-        onClick: () => onClickEmoji(index),
-        key: index,
-        className: classes.itemEmoji,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 258
-        },
-        __self: undefined
-      }, item.native);
-    }));
-  };
-
-  const renderGiphy = () => {
-    return __jsx("div", {
-      className: classes.viewWidthGiphy,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 271
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: classes.searchGiphy,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 272
-      },
-      __self: undefined
-    }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_9___default.a, {
-      className: classes.sizeSearchIcon,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 273
-      },
-      __self: undefined
-    }), __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["ThemeProvider"], {
-      theme: _constant__WEBPACK_IMPORTED_MODULE_15__["themeInputBase"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 274
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["InputBase"], {
-      onChange: e => searchGiphy(e),
-      className: classes.inputBaseGiphy,
-      placeholder: "T\xECm ki\u1EBFm ...",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 275
-      },
-      __self: undefined
-    }))), __jsx("div", {
-      className: classes.viewSizeGiphy,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 282
-      },
-      __self: undefined
-    }, valueSearchGiphy ? dataSearch.map((item, index) => {
-      return __jsx("div", {
-        className: classes.itemGiphy,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 286
-        },
-        __self: undefined
-      }, __jsx("img", {
-        className: classes.imgListGiphy,
-        alt: "giphy",
-        src: item.image.url,
-        onClick: () => setItemGiphy(index, "dataSearch"),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 287
-        },
-        __self: undefined
-      }));
-    }) : _constant__WEBPACK_IMPORTED_MODULE_15__["giphyDefault"].map((item, index) => {
-      // view giphy default
-      return __jsx("div", {
-        className: classes.itemGiphy,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 298
-        },
-        __self: undefined
-      }, __jsx("img", {
-        className: classes.imgListGiphy,
-        alt: "giphy",
-        src: item.image.url,
-        onClick: () => setItemGiphy(index, "giphyDefault"),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 299
-        },
-        __self: undefined
-      }));
-    })));
-  };
-
-  const renderEmojiGiphy = () => {
-    return __jsx("div", {
-      className: classes.emojiGiphy,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 315
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: classes.marinButtonEmojiGiphy,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 316
-      },
-      __self: undefined
-    }, __jsx("button", {
-      className: classes.buttonEmojiGiphy,
-      onClick: () => setViewEmoji(true),
-      style: {
-        backgroundColor: !viewEmoji ? "#aaa" : ""
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 317
-      },
-      __self: undefined
-    }, " Bi\u1EC3u t\u01B0\u1EE3ng"), __jsx("button", {
-      className: classes.buttonEmojiGiphy,
-      onClick: () => setViewEmoji(false),
-      style: {
-        backgroundColor: viewEmoji ? "#aaa" : ""
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 323
-      },
-      __self: undefined
-    }, " \u1EA2nh \u0111\u1ED9ng")), viewEmoji ? renderEmoji() : renderGiphy());
-  };
-
-  const getConversations = async () => {
-    let response = await _utils__WEBPACK_IMPORTED_MODULE_22__["apolloClient"].query({
-      query: _graphql_chat_queries__WEBPACK_IMPORTED_MODULE_24__["GET_LIST_MESSAGE"],
-      variables: {
-        "page": 1,
-        "limit": 5
-      }
-    }).then(response => {
-      let conversations = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(response, "data.conversations", {});
-
-      if (conversations) {
-        setConversations(conversations);
-      }
-    });
-  };
-
-  react__WEBPACK_IMPORTED_MODULE_3___default.a.useEffect(() => {
-    checkUserLogin();
-    getConversations();
-  }, []);
-
-  const renderImage = (send_at, url, role) => {
-    return __jsx("div", {
-      className: role === 'take' ? classes.viewContentImageTake : classes.viewContentImageSend,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 354
-      },
-      __self: undefined
-    }, __jsx(BootstrapTooltip, {
-      title: moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(send_at)).fromNow(),
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 355
-      },
-      __self: undefined
-    }, __jsx("img", {
-      src: url,
-      className: classes.imgGiphy,
-      alt: "giphy",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 356
-      },
-      __self: undefined
-    })));
-  };
-
-  const renderTextField = (send_at, text, role) => {
-    return __jsx(BootstrapTooltip, {
-      title: moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(send_at)).fromNow(),
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 364
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: role == "take" ? classes.viewTextTake : classes.viewTextSend,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 365
-      },
-      __self: undefined
-    }, text.trim()));
-  };
-
-  const renderText = (send_at, text, role) => {
-    if (role === 'take') {
-      return renderTextField(send_at, text, role);
-    }
-
-    return __jsx("div", {
-      className: classes.textFieldUserChatContent,
-      dir: `${text.length < 45 ? 'rtl' : ""}`,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 377
-      },
-      __self: undefined
-    }, renderTextField(send_at, text, role));
-  };
-
-  const renderConversation = () => {
-    let created_at = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "created_at", "");
-
-    return __jsx("div", {
-      className: openEmojiGiphy ? classes.openEG : classes.overflowHeightEG,
-      style: {
-        height: openEmojiGiphy ? "230px" : "430px"
-      },
-      id: 'ContainerElementID',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 386
-      },
-      __self: undefined
-    }, __jsx(react_scroll__WEBPACK_IMPORTED_MODULE_6__["Element"], {
-      name: "myScrollToElement",
-      id: "test_ndm",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 387
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Typography"], {
-      align: "center",
-      className: classes.textSizeNewDate,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 388
-      },
-      __self: undefined
-    }, " ", moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(created_at)).format('LLL'), " "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Divider"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 389
-      },
-      __self: undefined
-    }), _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1___default()(chat) ? chat.map((element, count) => {
-      let checkNewDate = false;
-      let oldDate = count > 0 ? moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(chat[count - 1].send_at)).format('YYYY-MM-DD') : '';
-      let newDate = moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(chat[count].send_at)).format('YYYY-MM-DD');
-
-      if (count > 0 && oldDate !== newDate) {
-        checkNewDate = true;
-      }
-
-      let url = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(element, "message.attachment.payload.url", "");
-
-      let text = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(element, "message.text", "");
-
-      let send_user_id = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(element, "send_user_id", "");
-
-      let send_at = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(element, "send_at", "");
-
-      let setViewAvatar = send_user_id == props.userLogin ? true : false;
-      return __jsx("div", {
-        key: count,
-        style: {
-          display: "block"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 403
-        },
-        __self: undefined
-      }, checkNewDate && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Typography"], {
-        align: "center",
-        className: classes.textSizeNewDate,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 404
-        },
-        __self: undefined
-      }, moment__WEBPACK_IMPORTED_MODULE_25___default()(Number(send_at)).format("LLL"), " ", __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Divider"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 405
-        },
-        __self: undefined
-      })), send_user_id !== props.userLogin ? __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["ThemeProvider"], {
-        theme: _constant__WEBPACK_IMPORTED_MODULE_15__["themeTextFieldAdmin"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 407
-        },
-        __self: undefined
-      }, __jsx("div", {
-        className: classes.viewAvatarChatContent,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 408
-        },
-        __self: undefined
-      }, setViewAvatar && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Avatar"], {
-        className: classes.avatarAdminText,
-        alt: "nhadatmoi.net",
-        src: avatarImage,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 409
-        },
-        __self: undefined
-      })), __jsx("div", {
-        className: classes.textFieldChatContent,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 411
-        },
-        __self: undefined
-      }, url ? renderImage(send_at, url, "take") : renderText(send_at, text, "take"))) : __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["ThemeProvider"], {
-        theme: _constant__WEBPACK_IMPORTED_MODULE_15__["themeTextFieldUser"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 415
-        },
-        __self: undefined
-      }, url ? renderImage(send_at, url, "send") : renderText(send_at, text, "send")), __jsx("div", {
-        className: classes.clearFloat,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 419
-        },
-        __self: undefined
-      }));
-    }) : "", __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 424
-      },
-      __self: undefined
-    }, !internet && __jsx("p", {
-      className: classes.errInternet,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 425
-      },
-      __self: undefined
-    }, __jsx("u", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 425
-      },
-      __self: undefined
-    }, "Kh\xF4ng th\u1EC3 g\u1EEDi tin nh\u1EAFn n\xE0y. Ki\u1EC3m tra k\u1EBFt n\u1ED1i internet v\xE0 th\u1EED l\u1EA1i"))), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 427
-      },
-      __self: undefined
-    }, " ", texting && __jsx("p", {
-      className: classes.texting,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 427
-      },
-      __self: undefined
-    }, "\u0110ang nh\u1EADp ..."))));
-  };
-
-  const onClickOpenEmojiGiphy = () => {
-    setOpenEmojiGiphy(!openEmojiGiphy);
-    setViewEmoji(true);
-  };
-
-  const apiBaseURL = "https://graph.nhadatmoi.net";
-  const apiUpload = `${apiBaseURL}/private_upload_image_app`;
-
-  const api = (method, url, data) => client.request({
-    data: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(data),
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json"
-    },
-    method,
-    url,
-    withCredentials: true
-  }).then(response => response.data);
-
-  const upLoadImage = files => {
-    const reader = new FileReader();
-    let file = files.target.files[0];
-    reader.readAsDataURL(file);
-
-    reader.onload = () => {
-      api("POST", `${apiUpload}`, {
-        base64_image: reader.result,
-        fileName: new Date().getTime() + "" + file.name,
-        typeUpload: "ad_sell_lease"
-      }).then(function (res) {
-        sendMessageChat("", res.location);
-      }).catch(function (err) {
-        alert('HTTP Error: ' + err.message);
-      });
-    };
-  };
-
-  const setOnKeyDown = event => {
-    if (event.keyCode == 13) {
-      sendMessageChat(valueInput, "");
-      setValueInput("");
-      setScrollTo();
-    }
-  };
-
-  const setScrollTo = () => {
-    let heightChatDiv = 0;
-    let elm = document.getElementById("test_ndm");
-
-    if (elm) {
-      heightChatDiv = elm.offsetHeight;
-    }
-
-    react_scroll__WEBPACK_IMPORTED_MODULE_6__["scroller"].scrollTo('myScrollToElement', {
-      duration: 500,
-      delay: 100,
-      smooth: true,
-      containerId: 'ContainerElementID',
-      offset: heightChatDiv
-    });
-  };
-
-  const setChangeInput = value => {
-    setValueInput(value);
-  };
-
-  const renderInput = () => {
-    return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Paper"], {
-      component: "form",
-      className: classes.inputBase,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 500
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["ThemeProvider"], {
-      theme: _constant__WEBPACK_IMPORTED_MODULE_15__["themeInput"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 501
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Input"], {
-      fullWidth: true,
-      disabled: !internet,
-      className: classes.inputText,
-      margin: "dense",
-      id: "outlined-basic",
-      autoFocus: true,
-      value: valueInput,
-      multiline: true,
-      onChange: e => setChangeInput(e.target.value),
-      onKeyDown: e => setOnKeyDown(e),
-      placeholder: "Nh\u1EADp tin nh\u1EAFn ...",
-      autoComplete: "false",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 502
-      },
-      __self: undefined
-    }), openEmojiGiphy ? __jsx(BootstrapTooltip, {
-      title: "Ch\xE8n bi\u1EC3u t\u01B0\u1EE3ng",
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 517
-      },
-      __self: undefined
-    }, __jsx(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_12___default.a, {
-      className: classes.sizeIcon,
-      onClick: onClickOpenEmojiGiphy,
-      color: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 518
-      },
-      __self: undefined
-    })) : __jsx(BootstrapTooltip, {
-      title: "Ch\xE8n bi\u1EC3u t\u01B0\u1EE3ng",
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 520
-      },
-      __self: undefined
-    }, __jsx(_material_ui_icons_TagFaces__WEBPACK_IMPORTED_MODULE_11___default.a, {
-      className: classes.sizeIcon,
-      onClick: onClickOpenEmojiGiphy,
-      color: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 521
-      },
-      __self: undefined
-    })), valueInput ? __jsx(BootstrapTooltip, {
-      title: "G\u1EEDi tin nh\u1EAFn",
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 525
-      },
-      __self: undefined
-    }, __jsx(_material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_14___default.a, {
-      onClick: () => sendMessageChat(valueInput, ""),
-      className: classes.sizeIcon,
-      color: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 526
-      },
-      __self: undefined
-    })) : __jsx(BootstrapTooltip, {
-      title: "Th\xEAm t\u1EADp tin",
-      placement: "top",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 528
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: classes.inputWrapper,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 529
-      },
-      __self: undefined
-    }, __jsx(_material_ui_icons_AddCircleOutline__WEBPACK_IMPORTED_MODULE_10___default.a, {
-      className: classes.sizeIcon,
-      color: "primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 530
-      },
-      __self: undefined
-    }), __jsx("input", {
-      type: "file",
-      className: classes.fileInput,
-      onChange: upLoadImage,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 531
-      },
-      __self: undefined
-    })))));
-  };
-
-  const viewChat = () => {
-    let openChat = open && checkLogin ? true : false;
-    return __jsx(_material_ui_core_Popper__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      open: openChat,
-      placement: placement,
-      transition: true,
-      className: classes.viewChatImpostant,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 543
-      },
-      __self: undefined
-    }, ({
-      TransitionProps
-    }) => __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Fade"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, TransitionProps, {
-      timeout: 300,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 545
-      },
-      __self: undefined
-    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Paper"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 546
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: classes.viewChat,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 547
-      },
-      __self: undefined
-    }, renderHeader(), renderConversation(), openEmojiGiphy && renderEmojiGiphy(), renderInput()))));
-  };
-
-  const handleClick = newPlacement => {
-    setOpen(true);
-    setPlacement(newPlacement);
-  };
-
-  const getConversation = async conversationId => {
-    let conversation = await _utils__WEBPACK_IMPORTED_MODULE_22__["apolloClient"].query({
-      query: _graphql_chat_queries__WEBPACK_IMPORTED_MODULE_24__["GET_MESSAGE_BY_ID"],
-      variables: {
-        "id": conversationId
-      }
-    }).then(response => {
-      let conversation = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(response, "data.conversation", {});
-
-      return conversation;
-    });
-
-    let chat = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "chat", []);
-
-    let avatar = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "target.avatar", "");
-
-    let userId = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "target.id", "");
-
-    let name = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "target.first_name", "") + lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "target.last_name", "");
-
-    let last_activity = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversation, "target.last_activity", "");
-
-    setChat(chat);
-    setAvatarImage(avatar);
-    setChatId(conversationId);
-    setUserId(userId);
-    setName(name);
-    setLastActivity(last_activity);
-    setConversation(conversation);
-  };
-
-  const renderListAvatar = (item, index, numberView) => {
-    let avatar = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.target.avatar", "");
-
-    let name = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.target.first_name", "") + lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.target.last_name", "");
-
-    let id = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.target.id", "");
-
-    let status = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.target.status", "");
-
-    let conversationId = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(item, "node.id", "");
-
-    if (index < numberView) {
-      return __jsx("div", {
-        key: index,
-        style: {
-          bottom: `${index * 65 + 80}px`
-        },
-        className: id === userId ? classes.renderAvatarBorderRadius : classes.renderAvatar,
-        onClick: () => getConversation(conversationId),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 596
-        },
-        __self: undefined
-      }, __jsx(BootstrapTooltip, {
-        title: name,
-        placement: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 600
-        },
-        __self: undefined
-      }, __jsx(_constant__WEBPACK_IMPORTED_MODULE_15__["StyledBadge"], {
-        overlap: "circle",
-        anchorOrigin: {
-          vertical: 'bottom',
-          horizontal: 'right'
-        },
-        variant: status == "offline" ? "standard" : "dot",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 601
-        },
-        __self: undefined
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Avatar"], {
-        src: avatar,
-        onClick: () => handleClick("top-start"),
-        className: classes.large,
-        alt: "name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 606
-        },
-        __self: undefined
-      }))));
-    }
-  };
-
-  const listAvatar = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.get(conversations, 'edges', []) || [];
-  return __jsx("div", {
-    className: classes.root,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 623
-    },
-    __self: undefined
-  }, viewChat(), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Grid"], {
-    container: true,
-    justify: "center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 625
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Grid"], {
-    item: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 626
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Hidden"], {
-    xsDown: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 627
-    },
-    __self: undefined
-  }, __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1___default()(listAvatar) && listAvatar.map((item, index) => {
-    return renderListAvatar(item, index, 5);
-  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Hidden"], {
-    smUp: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 634
-    },
-    __self: undefined
-  }, __jsx(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_1___default()(listAvatar) && listAvatar.map((item, index) => {
-    return renderListAvatar(item, index, 1);
-  }))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Chat);
-
-/***/ }),
-
-/***/ "./components/Chat/constant.tsx":
-/*!**************************************!*\
-  !*** ./components/Chat/constant.tsx ***!
-  \**************************************/
-/*! exports provided: dataEmoji, arrChat, giphyDefault, themeTextFieldAdmin, themeTextFieldUser, themeTextHeader, themeInput, StyledBadge, themeInputBase, zIndexMax, useStylesBootstrap, useStyles */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataEmoji", function() { return dataEmoji; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrChat", function() { return arrChat; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "giphyDefault", function() { return giphyDefault; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themeTextFieldAdmin", function() { return themeTextFieldAdmin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themeTextFieldUser", function() { return themeTextFieldUser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themeTextHeader", function() { return themeTextHeader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themeInput", function() { return themeInput; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledBadge", function() { return StyledBadge; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "themeInputBase", function() { return themeInputBase; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "zIndexMax", function() { return zIndexMax; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStylesBootstrap", function() { return useStylesBootstrap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStyles", function() { return useStyles; });
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-const zIndexMax = 999999999999999;
-const dataEmoji = [{
-  native: '😃'
-}, {
-  native: "😀"
-}, {
-  native: "😁"
-}, {
-  native: '😂'
-}, {
-  native: '😃'
-}, {
-  native: "😄"
-}, {
-  native: "😅"
-}, {
-  native: '😆'
-}, {
-  native: '😃'
-}, {
-  native: "😇"
-}, {
-  native: "😈	"
-}, {
-  native: '🎅🏼'
-}, {
-  native: '😉'
-}, {
-  native: '😋'
-}, {
-  native: '😌'
-}, {
-  native: '😍'
-}, {
-  native: '😎'
-}, {
-  native: '😏'
-}, {
-  native: '😐'
-}, {
-  native: '😑'
-}, {
-  native: '😒'
-}, {
-  native: '😓	'
-}, {
-  native: '😔'
-}, {
-  native: '😕'
-}, {
-  native: '😖'
-}, {
-  native: '😗'
-}, {
-  native: '😘'
-}, {
-  native: '😙'
-}, {
-  native: '😚'
-}, {
-  native: '😛'
-}, {
-  native: '😜'
-}, {
-  native: '😝'
-}, {
-  native: '😞'
-}, {
-  native: '😟'
-}, {
-  native: '😠'
-}, {
-  native: '😡'
-}, {
-  native: '😢'
-}, {
-  native: '😣'
-}, {
-  native: '😤'
-}, {
-  native: '😥'
-}, {
-  native: '😦'
-}, {
-  native: '😧'
-}, {
-  native: '😨'
-}, {
-  native: '😩'
-}, {
-  native: '😪'
-}, {
-  native: '😫'
-}, {
-  native: '😬'
-}, {
-  native: '😭'
-}, {
-  native: '😮'
-}, {
-  native: '😯	'
-}, {
-  native: '😰'
-}, {
-  native: '😱'
-}, {
-  native: '😲'
-}, {
-  native: '😳'
-}, {
-  native: '😴'
-}, {
-  native: '😵'
-}, {
-  native: '😶'
-}, {
-  native: '😷'
-}, {
-  native: '🙁'
-}, {
-  native: '🙂'
-}, {
-  native: '😱'
-}, {
-  native: '😲'
-}, {
-  native: '😳'
-}, {
-  native: '😴'
-}, {
-  native: '😵'
-}, {
-  native: '😶'
-}, {
-  native: '😷'
-}, {
-  native: '🙁'
-}, {
-  native: '🙂'
-}, {
-  native: '🙃'
-}, {
-  native: '🙄'
-}, {
-  native: '🤐'
-}];
-const arrChat = [{
-  message: "Nội thất Dodo xin chào quý khách",
-  date: "1570164019224",
-  image: {
-    url: '',
-    height: "",
-    width: ''
-  },
-  type: "admin"
-}];
-const giphyDefault = [{
-  image: {
-    url: 'https://media3.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=13984785c0b0951827d991e0244802c1aa7a37da3f7842a2&rid=giphy.gif',
-    height: '220',
-    width: "180"
-  }
-}, {
-  image: {
-    url: "https://media0.giphy.com/media/WXB88TeARFVvi/giphy.gif?cid=13984785c0b0951827d991e0244802c1aa7a37da3f7842a2&rid=giphy.gif",
-    height: '230',
-    width: "150"
-  }
-}, {
-  image: {
-    url: 'https://media3.giphy.com/media/kiBcwEXegBTACmVOnE/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif',
-    height: '250',
-    width: "220"
-  }
-}, {
-  image: {
-    url: "https://media3.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif",
-    height: '210',
-    width: "190"
-  }
-}, {
-  image: {
-    url: "https://media2.giphy.com/media/33OrjzUFwkwEg/giphy.gif?cid=13984785c0b0951827d991e0244802c1aa7a37da3f7842a2&rid=giphy.gif",
-    height: '250',
-    width: "240"
-  }
-}, {
-  image: {
-    url: "https://media3.giphy.com/media/mCRJDo24UvJMA/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif",
-    height: '200',
-    width: "150"
-  }
-}, {
-  image: {
-    url: "https://media3.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif",
-    height: '250',
-    width: "200"
-  }
-}, {
-  image: {
-    url: 'https://media3.giphy.com/media/kiBcwEXegBTACmVOnE/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif',
-    height: '250',
-    width: "200"
-  }
-}, {
-  image: {
-    url: "https://media2.giphy.com/media/QvBoMEcQ7DQXK/giphy.gif?cid=139847857f30fe5e8c9c8f4a605b72af5a4d8c7216516a01&rid=giphy.gif",
-    height: '250',
-    width: "200"
-  }
-}];
-const themeInput = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
-  overrides: {
-    MuiInput: {
-      root: {
-        position: "initial"
-      },
-      fullWidth: {
-        minHeight: "50px",
-        paddingLeft: "10px",
-        fontSize: "15px"
-      }
-    },
-    MuiInputBase: {
-      inputMultiline: {
-        padding: '4px'
-      }
-    }
-  }
-});
-const themeTextFieldAdmin = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
-  overrides: {
-    MuiTextField: {
-      root: {
-        borderRadius: "20px!important"
-      }
-    },
-    MuiOutlinedInput: {
-      multiline: {
-        borderRadius: "20px!important"
-      },
-      inputMultiline: {
-        fontSize: "13px"
-      }
-    }
-  }
-});
-const themeTextHeader = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
-  overrides: {
-    MuiTypography: {
-      colorTextSecondary: {
-        color: "white",
-        fontSize: "30px"
-      },
-      root: {
-        color: "white"
-      }
-    }
-  }
-});
-const themeInputBase = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
-  overrides: {
-    MuiInputBase: {
-      input: {
-        fontSize: "13px"
-      }
-    }
-  }
-});
-const themeTextFieldUser = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createMuiTheme"])({
-  direction: 'rtl',
-  overrides: {
-    MuiInput: {
-      root: {
-        borderRadius: "20px!important"
-      }
-    },
-    MuiOutlinedInput: {
-      multiline: {
-        borderRadius: "20px!important"
-      },
-      inputMultiline: {
-        fontSize: "13px"
-      }
-    }
-  }
-});
-const useStylesBootstrap = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => ({
-  arrow: {
-    color: "#444"
-  },
-  tooltip: {
-    backgroundColor: "#444"
-  }
-}));
-const StyledBadge = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["withStyles"])(theme => Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
-  badge: {
-    backgroundColor: '#44b700',
-    color: '#44b700',
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    '&::after': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: '50%',
-      animation: '$ripple 1.2s infinite ease-in-out',
-      border: '1px solid currentColor',
-      content: '""'
-    }
-  },
-  '@keyframes ripple': {
-    '0%': {
-      transform: 'scale(.8)',
-      opacity: 1
-    },
-    '100%': {
-      transform: 'scale(2.4)',
-      opacity: 0
-    }
-  }
-}))(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Badge"]);
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
-  root: {
-    width: 550,
-    zIndex: 900
-  },
-  inputWrapper: {
-    height: "32px",
-    width: "32px",
-    overflow: "hidden",
-    position: "relative",
-    cursor: "pointer",
-    marginTop: "5px"
-  },
-  fileInput: {
-    cursor: "pointer",
-    position: "absolute",
-    top: "0",
-    right: "0",
-    zIndex: 99,
-    fontSize: "20px",
-    opacity: "0"
-  },
-  textAdmin: {
-    backgroundColor: "#DBF4FD",
-    color: "white"
-  },
-  textFieldUserChatContent: {
-    marginLeft: "36px",
-    textAlign: "right"
-  },
-  textUser: {
-    backgroundColor: "white",
-    color: "black"
-  },
-  textFieldChatContent: {
-    marginLeft: "36px"
-  },
-  timeWork: {
-    color: "white"
-  },
-  itemEmoji: {
-    display: 'inline-block',
-    fontSize: '25px',
-    cursor: "pointer",
-    padding: '2px',
-    border: "1px solid white"
-  },
-  overflowHeightEG: {
-    overflowY: "auto",
-    padding: "8px 16px",
-    [theme.breakpoints.down('xs')]: {
-      height: 'calc(100vh - 126px)!important'
-    }
-  },
-  openEG: {
-    overflowY: "auto",
-    padding: "8px 16px",
-    [theme.breakpoints.down('xs')]: {
-      height: 'calc(100vh - 320px)!important'
-    }
-  },
-  overflowHeightEmoji: {
-    overflowX: 'auto',
-    height: '155px',
-    padding: "4px",
-    width: "350px"
-  },
-  viewSizeGiphy: {
-    overflowX: 'auto',
-    height: '125px'
-  },
-  viewWidthGiphy: {
-    width: "350px"
-  },
-  searchGiphy: {
-    display: 'flex',
-    margin: "0px 0px 4px 12px",
-    borderRadius: '4px',
-    backgroundColor: "#f0f0f0",
-    height: "28px",
-    width: "308px",
-    [theme.breakpoints.down('xl')]: {
-      margin: "0px 0px 4px 16px",
-      width: "308px"
-    },
-    [theme.breakpoints.down('lg')]: {
-      margin: "0px 0px 4px 12px",
-      width: "308px"
-    },
-    [theme.breakpoints.down('md')]: {
-      margin: "0px 0px 4px 20px",
-      width: "308px"
-    },
-    [theme.breakpoints.down('sm')]: {
-      margin: "0px 0px 4px 22px",
-      width: "306px"
-    }
-  },
-  inputBaseGiphy: {
-    marginleft: theme.spacing(1),
-    flex: 1
-  },
-  itemGiphy: {
-    width: "78px",
-    height: "55px",
-    display: 'inline-block',
-    padding: '2px'
-  },
-  imgListGiphy: {
-    width: "100%",
-    height: "100%",
-    borderRadius: '4px'
-  },
-  viewContentImageTake: {
-    maxWidth: "250px",
-    height: `auto`,
-    padding: "5px 0px 5px 0px",
-    float: "left"
-  },
-  viewContentImageSend: {
-    maxWidth: "250px",
-    height: `auto`,
-    float: "right",
-    padding: "5px 0px 5px 0px"
-  },
-  imgGiphy: {
-    width: "100%",
-    height: "100%"
-  },
-  errInternet: {
-    padding: "20px",
-    color: "red",
-    fontSize: '13px'
-  },
-  texting: {
-    fontSize: '13px',
-    color: '#aaa',
-    padding: "5px",
-    textAlign: 'right'
-  },
-  iconWaring: {
-    fontSize: "20px"
-  },
-  sizeSearchIcon: {
-    fontSize: "20px",
-    margin: "4px",
-    color: "#aaa"
-  },
-  viewConversation: {
-    display: "block"
-  },
-  buttonEmojiGiphy: {
-    border: '1px solid white',
-    backgroundColor: "#045EA8",
-    color: 'white',
-    padding: "5px 10px",
-    borderRadius: "5px",
-    marginLeft: "5px"
-  },
-  marinButtonEmojiGiphy: {
-    marginBottom: "5px",
-    marginTop: "5px"
-  },
-  iconSearch: {
-    padding: 2
-  },
-  inputBase: {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
-    width: "100%",
-    position: "absolute",
-    borderTopLeftRadius: "0px",
-    borderTopRightRadius: "0px",
-    borderBottomLeftRadius: "4px",
-    borderBottomRightRadius: "4px",
-    boxShadow: "0px -1px 3px #e8e8e8",
-    outline: 'none',
-    bottom: "0px",
-    ':before': {
-      border: '0px!important'
-    }
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    height: 50,
-    flex: 1
-  },
-  divider: {
-    height: 28,
-    margin: 4
-  },
-  inputText: {
-    width: "300px"
-  },
-  typography: {
-    padding: theme.spacing(2)
-  },
-  viewChatImpostant: {
-    zIndex: 9999999999999
-  },
-  viewChat: {
-    borderRadius: "4px 4px",
-    borderBottomLeftRadius: "4px",
-    borderBottomRightRadius: "4px",
-    backgroundColor: "white",
-    zIndex: 900,
-    height: "550px",
-    width: "350px",
-    position: "fixed",
-    right: '80px',
-    bottom: "15px",
-    boxShadow: "0px -1px 3px #444",
-    [theme.breakpoints.down('sm')]: {
-      position: "fixed",
-      right: '14px',
-      bottom: "80px"
-    },
-    [theme.breakpoints.down('xs')]: {
-      position: "fixed",
-      right: '0',
-      bottom: "0",
-      width: '100%',
-      height: '100vh'
-    }
-  },
-  emojiGiphy: {
-    height: "210px",
-    width: "350px",
-    textAlign: 'center',
-    display: "block",
-    borderTop: '1px solid gray'
-  },
-  textField: {
-    position: "absolute",
-    bottom: "0px"
-  },
-  exampleWrapper: {
-    position: 'fixed',
-    right: "60px",
-    bottom: "2px"
-  },
-  large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7)
-  },
-  avatarAdminText: {
-    width: theme.spacing(3),
-    height: theme.spacing(3)
-  },
-  sizeAvatarSmall: {
-    width: theme.spacing(5),
-    height: theme.spacing(5)
-  },
-  positionAvatar: {
-    position: 'fixed',
-    right: "15px",
-    bottom: "80px",
-    zIndex: 999999999999999
-  },
-  viewAvatarChatContent: {
-    float: "left",
-    margin: "10px 0px 0px 0"
-  },
-  radioGroup: {
-    margin: theme.spacing(1, 0)
-  },
-  avatar: {
-    backgroundColor: "blue"
-  },
-  media: {
-    height: 100,
-    backgroundColor: "blue"
-  },
-  header: {
-    backgroundColor: "#1a75ff",
-    borderTopLeftRadius: "4px",
-    borderTopRightRadius: "4px",
-    color: "white"
-  },
-  speedDial: {
-    position: 'absolute',
-    '&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft': {
-      bottom: theme.spacing(2),
-      right: theme.spacing(2)
-    },
-    '&.MuiSpeedDial-directionDown, &.MuiSpeedDial-directionRight': {
-      top: theme.spacing(2),
-      left: theme.spacing(2)
-    }
-  },
-  sizeIcon: {
-    fontSize: '27px'
-  },
-  textSizeNewDate: {
-    fontSize: "13px",
-    color: 'black',
-    padding: "4px 0px"
-  },
-  renderAvatar: {
-    position: 'fixed',
-    right: "15px",
-    zIndex: zIndexMax
-  },
-  renderAvatarBorderRadius: {
-    boxSizing: "content-box",
-    position: 'fixed',
-    right: "15px",
-    zIndex: zIndexMax,
-    borderRadius: "50%",
-    border: "2px solid #59a832"
-  },
-  clearFloat: {
-    clear: "both"
-  },
-  viewTextTake: {
-    maxWidth: 'calc(100% - 20px)',
-    height: 'auto',
-    background: "rgb(242, 246, 249)",
-    borderRadius: '20px',
-    padding: '10px 15px',
-    margin: '5px 0 5px 0',
-    fontSize: '15px',
-    wordWrap: 'break-word',
-    wordBreak: 'break-word',
-    float: "left"
-  },
-  viewTextSend: {
-    maxWidth: 'calc(100% - 20px)',
-    height: 'auto',
-    background: 'rgb(219, 244, 253)',
-    borderRadius: '20px',
-    padding: '10px 15px',
-    margin: '5px 0 5px 0',
-    fontSize: '15px',
-    wordWrap: 'break-word',
-    wordBreak: 'break-word',
-    float: 'right'
-  }
-}));
-
-
-/***/ }),
-
 /***/ "./components/Display/LoadingPage.tsx":
 /*!********************************************!*\
   !*** ./components/Display/LoadingPage.tsx ***!
@@ -1869,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/lab/Skeleton */ "@material-ui/lab/Skeleton");
 /* harmony import */ var _material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Display\\LoadingPage.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Display\\LoadingPage.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1885,39 +137,44 @@ const LoadingPage = props => {
     sm: props.grid.sm,
     xs: props.grid.xs,
     className: "grid__list__item u-margin-bottom-small",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
+      lineNumber: 20,
+      columnNumber: 5
+    }
   }, __jsx(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3___default.a, {
     variant: "rect",
     className: "grid__list__item__img",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
+      lineNumber: 25,
+      columnNumber: 7
+    }
   }), __jsx(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_2___default.a, {
     pt: 2,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
+      lineNumber: 26,
+      columnNumber: 7
+    }
   }, __jsx(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
+      lineNumber: 27,
+      columnNumber: 9
+    }
   }), __jsx(_material_ui_lab_Skeleton__WEBPACK_IMPORTED_MODULE_3___default.a, {
     width: "60%",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
+      lineNumber: 28,
+      columnNumber: 9
+    }
   })));
 
   let newDomReact = __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
@@ -1932,11 +189,12 @@ const LoadingPage = props => {
     justify: "center",
     alignItems: "baseline",
     className: "grid__list",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
+      lineNumber: 40,
+      columnNumber: 5
+    }
   }, newDomReact);
 };
 
@@ -1961,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_stringProcess__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../modules/stringProcess */ "./modules/stringProcess.tsx");
 /* harmony import */ var _modules_urlProcess__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../modules/urlProcess */ "./modules/urlProcess.tsx");
 /* harmony import */ var _modules_priceProcess__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../modules/priceProcess */ "./modules/priceProcess.tsx");
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\GridList\\GridAdSellLeases.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\GridList\\GridAdSellLeases.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1979,11 +237,12 @@ const GridList = props => {
     direction: "row",
     alignItems: "baseline",
     className: props.className,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
+      lineNumber: 55,
+      columnNumber: 5
+    }
   }, props.gridData.map((dataItem, index) => {
     let priceValue = _modules_priceProcess__WEBPACK_IMPORTED_MODULE_5__["default"].priceProcess(dataItem.node.price.value, dataItem.node.price.unit);
     let dataGrid = {
@@ -2008,11 +267,12 @@ const GridList = props => {
         grid: props.grid,
         dataGird: dataGrid,
         key: "grid_item_ad_sell_" + index,
+        __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: undefined
+          lineNumber: 77,
+          columnNumber: 13
+        }
       });
     }
   }));
@@ -2054,7 +314,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graphql_project_mutation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../graphql/project/mutation */ "./graphql/project/mutation/index.ts");
 /* harmony import */ var _graphql_ad_sell_leases_mutation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../graphql/ad_sell_leases/mutation */ "./graphql/ad_sell_leases/mutation/index.ts");
 
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\GridList\\GridItemASL.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\GridList\\GridItemASL.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // Material- UI
 
@@ -2227,196 +487,223 @@ const GridItemASL = props => {
     direction: props.grid ? "column" : "row",
     spacing: 0,
     className: "grid__list__item u-margin-bottom-small",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
-    },
-    __self: undefined
+      lineNumber: 185,
+      columnNumber: 5
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
     item: true,
     xs: 12,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
-    },
-    __self: undefined
+      lineNumber: 187,
+      columnNumber: 7
+    }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: linkHref,
     as: linkAs,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
-    },
-    __self: undefined
+      lineNumber: 188,
+      columnNumber: 9
+    }
   }, __jsx("a", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
-    },
-    __self: undefined
+      lineNumber: 188,
+      columnNumber: 43
+    }
   }, __jsx("div", {
     className: "grid__list__item__img background block_float",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
-    },
-    __self: undefined
+      lineNumber: 189,
+      columnNumber: 11
+    }
   }, __jsx("div", {
     className: 'grid__list__item__img__date',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: undefined
+      lineNumber: 190,
+      columnNumber: 13
+    }
   }, __jsx(_material_ui_icons_CalendarToday__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: undefined
+      lineNumber: 190,
+      columnNumber: 60
+    }
   }), __jsx(react_moment__WEBPACK_IMPORTED_MODULE_6___default.a, {
     unix: true,
     format: "DD/MM/YYYY",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: undefined
+      lineNumber: 190,
+      columnNumber: 76
+    }
   }, Number(props.dataGird.created_at) / 1000)), __jsx("div", {
     className: 'grid__list__item__img__favorite',
     onClick: handleClickLike,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
-    },
-    __self: undefined
+      lineNumber: 193,
+      columnNumber: 13
+    }
   }, likeStatus && __jsx(_material_ui_icons_Favorite__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
-    },
-    __self: undefined
+      lineNumber: 196,
+      columnNumber: 17
+    }
   }), !likeStatus && __jsx(_material_ui_icons_FavoriteBorder__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200
-    },
-    __self: undefined
+      lineNumber: 200,
+      columnNumber: 17
+    }
   })), props.dataGird.image && props.dataGird.image !== 'null' && props.dataGird.image !== '' && __jsx("img", {
     src: props.dataGird.image,
     alt: props.dataGird.title,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
-    },
-    __self: undefined
+      lineNumber: 205,
+      columnNumber: 15
+    }
   }), (!props.dataGird.image || props.dataGird.image === 'null' || props.dataGird.image === '') && __jsx("img", {
     src: "https://static.nhadatmoi.net/default/home_default.jpg",
     alt: props.dataGird.title,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
-    },
-    __self: undefined
+      lineNumber: 209,
+      columnNumber: 15
+    }
   }))))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
     item: true,
     xs: 12,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214
-    },
-    __self: undefined
+      lineNumber: 214,
+      columnNumber: 7
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: "grid__list__item__content",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
-    },
-    __self: undefined
+      lineNumber: 215,
+      columnNumber: 9
+    }
   }, __jsx("div", {
     className: "grid__list__item__content__title u-flexSpaceBetween",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
-    },
-    __self: undefined
+      lineNumber: 216,
+      columnNumber: 11
+    }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: linkHref,
     as: linkAs,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
-    },
-    __self: undefined
+      lineNumber: 217,
+      columnNumber: 13
+    }
   }, __jsx("a", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
-    },
-    __self: undefined
+      lineNumber: 217,
+      columnNumber: 47
+    }
   }, __jsx("div", {
     className: "grid__list__item__content__title__text",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
-    },
-    __self: undefined
+      lineNumber: 218,
+      columnNumber: 15
+    }
   }, __jsx("p", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
-    },
-    __self: undefined
+      lineNumber: 219,
+      columnNumber: 17
+    }
   }, props.dataGird.title))))), __jsx("div", {
     className: "grid__list__item__content__description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 223
-    },
-    __self: undefined
+      lineNumber: 223,
+      columnNumber: 11
+    }
   }, props.dataGird.address), props.dataGird.area && props.dataGird.area != "0" && __jsx("div", {
     className: "grid__list__item__content__description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
-    },
-    __self: undefined
+      lineNumber: 228,
+      columnNumber: 13
+    }
   }, "Di\u1EC7n t\xEDch: ", props.dataGird.area, " m", __jsx("sup", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229
-    },
-    __self: undefined
+      lineNumber: 229,
+      columnNumber: 49
+    }
   }, "2"), " -  L\u01B0\u1EE3t xem: ", props.dataGird.view_count), (!props.dataGird.area || props.dataGird.area == "0") && __jsx("div", {
     className: "grid__list__item__content__description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
-    },
-    __self: undefined
+      lineNumber: 234,
+      columnNumber: 13
+    }
   }, "Di\u1EC7n t\xEDch: \u0110ang c\u1EADp nh\u1EADt -  L\u01B0\u1EE3t xem: ", props.dataGird.view_count), __jsx("div", {
     className: "grid__list__item__content__price",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238
-    },
-    __self: undefined
+      lineNumber: 238,
+      columnNumber: 11
+    }
   }, props.dataGird.price && props.dataGird.price !== '0' && props.dataGird.price !== '0 ' && props.dataGird.price !== '0 đồng' ? props.dataGird.price : 'Giá: Liên hệ'), !statusCompare && __jsx("div", {
     className: "grid__list__item__content__compare",
     onClick: () => clickAddToCompare(),
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
-    },
-    __self: undefined
+      lineNumber: 241,
+      columnNumber: 13
+    }
   }, "SO S\xC1NH"), statusCompare && __jsx("div", {
     className: "grid__list__item__content__compare",
     onClick: () => handleClickRemoveCompare(dataPrepare),
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 247
-    },
-    __self: undefined
+      lineNumber: 247,
+      columnNumber: 13
+    }
   }, "HU\u1EF6"))));
 
   return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -2426,11 +713,12 @@ const GridItemASL = props => {
     md: props.grid.md,
     sm: props.grid.sm,
     xs: props.grid.xs,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 256
-    },
-    __self: undefined
+      lineNumber: 256,
+      columnNumber: 5
+    }
   }, componentsItem);
 };
 
@@ -2453,7 +741,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Index\\TitleBlock.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Index\\TitleBlock.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2465,33 +753,36 @@ const TitleBlock = props => {
   if (props.type === "h1") {
     domTitle = __jsx("h1", {
       className: "title_block__big_title",
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: undefined
+        lineNumber: 16,
+        columnNumber: 17
+      }
     }, props.title);
   }
 
   if (props.type === "h2") {
     domTitle = __jsx("h2", {
       className: "title_block__big_title",
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: undefined
+        lineNumber: 19,
+        columnNumber: 17
+      }
     }, props.title);
   }
 
   if (props.type === "h3") {
     domTitle = __jsx("h2", {
       className: "title_block__big_title",
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: undefined
+        lineNumber: 22,
+        columnNumber: 17
+      }
     }, props.title);
   }
 
@@ -2500,11 +791,12 @@ const TitleBlock = props => {
   if (props.path.indexOf('https://') !== -1) {
     domBlockTitle = __jsx("a", {
       href: props.path,
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: undefined
+        lineNumber: 27,
+        columnNumber: 7
+      }
     }, domTitle);
   } else if (props.path === '') {
     domBlockTitle = domTitle;
@@ -2512,17 +804,19 @@ const TitleBlock = props => {
     domBlockTitle = __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: props.href ? props.href : props.path,
       as: String(props.path),
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: undefined
+        lineNumber: 35,
+        columnNumber: 7
+      }
     }, __jsx("a", {
+      __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: undefined
+        lineNumber: 36,
+        columnNumber: 9
+      }
     }, domTitle));
   }
 
@@ -2534,18 +828,20 @@ const TitleBlock = props => {
     direction: "row",
     alignItems: "center",
     className: "title_block",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
+      lineNumber: 43,
+      columnNumber: 5
+    }
   }, domBlockTitle, __jsx("div", {
     className: "title_block__big_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: undefined
+      lineNumber: 46,
+      columnNumber: 7
+    }
   }, props.description));
 };
 
@@ -2581,7 +877,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graphql_ad_sell_leases_queries__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../graphql/ad_sell_leases/queries */ "./graphql/ad_sell_leases/queries/index.ts");
 /* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../modules/validator */ "./modules/validator.tsx");
 
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Layout\\ErrorMainPage.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Layout\\ErrorMainPage.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -2625,27 +921,30 @@ const ErrorMainPage = props => {
   }, props, {
     canonical: _constants__WEBPACK_IMPORTED_MODULE_3__["mainURL"],
     path: '',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
+      lineNumber: 42,
+      columnNumber: 5
+    }
   }), __jsx(_components_Layout_ErrorPage__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
+      lineNumber: 49,
+      columnNumber: 7
+    }
   }), __jsx(_components_Index_TitleBlock__WEBPACK_IMPORTED_MODULE_6__["default"], {
     title: "Tin rao ph\xF9 h\u1EE3p v\u1EDBi b\u1EA1n",
     description: "Xem th\xEAm m\u1ED9t s\u1ED1 tin rao ph\xF9 h\u1EE3p v\u1EDBi b\u1EA1n",
     path: "/tim-tin-rao",
     type: "h2",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
+      lineNumber: 50,
+      columnNumber: 7
+    }
   }), statusLoadingAdSellLease && __jsx(_components_Display_LoadingPage__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "loading_page",
     grid: {
@@ -2656,11 +955,12 @@ const ErrorMainPage = props => {
       xs: 12
     },
     numberLimit: 8,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
+      lineNumber: 53,
+      columnNumber: 9
+    }
   }), !statusLoadingAdSellLease && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_components_GridList_GridAdSellLeases__WEBPACK_IMPORTED_MODULE_8__["default"], {
     grid: {
       xl: 3,
@@ -2671,32 +971,36 @@ const ErrorMainPage = props => {
     },
     gridData: dataAdSellLeases,
     className: "grid__list",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
+      lineNumber: 58,
+      columnNumber: 11
+    }
   }), __jsx("div", {
     className: "content_index_button",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
+      lineNumber: 59,
+      columnNumber: 11
+    }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
     href: "/[slug]",
     as: '/tim-tin-rao',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
+      lineNumber: 60,
+      columnNumber: 13
+    }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
+      lineNumber: 60,
+      columnNumber: 54
+    }
   }, "Xem th\xEAm")))));
 }; // @ts-ignore
 
@@ -2744,7 +1048,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Layout\\ErrorPage.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Layout\\ErrorPage.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2826,32 +1130,36 @@ const ErrorPageProps = props => {
   const id = openSearchType ? 'simple-popover' : undefined;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: 'container-big error_page',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: undefined
+      lineNumber: 65,
+      columnNumber: 7
+    }
   }, __jsx("div", {
     className: 'error_page__image',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
+      lineNumber: 66,
+      columnNumber: 9
+    }
   }, __jsx("img", {
     src: 'https://static.nhadatmoi.net/default/error-image.svg',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: undefined
+      lineNumber: 67,
+      columnNumber: 11
+    }
   })), __jsx("div", {
     className: 'error_page__title',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: undefined
+      lineNumber: 69,
+      columnNumber: 9
+    }
   }, "\u0110\xC3 X\u1EA2Y RA L\u1ED6I, VUI L\xD2NG TH\u1EEC L\u1EA0I"), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     container: true,
     spacing: 0,
@@ -2860,63 +1168,71 @@ const ErrorPageProps = props => {
     direction: "row",
     justify: "center",
     alignItems: "center",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
+      lineNumber: 73,
+      columnNumber: 9
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     xs: true,
     className: "error_page__search",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: undefined
+      lineNumber: 76,
+      columnNumber: 11
+    }
   }, __jsx("div", {
     className: "search_homepage__body__box",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: undefined
+      lineNumber: 77,
+      columnNumber: 13
+    }
   }, __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_2___default.a, {
     xsDown: true,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: undefined
+      lineNumber: 78,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "search_homepage__body__box__select",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
+      lineNumber: 79,
+      columnNumber: 17
+    }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
     onClick: handleClickSearchType,
     "aria-describedby": id,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
+      lineNumber: 80,
+      columnNumber: 19
+    }
   }, typeSearch.name, __jsx("svg", {
     viewBox: "0 0 320 512",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: undefined
+      lineNumber: 81,
+      columnNumber: 38
+    }
   }, __jsx("path", {
     d: "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
+      lineNumber: 82,
+      columnNumber: 21
+    }
   }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Popover"], {
     id: id,
     open: openSearchType,
@@ -2931,79 +1247,90 @@ const ErrorPageProps = props => {
       horizontal: 'center'
     },
     className: "search_homepage__body__box__select__popup",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
-    },
-    __self: undefined
+      lineNumber: 85,
+      columnNumber: 19
+    }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Typography"], {
     component: 'span',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
+      lineNumber: 100,
+      columnNumber: 21
+    }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
     button: true,
     onClick: event => handleChangeType(dropdownSearch[0]),
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
+      lineNumber: 101,
+      columnNumber: 23
+    }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItemIcon"], {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
-    },
-    __self: undefined
+      lineNumber: 102,
+      columnNumber: 25
+    }
   }, __jsx(_material_ui_icons_Eco__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
+      lineNumber: 103,
+      columnNumber: 27
+    }
   })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItemText"], {
     primary: dropdownSearch[0].name,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
+      lineNumber: 105,
+      columnNumber: 25
+    }
   })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItem"], {
     button: true,
     onClick: event => handleChangeType(dropdownSearch[1]),
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: undefined
+      lineNumber: 107,
+      columnNumber: 23
+    }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItemIcon"], {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
+      lineNumber: 108,
+      columnNumber: 25
+    }
   }, __jsx(_material_ui_icons_ViewList__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
+      lineNumber: 109,
+      columnNumber: 27
+    }
   })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["ListItemText"], {
     primary: dropdownSearch[1].name,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
+      lineNumber: 111,
+      columnNumber: 25
+    }
   })))))), __jsx("div", {
     className: "search_homepage__body_box_input",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: undefined
+      lineNumber: 117,
+      columnNumber: 15
+    }
   }, __jsx(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_7___default.a, {
     className: "search_homepage__body_box_input_base",
     placeholder: placeholderSearch,
@@ -3011,26 +1338,29 @@ const ErrorPageProps = props => {
       'aria-label': placeholderSearch
     },
     onKeyUp: e => onChangeWards(e),
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
-    },
-    __self: undefined
+      lineNumber: 118,
+      columnNumber: 17
+    }
   })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: "search_homepage__body_box_button",
     variant: "outlined",
     onClick: onClickSearch,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
+      lineNumber: 125,
+      columnNumber: 15
+    }
   }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: undefined
+      lineNumber: 126,
+      columnNumber: 17
+    }
   })))))));
 };
 
@@ -3055,13 +1385,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_PhoneIphone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PhoneIphone__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_icons_Email__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/Email */ "@material-ui/icons/Email");
 /* harmony import */ var _material_ui_icons_Email__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Email__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Hidden */ "@material-ui/core/Hidden");
-/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Layout\\Footer.tsx";
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Layout\\Footer.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
-
 
 
 
@@ -3078,2991 +1405,717 @@ const FooterPage = props => {
     direction: "row",
     justify: "center",
     alignItems: "center",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
+      lineNumber: 14,
+      columnNumber: 7
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     container: true,
     spacing: 0,
     className: "footer_body",
     justify: "center",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
+      lineNumber: 17,
+      columnNumber: 9
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 4,
     sm: 12,
     className: "footer_body__item border_bottom_mobile",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
+      lineNumber: 19,
+      columnNumber: 11
+    }
   }, __jsx("div", {
     className: "footer_body__item_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, "C\xD4NG TY C\u1ED4 PH\u1EA6N B\u1EA4T \u0110\u1ED8NG S\u1EA2N M\u1EDAI"), __jsx("div", {
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }, "C\xD4NG TY C\u1ED4 PH\u1EA6N N\u1ED8I TH\u1EA4T DODO"), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
+      lineNumber: 23,
+      columnNumber: 13
+    }
   }, __jsx("div", {
     className: "footer_body__item_description_icon",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
+      lineNumber: 24,
+      columnNumber: 15
+    }
   }, __jsx("svg", {
     viewBox: "0 0 384 512",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
+      lineNumber: 25,
+      columnNumber: 17
+    }
   }, __jsx("path", {
     d: "M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
+      lineNumber: 26,
+      columnNumber: 19
+    }
   }))), __jsx("div", {
     className: "footer_body__item_description_text",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
+      lineNumber: 30,
+      columnNumber: 15
+    }
   }, __jsx("p", {
     className: "footer_body__item_description_text_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
+      lineNumber: 31,
+      columnNumber: 17
+    }
   }, "\u0110\u1ECBa ch\u1EC9"), __jsx("p", {
     className: "footer_body__item_description_text_content",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
+      lineNumber: 32,
+      columnNumber: 17
+    }
   }, "S\u1ED1 12 Khu\u1EA5t Duy Ti\u1EBFn, Thanh Xu\xE2n, H\xE0 N\u1ED9i"))), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
+      lineNumber: 37,
+      columnNumber: 13
+    }
   }, __jsx("div", {
     className: "footer_body__item_description_icon",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
+      lineNumber: 38,
+      columnNumber: 15
+    }
   }, __jsx(_material_ui_icons_PhoneIphone__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
+      lineNumber: 39,
+      columnNumber: 17
+    }
   })), __jsx("div", {
     className: "footer_body__item_description_text",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
+      lineNumber: 41,
+      columnNumber: 15
+    }
   }, __jsx("p", {
     className: "footer_body__item_description_text_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
+      lineNumber: 42,
+      columnNumber: 17
+    }
   }, "\u0110i\u1EC7n tho\u1EA1i"), __jsx("p", {
     className: "footer_body__item_description_text_content",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, "0936.33.81.39"))), __jsx("div", {
+      lineNumber: 43,
+      columnNumber: 17
+    }
+  }, "0377 535 717"))), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
+      lineNumber: 48,
+      columnNumber: 13
+    }
   }, __jsx("div", {
     className: "footer_body__item_description_icon",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
+      lineNumber: 49,
+      columnNumber: 15
+    }
   }, __jsx(_material_ui_icons_Email__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
+      lineNumber: 50,
+      columnNumber: 17
+    }
   })), __jsx("div", {
     className: "footer_body__item_description_text",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: undefined
+      lineNumber: 52,
+      columnNumber: 15
+    }
   }, __jsx("p", {
     className: "footer_body__item_description_text_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
+      lineNumber: 53,
+      columnNumber: 17
+    }
   }, "E-mail"), __jsx("p", {
     className: "footer_body__item_description_text_content",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
+      lineNumber: 54,
+      columnNumber: 17
+    }
   }, "noithatdodo@gmail.com"))), __jsx("div", {
     className: "footer_body__item_branch",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
+      lineNumber: 59,
+      columnNumber: 13
+    }
   }, __jsx("img", {
     className: "gov",
     src: "https://static.nhadatmoi.net/default/bocongthuong.png",
     alt: "\u0110\xE3 th\xF4ng b\xE1o v\u1EDBi B\u1ED9 C\xF4ng Th\u01B0\u01A1ng",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
+      lineNumber: 60,
+      columnNumber: 15
+    }
   }), __jsx("a", {
     href: 'https://www.dmca.com/Protection/Status.aspx?ID=7816605d-fbd2-45f8-a397-eeac42642b75&refurl=https://nhadatmoi.net/',
     target: '_blank',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
+      lineNumber: 62,
+      columnNumber: 15
+    }
   }, __jsx("img", {
     src: "https://static.nhadatmoi.net/default/dmca.png",
     alt: "DMCA",
     className: "dmca",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
+      lineNumber: 63,
+      columnNumber: 17
+    }
   })))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 8,
     sm: 12,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: undefined
+      lineNumber: 67,
+      columnNumber: 11
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     container: true,
     spacing: 0,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: undefined
+      lineNumber: 68,
+      columnNumber: 13
+    }
   }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 3,
     xs: 6,
     className: "footer_body__item",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: undefined
+      lineNumber: 69,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__item_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
+      lineNumber: 70,
+      columnNumber: 17
+    }
   }, "C\xF4ng ty"), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      lineNumber: 73,
+      columnNumber: 17
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: '/about-us',
     as: '/about-us',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
+      lineNumber: 74,
+      columnNumber: 19
+    }
   }, __jsx("a", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
+      lineNumber: 74,
+      columnNumber: 61
+    }
   }, "V\u1EC1 B\u1EA5t \u0110\u1ED9ng S\u1EA3n M\u1EDBi"))), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: undefined
+      lineNumber: 76,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/tuyen-dung',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: undefined
+      lineNumber: 77,
+      columnNumber: 19
+    }
   }, "Tuy\u1EC3n d\u1EE5ng")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
+      lineNumber: 79,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/lien-he/thong-tin-lien-he',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
+      lineNumber: 80,
+      columnNumber: 19
+    }
   }, "Th\xF4ng tin li\xEAn h\u1EC7")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      lineNumber: 82,
+      columnNumber: 17
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: '/sitemap',
     as: '/sitemap',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
+      lineNumber: 83,
+      columnNumber: 19
+    }
   }, __jsx("a", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
+      lineNumber: 83,
+      columnNumber: 59
+    }
   }, "Sitemap")))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 3,
     xs: 6,
     className: "footer_body__item",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: undefined
+      lineNumber: 86,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__item_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: undefined
+      lineNumber: 87,
+      columnNumber: 17
+    }
   }, "\u0110i\u1EC1u kho\u1EA3n"), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
-    },
-    __self: undefined
+      lineNumber: 90,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/dieu-khoan/quy-che-hoat-dong',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: undefined
+      lineNumber: 91,
+      columnNumber: 19
+    }
   }, "Quy ch\u1EBF ho\u1EA1t \u0111\u1ED9ng")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
+      lineNumber: 93,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/dieu-khoan/chinh-sach-bao-mat',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
-    },
-    __self: undefined
+      lineNumber: 94,
+      columnNumber: 19
+    }
   }, "Ch\xEDnh s\xE1ch b\u1EA3o m\u1EADt")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
+      lineNumber: 96,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/dieu-khoan/chinh-sach-cookie',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: undefined
+      lineNumber: 97,
+      columnNumber: 19
+    }
   }, "Ch\xEDnh s\xE1ch Cookie")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: undefined
+      lineNumber: 99,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/dieu-khoan/dieu-khoan-su-dung',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
+      lineNumber: 100,
+      columnNumber: 19
+    }
   }, "\u0110i\u1EC1u kho\u1EA3n s\u1EED d\u1EE5ng"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 3,
     xs: 6,
     className: "footer_body__item",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
+      lineNumber: 103,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__item_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
-    },
-    __self: undefined
+      lineNumber: 104,
+      columnNumber: 17
+    }
   }, "Th\xF4ng tin"), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: undefined
+      lineNumber: 107,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://nhadatmoi.net/tin-tuc/tin-tuc',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
+      lineNumber: 108,
+      columnNumber: 19
+    }
   }, "Tin t\u1EE9c th\u1ECB tr\u01B0\u1EDDng")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: undefined
+      lineNumber: 110,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://nhadatmoi.net/tin-tuc/blog',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
-    },
-    __self: undefined
+      lineNumber: 111,
+      columnNumber: 19
+    }
   }, "B\xE1o c\xE1o & Ph\xE2n t\xEDch")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
-    },
-    __self: undefined
+      lineNumber: 113,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://nhadatmoi.net/tin-tuc/kien-thuc-moi-gioi',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
-    },
-    __self: undefined
+      lineNumber: 114,
+      columnNumber: 19
+    }
   }, "Ki\u1EBFn th\u1EE9c cho m\xF4i gi\u1EDBi")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: undefined
+      lineNumber: 116,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://help.nhadatmoi.net/huong-dan',
     rel: 'nofollow',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: undefined
+      lineNumber: 117,
+      columnNumber: 19
+    }
   }, "H\u01B0\u1EDBng d\u1EABn s\u1EED d\u1EE5ng"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 3,
     xs: 6,
     className: "footer_body__item",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
+      lineNumber: 120,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__item_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: undefined
+      lineNumber: 121,
+      columnNumber: 17
+    }
   }, "M\u1EA1ng x\xE3 h\u1ED9i"), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: undefined
+      lineNumber: 124,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://www.facebook.com/nhadatmoi.net/',
     rel: 'nofollow',
     target: '_blank',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
+      lineNumber: 125,
+      columnNumber: 19
+    }
   }, "Facebook")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
-    },
-    __self: undefined
+      lineNumber: 127,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://www.youtube.com/channel/UCCvlOD7vTPJeYRY8IrINguQ',
     rel: 'nofollow',
     target: '_blank',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
-    },
-    __self: undefined
+      lineNumber: 128,
+      columnNumber: 19
+    }
   }, "Youtube")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
-    },
-    __self: undefined
+      lineNumber: 130,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://twitter.com/nhadatmoi',
     rel: 'nofollow',
     target: '_blank',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
-    },
-    __self: undefined
+      lineNumber: 131,
+      columnNumber: 19
+    }
   }, "Twitter")), __jsx("div", {
     className: "footer_body__item_description",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
-    },
-    __self: undefined
+      lineNumber: 133,
+      columnNumber: 17
+    }
   }, __jsx("a", {
     href: 'https://www.linkedin.com/in/nhadatmoi/',
     rel: 'nofollow',
     target: '_blank',
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
-    },
-    __self: undefined
+      lineNumber: 134,
+      columnNumber: 19
+    }
   }, "LinkedIn"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 6,
     xs: 12,
     className: "footer_body__apps",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
-    },
-    __self: undefined
+      lineNumber: 137,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__apps_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
-    },
-    __self: undefined
+      lineNumber: 138,
+      columnNumber: 17
+    }
   }, "Ph\u01B0\u01A1ng th\u1EE9c thanh to\xE1n"), __jsx("div", {
     className: "footer_body__apps_payment",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
-    },
-    __self: undefined
+      lineNumber: 139,
+      columnNumber: 17
+    }
   }, __jsx("img", {
     src: "https://static.nhadatmoi.net/default/visa.png",
     alt: "Visa",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
-    },
-    __self: undefined
+      lineNumber: 140,
+      columnNumber: 19
+    }
   }), __jsx("img", {
     src: "https://static.nhadatmoi.net/default/mastercard.png",
     alt: "Mastercard",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
-    },
-    __self: undefined
+      lineNumber: 141,
+      columnNumber: 19
+    }
   }), __jsx("img", {
     src: "https://static.nhadatmoi.net/default/atm.png",
     alt: "ATM",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
-    },
-    __self: undefined
+      lineNumber: 142,
+      columnNumber: 19
+    }
   }))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
     item: true,
     md: 6,
     xs: 12,
     className: "footer_body__apps",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: undefined
+      lineNumber: 145,
+      columnNumber: 15
+    }
   }, __jsx("div", {
     className: "footer_body__apps_title",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
-    },
-    __self: undefined
+      lineNumber: 146,
+      columnNumber: 17
+    }
   }, "\u1EE8ng d\u1EE5ng di \u0111\u1ED9ng"), __jsx("div", {
     className: "footer_body__apps_payment",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
-    },
-    __self: undefined
+      lineNumber: 147,
+      columnNumber: 17
+    }
   }, __jsx("img", {
     className: "no_border",
     src: "https://static.nhadatmoi.net/default/apple-store.svg",
     alt: "Apple Store",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
-    },
-    __self: undefined
+      lineNumber: 148,
+      columnNumber: 19
+    }
   }), __jsx("img", {
     className: "no_border",
     src: "https://static.nhadatmoi.net/default/google-play.svg",
     alt: "Google Play",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
-    },
-    __self: undefined
-  })))))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    container: true,
-    spacing: 0,
-    className: "footer_bottom",
-    justify: "center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 157
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    smDown: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 159
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    item: true,
-    xs: 6,
-    className: "footer_bottom__left",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 160
-    },
-    __self: undefined
-  }, "\xA9 2020 - B\u1EA3n quy\u1EC1n c\u1EE7a c\xF4ng ty C\u1ED5 ph\u1EA7n N\u1ED9i Th\u1EA5t \u0110\xF4 \u0110\xF4 - noithatdodo.com"), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    item: true,
-    xs: 6,
-    className: "footer_bottom__right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 164
-    },
-    __self: undefined
-  }, "Ph\u1EA3n h\u1ED3i"), __jsx("a", {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 165
-    },
-    __self: undefined
-  }, "\u0110i\u1EC1u kho\u1EA3n"), __jsx("a", {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 166
-    },
-    __self: undefined
-  }, "Ch\xEDnh s\xE1ch b\u1EA3o m\u1EADt"))), __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    lgUp: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 169
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    item: true,
-    xs: 12,
-    className: "footer_bottom__center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 170
-    },
-    __self: undefined
-  }, "\xA9 2019 - B\u1EA3n quy\u1EC1n c\u1EE7a c\xF4ng ty C\u1ED5 ph\u1EA7n B\u1EA5t \u0110\u1ED9ng S\u1EA3n M\u1EDBi"))));
+      lineNumber: 150,
+      columnNumber: 19
+    }
+  })))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FooterPage);
-
-/***/ }),
-
-/***/ "./components/Layout/Header.tsx":
-/*!**************************************!*\
-  !*** ./components/Layout/Header.tsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Login_Modal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Login/Modal */ "./components/Login/Modal.tsx");
-/* harmony import */ var _material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/Drawer */ "@material-ui/core/Drawer");
-/* harmony import */ var _material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _material_ui_icons_ListAlt__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/ListAlt */ "@material-ui/icons/ListAlt");
-/* harmony import */ var _material_ui_icons_ListAlt__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ListAlt__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _material_ui_icons_FilterVintage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons/FilterVintage */ "@material-ui/icons/FilterVintage");
-/* harmony import */ var _material_ui_icons_FilterVintage__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_FilterVintage__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons/Menu */ "@material-ui/icons/Menu");
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _material_ui_icons_AddCircle__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/icons/AddCircle */ "@material-ui/icons/AddCircle");
-/* harmony import */ var _material_ui_icons_AddCircle__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AddCircle__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _material_ui_icons_ViewList__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/ViewList */ "@material-ui/icons/ViewList");
-/* harmony import */ var _material_ui_icons_ViewList__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ViewList__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _material_ui_icons_Eco__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/Eco */ "@material-ui/icons/Eco");
-/* harmony import */ var _material_ui_icons_Eco__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Eco__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/Add */ "@material-ui/icons/Add");
-/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _material_ui_icons_ArrowForward__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @material-ui/icons/ArrowForward */ "@material-ui/icons/ArrowForward");
-/* harmony import */ var _material_ui_icons_ArrowForward__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowForward__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @material-ui/core/Fab */ "@material-ui/core/Fab");
-/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @material-ui/core/Hidden */ "@material-ui/core/Hidden");
-/* harmony import */ var _material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../modules/validator */ "./modules/validator.tsx");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! query-string */ "query-string");
-/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(query_string__WEBPACK_IMPORTED_MODULE_27__);
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_28__);
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__);
-/* harmony import */ var _material_ui_icons_GroupAdd__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @material-ui/icons/GroupAdd */ "@material-ui/icons/GroupAdd");
-/* harmony import */ var _material_ui_icons_GroupAdd__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_GroupAdd__WEBPACK_IMPORTED_MODULE_31__);
-/* harmony import */ var _material_ui_icons_ExitToApp__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @material-ui/icons/ExitToApp */ "@material-ui/icons/ExitToApp");
-/* harmony import */ var _material_ui_icons_ExitToApp__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ExitToApp__WEBPACK_IMPORTED_MODULE_32__);
-/* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @material-ui/icons/Settings */ "@material-ui/icons/Settings");
-/* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_33___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_33__);
-/* harmony import */ var _material_ui_icons_List__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @material-ui/icons/List */ "@material-ui/icons/List");
-/* harmony import */ var _material_ui_icons_List__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_List__WEBPACK_IMPORTED_MODULE_34__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../utils */ "./utils/index.ts");
-/* harmony import */ var _graphql_profile_queries__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../graphql/profile/queries */ "./graphql/profile/queries/index.ts");
-/* harmony import */ var nextjs_progressbar__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! nextjs-progressbar */ "nextjs-progressbar");
-/* harmony import */ var nextjs_progressbar__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(nextjs_progressbar__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @material-ui/core/InputBase */ "@material-ui/core/InputBase");
-/* harmony import */ var _material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_38__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_39__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../../constants */ "./constants/index.ts");
-/* harmony import */ var _Chat_Index__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../Chat/Index */ "./components/Chat/Index.tsx");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_42__);
-
-
-
-
-
-
-
-
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Layout\\Header.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8__["createElement"];
-
-function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // @ts-ignore
-
-
-
-
-
-
-
-const defaultUser = {
-  _id: "",
-  email: "",
-  avatar: "",
-  first_name: "",
-  last_name: ""
-};
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__["makeStyles"])(theme => ({
-  toolbar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
-  },
-  toolbarTitle: {
-    flex: 1
-  },
-  toolbarItem: {
-    marginRight: theme.spacing(1)
-  },
-  typography: {
-    padding: theme.spacing(2)
-  },
-  inline: {
-    display: "inline"
-  }
-}));
-
-const HeaderPage = props => {
-  var _props$dataQuery, _props$dataQuery2;
-
-  const setModal = dataModal => {
-    props.updateModal(dataModal);
-  };
-
-  const [anchorEl, setAnchorEl] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](null);
-  const [anchorElSearchType, setAnchorElSearchType] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](null);
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const [userInfo, setUserInfo] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](defaultUser);
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
-
-  const handleClickSearchType = event => {
-    setAnchorElSearchType(event.currentTarget);
-  };
-
-  const handleCloseSearchType = () => {
-    setAnchorElSearchType(null);
-  };
-
-  const openSearchType = Boolean(anchorElSearchType);
-  const classes = useStyles();
-  const [dataCompare, setDataCompare] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](props.dataCompare);
-  Object(react__WEBPACK_IMPORTED_MODULE_8__["useEffect"])(() => {
-    if (props.user) {
-      setUserInfo(props.user);
-    }
-
-    setDataCompare(props.dataCompare);
-  }, [props.dataCompare]);
-
-  const handleClickOpen = () => {
-    setModal(true);
-  };
-
-  const [state, setState] = react__WEBPACK_IMPORTED_MODULE_8__["useState"]({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false
-  }); // @ts-ignore
-
-  const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState(_objectSpread({}, state, {
-      [side]: open
-    }));
-  };
-
-  const logout = () => {
-    setUserInfo(defaultUser);
-    _utils__WEBPACK_IMPORTED_MODULE_35__["apolloClient"].query({
-      query: _graphql_profile_queries__WEBPACK_IMPORTED_MODULE_36__["LOG_OUT"]
-    }).then(r => {});
-  };
-
-  const dropdownSearch = [{
-    type: 'du-an-bat-dong-san',
-    name: 'Dự án'
-  }, {
-    type: 'tim-tin-rao',
-    name: 'Tin rao'
-  }];
-  let defaultDropdown = dropdownSearch[0];
-
-  if (props.path === 'tin-rao' || props.path === 'nha-dat-ban') {
-    defaultDropdown = dropdownSearch[1];
-  }
-
-  const [typeSearch, setType] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](defaultDropdown);
-
-  const handleChangeType = inputType => {
-    setType(inputType);
-    handleCloseSearchType();
-  };
-
-  let keywordNew = '';
-
-  if ((_props$dataQuery = props.dataQuery) === null || _props$dataQuery === void 0 ? void 0 : _props$dataQuery.title) {
-    keywordNew = props.dataQuery.title;
-  }
-
-  if ((_props$dataQuery2 = props.dataQuery) === null || _props$dataQuery2 === void 0 ? void 0 : _props$dataQuery2.name) {
-    keywordNew = props.dataQuery.name;
-  }
-
-  const [keywordSearch, setKeywordSearch] = react__WEBPACK_IMPORTED_MODULE_8__["useState"](keywordNew);
-  let placeholderSearch = 'Tìm kiếm';
-  let isHomepage = false;
-
-  const onChangeWards = event => {
-    setKeywordSearch(event.target.value);
-
-    if (event.key == "Enter" || event.keyCode == 13) {
-      onClickSearch();
-    }
-  };
-
-  const onClickSearch = () => {
-    if (typeSearch.type === 'tim-tin-rao') {
-      let urlProcess = {
-        pathname: '/[slug]',
-        query: {
-          title: keywordSearch
-        }
-      };
-      let slugAs = '/tim-tin-rao?title=' + keywordSearch;
-
-      if (props.path === 'tim-tin-rao') {
-        window.location.href = '/tim-tin-rao?title=' + keywordSearch;
-        return true;
-      } else {
-        next_router__WEBPACK_IMPORTED_MODULE_39___default.a.replace(urlProcess, slugAs, {
-          shallow: true
-        });
-      }
-    } else {
-      let urlProcess = {
-        pathname: '/du-an-bat-dong-san',
-        query: {
-          name: keywordSearch
-        }
-      };
-      let slugAs = '/du-an-bat-dong-san?name=' + keywordSearch;
-
-      if (props.path === 'du-an-bat-dong-san') {
-        window.location.href = '/du-an-bat-dong-san?name=' + keywordSearch;
-        return true;
-      } else {
-        next_router__WEBPACK_IMPORTED_MODULE_39___default.a.replace(urlProcess, slugAs, {
-          shallow: true
-        });
-      }
-    }
-  };
-
-  const clickCancelCompare = () => {
-    localStorage.removeItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"]);
-    setDataCompare(null);
-  };
-
-  const clickToCompare = () => {
-    if (props.dataCompare && !_modules_validator__WEBPACK_IMPORTED_MODULE_25__["default"].isBlank(props.dataCompare)) {
-      let dataCompareId = [];
-
-      for (let index in props.dataCompare) {
-        dataCompareId.push(props.dataCompare[index].id);
-      }
-
-      let dataQuery = query_string__WEBPACK_IMPORTED_MODULE_27___default.a.stringify({
-        ids: dataCompareId
-      }, {
-        arrayFormat: 'none'
-      });
-      let urlProcessCompare = '/compare/asl?' + dataQuery;
-      next_router__WEBPACK_IMPORTED_MODULE_39___default.a.push(urlProcessCompare, urlProcessCompare, {
-        shallow: false
-      });
-      localStorage.removeItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"]);
-      setDataCompare(null);
-    }
-  };
-
-  const handleClickRemoveCompare = dataCompare => {
-    if (localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"]) && !_modules_validator__WEBPACK_IMPORTED_MODULE_25__["default"].isBlank(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"]))) {
-      let dataToCompare = JSON.parse(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"]));
-      let dataNewCompare = [];
-
-      for (let index in dataToCompare) {
-        if (dataToCompare[index].id !== dataCompare.id) {
-          dataNewCompare.push(dataToCompare[index]);
-        }
-      }
-
-      localStorage.setItem(_constants__WEBPACK_IMPORTED_MODULE_40__["localStorageCompareKey"], _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6___default()(dataNewCompare));
-      location.reload();
-    }
-  };
-
-  let userLogin = lodash__WEBPACK_IMPORTED_MODULE_42___default.a.get(props, "user._id", "");
-
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 254
-    },
-    __self: undefined
-  }, __jsx(nextjs_progressbar__WEBPACK_IMPORTED_MODULE_37___default.a, {
-    color: "#1A4684",
-    startPosition: 0,
-    stopDelayMs: 200,
-    height: "2",
-    showSpinner: false,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 255
-    },
-    __self: undefined
-  }), __jsx(_Chat_Index__WEBPACK_IMPORTED_MODULE_41__["default"], {
-    userLogin: userLogin,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 262
-    },
-    __self: undefined
-  }), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    container: true,
-    spacing: 0,
-    className: "header",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 263
-    },
-    __self: undefined
-  }, __jsx(_Login_Modal__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    statusModal: props.statusModal,
-    onClose: () => setModal(false),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 264
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "header__left",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 265
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "header_logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 266
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 267
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 267
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 173.7 40",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 268
-    },
-    __self: undefined
-  }, __jsx("g", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 269
-    },
-    __self: undefined
-  }, __jsx("path", {
-    className: "st0",
-    d: "M15.9,38c-1.9-1.4-6.5-4.6-7.5-10.1c-0.5-2.7,0.2-5.5,1.9-7.7c1.8-2.2,4.5-3.5,7.4-3.7c0.1,0,0.2,0,0.3,0c2.7,0,5.3,1.2,7,3.3c1.9,2.2,2.7,5.1,2.3,7.9c-0.9,5.3-5,8.4-7.4,10.2l-2,1.5L15.9,38z M18,20.3c-0.1,0-0.1,0-0.2,0c-1.9,0.1-3.6,0.9-4.7,2.3c-1.1,1.3-1.5,3-1.2,4.7c0.7,3.5,3.3,5.8,5.8,7.7c2.8-2.1,5.3-4.2,5.8-7.7c0.3-1.7-0.3-3.6-1.4-5C21.2,21,19.7,20.3,18,20.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 270
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st0",
-    d: "M17.9,22.7c1.9,0,3.4,1.6,3.4,3.4c0,1.9-1.6,3.4-3.4,3.4c-1.9,0-3.5-1.6-3.5-3.4C14.5,24.2,16,22.7,17.9,22.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 272
-    },
-    __self: undefined
-  }), isHomepage && __jsx("g", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 276
-    },
-    __self: undefined
-  }, __jsx("path", {
-    className: "st1",
-    d: "M54.2,34.1v-7.5c0-0.9-0.1-1.6-0.4-2c-0.3-0.6-0.9-0.8-1.8-0.8c-0.9,0-1.5,0.3-1.9,0.8c-0.3,0.4-0.5,1.1-0.5,2v7.4h-4.1V20.4h3.8v1.5h0.1c0.8-1.3,2-1.9,3.7-1.9c1.4,0,2.6,0.4,3.5,1.2c0.6,0.5,1,1.2,1.3,2c0.2,0.7,0.3,1.5,0.3,2.4v8.6H54.2z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 277
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M68.8,34.1v-7.4c0-0.9-0.1-1.5-0.4-2c-0.4-0.6-1-0.9-1.8-0.9c-0.8,0-1.4,0.3-1.8,0.8c-0.3,0.4-0.5,1.1-0.5,1.9v7.6h-4.1V15.8h4.1v5.8h0c0.3-0.6,0.8-1.1,1.5-1.3c0.6-0.3,1.2-0.4,2-0.4c1.6,0,2.9,0.5,3.7,1.5c0.6,0.7,1,1.5,1.1,2.4c0.1,0.4,0.1,0.8,0.1,1.3c0,0.2,0,0.4,0,0.7v8.3H68.8z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 279
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M85,34.1v-1.5h0c-0.3,0.7-0.9,1.2-1.7,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2.1,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.8,1.9-5.2c1.3-1.4,3-2.2,5-2.2c0.8,0,1.6,0.2,2.3,0.5c0.8,0.3,1.3,0.8,1.7,1.5h0v-1.5h4.1v13.7H85z M84.1,24.7c-0.6-0.7-1.5-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.5-0.9,2.5c0,1,0.3,1.8,1,2.4c0.7,0.7,1.5,1,2.4,1c1,0,1.8-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C85,26.2,84.7,25.4,84.1,24.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 281
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M101.5,34.1v-1.5h0c-0.4,0.7-1,1.2-1.8,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.7,1.8-5.1c1.3-1.4,2.9-2.2,4.9-2.2c1.6,0,3,0.5,4,1.6v-5.7h4.1v18.2H101.5z M100.5,24.7c-0.7-0.6-1.5-1-2.5-1c-1,0-1.8,0.3-2.5,1c-0.7,0.6-1,1.5-1,2.5c0,1,0.3,1.8,1,2.5c0.6,0.7,1.5,1,2.5,1c1,0,1.9-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C101.5,26.2,101.2,25.4,100.5,24.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 283
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M117.6,34.1v-1.5h0c-0.3,0.7-0.9,1.2-1.7,1.5c-0.7,0.3-1.4,0.4-2.3,0.4c-2.1,0-3.7-0.7-5-2.1c-1.2-1.4-1.9-3.1-1.9-5.2c0-2,0.6-3.8,1.9-5.2c1.3-1.4,3-2.2,5-2.2c0.8,0,1.6,0.2,2.3,0.5c0.8,0.3,1.3,0.8,1.7,1.5h0v-1.5h4.1v13.7H117.6z M116.6,24.7c-0.6-0.7-1.5-1-2.5-1c-1,0-1.8,0.3-2.4,1c-0.6,0.7-0.9,1.5-0.9,2.5c0,1,0.3,1.8,1,2.4c0.7,0.7,1.5,1,2.4,1c1,0,1.8-0.3,2.5-1c0.6-0.7,1-1.5,1-2.5C117.6,26.2,117.3,25.4,116.6,24.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 285
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M128.6,23.5v10.6h-4.1V23.5h-2v-3.1h2v-4.6h4.1v4.6h2v3.1H128.6z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 287
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M148.3,34.1v-7.3c0-0.9-0.1-1.6-0.3-2.1c-0.3-0.6-0.9-1-1.8-1c-0.8,0-1.4,0.3-1.8,0.8c-0.3,0.5-0.5,1.1-0.5,2v7.5h-4.1v-7.4c0-0.9-0.1-1.5-0.4-2c-0.3-0.6-0.9-0.9-1.7-0.9c-0.9,0-1.5,0.3-1.9,0.9c-0.3,0.5-0.4,1.2-0.4,2.1v7.3h-4.1V20.4h3.8v1.5h0.1c0.4-0.7,0.9-1.2,1.6-1.5c0.6-0.3,1.3-0.4,2.2-0.4c1.7,0,3.1,0.8,3.9,2.4c1-1.6,2.5-2.4,4.3-2.4c1.5,0,2.7,0.5,3.6,1.4c0.7,0.7,1.1,1.5,1.3,2.5c0.1,0.4,0.1,0.8,0.1,1.4c0,0.2,0,0.4,0,0.7v8.2H148.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 288
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M166.2,32.4c-1.4,1.4-3.2,2.1-5.3,2.1c-2.1,0-3.9-0.7-5.2-2.1c-1.4-1.4-2.1-3.1-2.1-5.2c0-2.1,0.7-3.8,2.1-5.2c1.4-1.4,3.1-2.1,5.2-2.1c2.1,0,3.9,0.7,5.3,2.1c1.4,1.4,2.1,3.1,2.1,5.2C168.3,29.3,167.6,31.1,166.2,32.4z M163.3,24.8c-0.6-0.7-1.4-1-2.4-1c-0.9,0-1.7,0.3-2.3,1c-0.6,0.7-0.9,1.5-0.9,2.4c0,0.9,0.3,1.7,0.9,2.4c0.6,0.7,1.4,1,2.3,1c0.9,0,1.7-0.3,2.4-1c0.6-0.7,0.9-1.5,0.9-2.4C164.2,26.3,163.9,25.5,163.3,24.8z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 290
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M169.7,19v-3.1h4.1V19H169.7z M169.7,34.1V20.4h4.1v13.7H169.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 292
-    },
-    __self: undefined
-  })), __jsx("path", {
-    className: "st0",
-    d: "M34.6,13.3L20,0.8c-1.2-1.1-3-1.1-4.3,0L1.2,13.3C0.4,13.9,0,14.8,0,15.8v21C0,38.5,1.5,40,3.3,40h12.6l-0.9-0.6c-1.1-0.8-3-2.2-4.8-4.2h-2c-1.8,0-3.3-1.5-3.3-3.3V18c0-1,0.4-1.9,1.2-2.5l9.7-8.3c1.2-1.1,3-1.1,4.3,0l9.6,8.3c0.7,0.6,1.1,1.5,1.1,2.5v13.8c0,1.8-1.5,3.3-3.3,3.3h-2c-1.6,1.9-3.4,3.2-4.7,4.2L19.9,40h12.5c1.8,0,3.3-1.5,3.3-3.3v-21C35.7,14.8,35.3,13.9,34.6,13.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 295
-    },
-    __self: undefined
-  }))))))), __jsx("div", {
-    className: "header__center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 303
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "header__center__search",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 304
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "header__center__search__icon",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 305
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 512 512",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 306
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 307
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: "header__center__search__box",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 310
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_InputBase__WEBPACK_IMPORTED_MODULE_38___default.a, {
-    placeholder: placeholderSearch,
-    defaultValue: keywordSearch,
-    onKeyUp: e => onChangeWards(e),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 311
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "header__center__search__type",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 317
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    onClick: handleClickSearchType,
-    "aria-describedby": id,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 318
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 320 512",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 319
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 320
-    },
-    __self: undefined
-  })), typeSearch.name), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Popover"], {
-    id: id,
-    open: openSearchType,
-    anchorEl: anchorElSearchType,
-    onClose: handleCloseSearchType,
-    anchorOrigin: {
-      vertical: 'bottom',
-      horizontal: 'center'
-    },
-    transformOrigin: {
-      vertical: 'top',
-      horizontal: 'center'
-    },
-    className: "header__center__search__type__popup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 324
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-    component: 'span',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 339
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: event => handleChangeType(dropdownSearch[0]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 340
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 341
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Eco__WEBPACK_IMPORTED_MODULE_20___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 342
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: dropdownSearch[0].name,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 344
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: event => handleChangeType(dropdownSearch[1]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 346
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 347
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_ViewList__WEBPACK_IMPORTED_MODULE_19___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 348
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: dropdownSearch[1].name,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 350
-    },
-    __self: undefined
-  }))))), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header__center__search__button",
-    variant: "outlined",
-    onClick: onClickSearch,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 355
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 512 512",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 356
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 357
-    },
-    __self: undefined
-  }))))), __jsx("div", {
-    className: "header__right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 362
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_24___default.a, {
-    smDown: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 363
-    },
-    __self: undefined
-  }, userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/asl/create",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 366
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _full",
-    variant: "outlined",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 367
-    },
-    __self: undefined
-  }, "\u0110\u0103ng tin")), !userInfo._id && __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _full",
-    variant: "outlined",
-    onClick: handleClickOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 375
-    },
-    __self: undefined
-  }, "\u0110\u0103ng tin"), userInfo._id ? __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 382
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _no_padding",
-    "aria-describedby": id,
-    onClick: handleClick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 383
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Avatar"], {
-    alt: userInfo.first_name,
-    src: userInfo.avatar,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 384
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Popover"], {
-    id: id,
-    open: open,
-    anchorEl: anchorEl,
-    onClose: handleClose,
-    anchorOrigin: {
-      vertical: 'bottom',
-      horizontal: 'center'
-    },
-    transformOrigin: {
-      vertical: 'top',
-      horizontal: 'center'
-    },
-    className: "header_button__popup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 386
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-    component: 'span',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 401
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 402
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    alignItems: "flex-start",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 403
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemAvatar"], {
-    className: "header_button__popup__avatar",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 404
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Avatar"], {
-    alt: userInfo.first_name,
-    src: userInfo.avatar,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 405
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    className: "header_button__popup__title",
-    primary: `${userInfo.first_name} ${userInfo.last_name}`,
-    secondary: __jsx(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 411
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-      component: "span",
-      variant: "body2",
-      color: "textPrimary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 412
-      },
-      __self: undefined
-    }, userInfo.email)),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 407
-    },
-    __self: undefined
-  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Divider"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 424
-    },
-    __self: undefined
-  }), __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 425
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 426
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 427
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_GroupAdd__WEBPACK_IMPORTED_MODULE_31___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 428
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "N\xE2ng c\u1EA5p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 430
-    },
-    __self: undefined
-  }))), __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/asl/list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 433
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 434
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 435
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_List__WEBPACK_IMPORTED_MODULE_34___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 436
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "Qu\u1EA3n l\xFD tin rao",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 438
-    },
-    __self: undefined
-  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Divider"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 441
-    },
-    __self: undefined
-  }), __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/user_info",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 442
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 443
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 444
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_33___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 445
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "C\xE0i \u0111\u1EB7t",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 447
-    },
-    __self: undefined
-  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: () => logout(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 450
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 451
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_ExitToApp__WEBPACK_IMPORTED_MODULE_32___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 452
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "\u0110\u0103ng xu\u1EA5t",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 454
-    },
-    __self: undefined
-  }))))) : __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _border",
-    variant: "outlined",
-    onClick: handleClickOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 460
-    },
-    __self: undefined
-  }, "\u0110\u0103ng nh\u1EADp"), __jsx("div", {
-    className: 'mega_menu_asl',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 465
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    href: "/[slug]",
-    as: '/tim-tin-rao',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 465
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 465
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _empty" + (props.path === 'tin-rao' || props.path === 'nha-dat-ban' ? ' active' : ''),
-    variant: "outlined",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 465
-    },
-    __self: undefined
-  }, "Tin rao"))), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_28___default.a, {
-    className: 'card_asl',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 468
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_29___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 469
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    container: true,
-    spacing: 2,
-    className: 'card_asl__body',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 470
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    item: true,
-    xs: 3,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 471
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "https://nhadatmoi.net/nha-dat-ban",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 472
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__title',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 473
-    },
-    __self: undefined
-  }, "Nh\xE0 \u0111\u1EA5t b\xE1n")), __jsx("a", {
-    href: "https://nhadatmoi.net/mua-ban-nha",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 475
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 476
-    },
-    __self: undefined
-  }, "B\xE1n nh\xE0")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-ban-can-ho-chung-cu',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 478
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 479
-    },
-    __self: undefined
-  }, "B\xE1n c\u0103n h\u1ED9, chung c\u01B0")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-ban-biet-thu',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 481
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 482
-    },
-    __self: undefined
-  }, "B\xE1n bi\u1EC7t th\u1EF1")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-ban-dat',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 484
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 485
-    },
-    __self: undefined
-  }, "B\xE1n \u0111\u1EA5t")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-ban-bat-dong-san-khac',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 487
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 488
-    },
-    __self: undefined
-  }, "B\xE1n c\xE1c lo\u1EA1i b\u1EA5t \u0111\u1ED9ng s\u1EA3n kh\xE1c"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    item: true,
-    xs: 3,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 492
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: 'https://nhadatmoi.net/nha-dat-thue',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 493
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__title',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 494
-    },
-    __self: undefined
-  }, "Nh\xE0 \u0111\u1EA5t thu\xEA")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-can-ho-chung-cu',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 496
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 497
-    },
-    __self: undefined
-  }, "Cho thu\xEA c\u0103n h\u1ED9 chung c\u01B0")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-nha-rieng',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 499
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 500
-    },
-    __self: undefined
-  }, "Cho thu\xEA nh\xE0 ri\xEAng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-nha-mat-pho',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 502
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 503
-    },
-    __self: undefined
-  }, "Cho thu\xEA nh\xE0 m\u1EB7t ph\u1ED1")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-nha-tro-phong-tro',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 505
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 506
-    },
-    __self: undefined
-  }, "Cho thu\xEA nh\xE0 tr\u1ECD, ph\xF2ng tr\u1ECD")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-van-phong',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 508
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 509
-    },
-    __self: undefined
-  }, "Cho thu\xEA v\u0103n ph\xF2ng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-cua-hang-kiot',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 511
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 512
-    },
-    __self: undefined
-  }, "Cho thu\xEA c\u1EEDa h\xE0ng, kiot")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-kho-nha-xuong-dat',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 514
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 515
-    },
-    __self: undefined
-  }, "Cho thu\xEA kho, nh\xE0 x\u01B0\u1EDFng, \u0111\u1EA5t")), __jsx("a", {
-    href: 'https://nhadatmoi.net/cho-thue-cac-loai-bat-dong-san-khac',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 517
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 518
-    },
-    __self: undefined
-  }, "Cho thu\xEA c\xE1c lo\u1EA1i b\u1EA5t \u0111\u1ED9ng s\u1EA3n kh\xE1c"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    item: true,
-    xs: 3,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 521
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: 'https://nhadatmoi.net/nha-dat-can-mua',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 522
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__title',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 523
-    },
-    __self: undefined
-  }, "Nh\xE0 \u0111\u1EA5t c\u1EA7n mua")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-can-ho-chung-cu',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 525
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 526
-    },
-    __self: undefined
-  }, "Mua c\u0103n h\u1ED9 chung c\u01B0")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-nha-rieng',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 528
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 529
-    },
-    __self: undefined
-  }, "Mua nh\xE0 ri\xEAng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-nha-biet-thu-lien-ke',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 531
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 532
-    },
-    __self: undefined
-  }, "Mua nh\xE0 bi\u1EC7t th\u1EF1, li\u1EC1n k\u1EC1")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-nha-mat-pho',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 534
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 535
-    },
-    __self: undefined
-  }, "Mua nh\xE0 m\u1EB7t ph\u1ED1")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-dat-nen-du-an',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 537
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 538
-    },
-    __self: undefined
-  }, "Mua \u0111\u1EA5t n\u1EC1n d\u1EF1 \xE1n")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-dat',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 540
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 541
-    },
-    __self: undefined
-  }, "Mua \u0111\u1EA5t")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-trang-trai-khu-nghi-duong',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 543
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 544
-    },
-    __self: undefined
-  }, "Mua trang tr\u1EA1i, khu ngh\u1EC9 d\u01B0\u1EE1ng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-kho-nha-xuong',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 546
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 547
-    },
-    __self: undefined
-  }, "Mua kho, nh\xE0 x\u01B0\u1EDFng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/mua-cac-loai-bat-dong-san-khac',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 549
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 550
-    },
-    __self: undefined
-  }, "Mua c\xE1c lo\u1EA1i b\u1EA5t \u0111\u1ED9ng s\u1EA3n kh\xE1c"))), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    item: true,
-    xs: 3,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 553
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: 'https://nhadatmoi.net/nha-dat-can-thue',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 554
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__title',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 555
-    },
-    __self: undefined
-  }, "Nh\xE0 \u0111\u1EA5t c\u1EA7n thu\xEA")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-can-ho-chung-cu',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 557
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 558
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA c\u0103n h\u1ED9 chung c\u01B0")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-nha-rieng',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 560
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 561
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA nh\xE0 ri\xEAng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-nha-mat-pho',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 563
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 564
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA nh\xE0 m\u1EB7t ph\u1ED1")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-nha-tro-phong-tro',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 566
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 567
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA nh\xE0 tr\u1ECD, ph\xF2ng tr\u1ECD")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-van-phong',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 569
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 570
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA v\u0103n ph\xF2ng")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-cua-hang-kiot',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 572
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 573
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA c\u1EEDa h\xE0ng, kiot")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-kho-nha-xuong-dat',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 575
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 576
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA kho, nh\xE0 x\u01B0\u1EDFng, \u0111\u1EA5t")), __jsx("a", {
-    href: 'https://nhadatmoi.net/can-thue-cac-loai-bat-dong-san-khac',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 578
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'card_asl__body__item__child',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 579
-    },
-    __self: undefined
-  }, "C\u1EA7n thu\xEA c\xE1c lo\u1EA1i b\u1EA5t \u0111\u1ED9ng s\u1EA3n kh\xE1c"))))))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    href: "/du-an-bat-dong-san",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 586
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 586
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: "header_button _empty" + (props.path === 'du-an' || props.path === 'du-an-bat-dong-san' ? ' active' : ''),
-    variant: "outlined",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 586
-    },
-    __self: undefined
-  }, "D\u1EF1 \xE1n")))), __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_24___default.a, {
-    mdUp: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 590
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_14___default.a, {
-    edge: "start",
-    className: "header_button _menu",
-    "aria-label": "open drawer",
-    onClick: toggleDrawer('right', true),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 591
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_17___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 597
-    },
-    __self: undefined
-  })))), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    anchor: "right",
-    open: state.right,
-    onClose: toggleDrawer('right', false),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 601
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "header__menu_mobile",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 602
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-    className: "header__menu_mobile__body",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 603
-    },
-    __self: undefined
-  }, userInfo._id && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    alignItems: "flex-start",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 606
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemAvatar"], {
-    className: "header__menu_mobile__avatar",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 607
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Avatar"], {
-    alt: userInfo.first_name,
-    src: userInfo.avatar,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 608
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    className: "header__menu_mobile__title",
-    primary: `${userInfo.first_name} ${userInfo.last_name}`,
-    secondary: __jsx(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 614
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-      component: "span",
-      variant: "body2",
-      color: "textPrimary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 615
-      },
-      __self: undefined
-    }, userInfo.email)),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 610
-    },
-    __self: undefined
-  })), !userInfo._id && __jsx(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/settings",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 630
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    alignItems: "flex-start",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 631
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemAvatar"], {
-    className: "header__menu_mobile__avatar",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 632
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Avatar"], {
-    alt: "Kh\xE1ch gh\xE9 th\u0103m",
-    src: "https://static.nhadatmoi.net/default/user.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 633
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    className: "header__menu_mobile__title",
-    primary: "Ch\xE0o m\u1EEBng Kh\xE1ch",
-    secondary: __jsx(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 639
-      },
-      __self: undefined
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Typography"], {
-      component: "span",
-      variant: "body2",
-      className: classes.inline,
-      color: "textPrimary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 640
-      },
-      __self: undefined
-    }, "B\u1EA5t \u0110\u1ED9ng S\u1EA3n M\u1EDBi")),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 635
-    },
-    __self: undefined
-  })))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Divider"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 654
-    },
-    __self: undefined
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    href: "/[slug]",
-    as: '/tim-tin-rao',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 656
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 656
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 657
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 658
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_ListAlt__WEBPACK_IMPORTED_MODULE_15___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 659
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "Tin rao",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 661
-    },
-    __self: undefined
-  })))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    href: "/du-an-bat-dong-san",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 666
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 666
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 667
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 668
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_FilterVintage__WEBPACK_IMPORTED_MODULE_16___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 669
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "D\u1EF1 \xE1n",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 671
-    },
-    __self: undefined
-  })))), userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/asl/create",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 676
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 677
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 678
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_AddCircle__WEBPACK_IMPORTED_MODULE_18___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 679
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "\u0110\u0103ng tin",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 681
-    },
-    __self: undefined
-  }))), !userInfo._id && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: handleClickOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 688
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 689
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_AddCircle__WEBPACK_IMPORTED_MODULE_18___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 690
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "\u0110\u0103ng tin",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 692
-    },
-    __self: undefined
-  })), !userInfo._id && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: handleClickOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 697
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 698
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_ArrowForward__WEBPACK_IMPORTED_MODULE_22___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 699
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "\u0110\u0103ng nh\u1EADp",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 701
-    },
-    __self: undefined
-  })), userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 707
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 708
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 709
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_GroupAdd__WEBPACK_IMPORTED_MODULE_31___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 710
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "N\xE2ng c\u1EA5p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 712
-    },
-    __self: undefined
-  }))), userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/asl/list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 719
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 720
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 721
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_List__WEBPACK_IMPORTED_MODULE_34___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 722
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "Qu\u1EA3n l\xFD tin rao",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 724
-    },
-    __self: undefined
-  }))), userInfo._id && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["Divider"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 731
-    },
-    __self: undefined
-  }), userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/settings",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 735
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 736
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 737
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_33___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 738
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "C\xE0i \u0111\u1EB7t",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 740
-    },
-    __self: undefined
-  }))), userInfo._id && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItem"], {
-    button: true,
-    onClick: () => logout(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 746
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemIcon"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 747
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_ExitToApp__WEBPACK_IMPORTED_MODULE_32___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 748
-    },
-    __self: undefined
-  })), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_30__["ListItemText"], {
-    primary: "\u0110\u0103ng xu\u1EA5t",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 750
-    },
-    __self: undefined
-  })))))), dataCompare && !_modules_validator__WEBPACK_IMPORTED_MODULE_25__["default"].isBlank(dataCompare) && dataCompare.length !== 0 && __jsx("div", {
-    className: "footer_compare",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 759
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'footer_compare_boder',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 760
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "footer_compare__content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 761
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: 'footer_compare__content__item',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 762
-    },
-    __self: undefined
-  }, dataCompare && dataCompare.length > 0 && dataCompare[0] && __jsx("div", {
-    className: 'footer_compare__content__item__avatar',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 765
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 352 512",
-    onClick: () => handleClickRemoveCompare(dataCompare[0]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 766
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 766
-    },
-    __self: undefined
-  })), __jsx("img", {
-    src: dataCompare[0].avatar,
-    alt: dataCompare[0].title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 767
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: 'footer_compare__content__item',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 771
-    },
-    __self: undefined
-  }, dataCompare && dataCompare.length > 0 && dataCompare[1] && __jsx("div", {
-    className: 'footer_compare__content__item__avatar',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 774
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 352 512",
-    onClick: () => handleClickRemoveCompare(dataCompare[1]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 775
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 775
-    },
-    __self: undefined
-  })), __jsx("img", {
-    src: dataCompare[1].avatar,
-    alt: dataCompare[1].title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 776
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: 'footer_compare__content__item hide_mobile',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 780
-    },
-    __self: undefined
-  }, dataCompare && dataCompare.length > 0 && dataCompare[2] && __jsx("div", {
-    className: 'footer_compare__content__item__avatar',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 783
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 352 512",
-    onClick: () => handleClickRemoveCompare(dataCompare[2]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 784
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 784
-    },
-    __self: undefined
-  })), __jsx("img", {
-    src: dataCompare[2].avatar,
-    alt: dataCompare[2].title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 785
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: 'footer_compare__content__item hide_mobile',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 789
-    },
-    __self: undefined
-  }, dataCompare && dataCompare.length > 0 && dataCompare[3] && __jsx("div", {
-    className: 'footer_compare__content__item__avatar',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 792
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 352 512",
-    onClick: () => handleClickRemoveCompare(dataCompare[3]),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 793
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 793
-    },
-    __self: undefined
-  })), __jsx("img", {
-    src: dataCompare[3].avatar,
-    alt: dataCompare[3].title,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 794
-    },
-    __self: undefined
-  })))), __jsx("div", {
-    className: "footer_compare__button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 799
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: 'btn_compare',
-    onClick: () => clickToCompare(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 800
-    },
-    __self: undefined
-  }, "SO S\xC1NH"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: 'btn_cancel',
-    onClick: () => clickCancelCompare(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 801
-    },
-    __self: undefined
-  }, "HU\u1EF6 B\u1ECE")))), __jsx("div", {
-    className: "header_background",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 806
-    },
-    __self: undefined
-  }), (props.path === '' || props.path === 'tim-tin-rao' || props.path === 'du-an-bat-dong-san') && __jsx(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, userInfo._id && __jsx("a", {
-    href: "https://moigioi.nhadatmoi.net/asl/create",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 812
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_23___default.a, {
-    "aria-label": "Đăng bài mới",
-    className: "header_button__float",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 813
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_21___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 814
-    },
-    __self: undefined
-  }))), !userInfo._id && __jsx(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_23___default.a, {
-    "aria-label": "Đăng bài mới",
-    className: "header_button__float",
-    onClick: handleClickOpen,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 820
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_21___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 821
-    },
-    __self: undefined
-  }))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (HeaderPage);
 
 /***/ }),
 
@@ -6075,29 +2128,26 @@ const HeaderPage = props => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header */ "./components/Layout/Header.tsx");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Footer */ "./components/Layout/Footer.tsx");
-/* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../modules/validator */ "./modules/validator.tsx");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./constants/index.ts");
-
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Layout\\Layout.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Layout/Footer.tsx");
+/* harmony import */ var _modules_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../modules/validator */ "./modules/validator.tsx");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants */ "./constants/index.ts");
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\components\\Layout\\Layout.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
 
 
- //Import Constants
 
 
 
+const Logo = __webpack_require__(/*! ./logo.png */ "./components/Layout/logo.png");
 
 const LayoutPage = props => {
-  const [statusModal, setModal] = react__WEBPACK_IMPORTED_MODULE_1__["useState"](false);
+  const [statusModal, setModal] = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false);
 
   const updateModal = data => {
     if (typeof props.updateModal !== "undefined") {
@@ -6107,259 +2157,278 @@ const LayoutPage = props => {
     }
   };
 
-  const [dataCompareLocal, setDataCompareLocal] = react__WEBPACK_IMPORTED_MODULE_1__["useState"](null);
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    if (localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_6__["localStorageCompareKey"]) && !_modules_validator__WEBPACK_IMPORTED_MODULE_5__["default"].isBlank(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_6__["localStorageCompareKey"]))) {
+  const [dataCompareLocal, setDataCompareLocal] = react__WEBPACK_IMPORTED_MODULE_0__["useState"](null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_4__["localStorageCompareKey"]) && !_modules_validator__WEBPACK_IMPORTED_MODULE_3__["default"].isBlank(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_4__["localStorageCompareKey"]))) {
       try {
-        setDataCompareLocal(JSON.parse(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_6__["localStorageCompareKey"])));
+        setDataCompareLocal(JSON.parse(localStorage.getItem(_constants__WEBPACK_IMPORTED_MODULE_4__["localStorageCompareKey"])));
       } catch (error) {
         console.log(error);
       }
     }
   }, []);
-  let schemaObject = '{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Bất Động Sản Nội thất Dodo", "image": "https://pbs.twimg.com/profile_images/1230120113887531008/BPH75bW0_400x400.jpg", "additionalType":["https://vi.wikipedia.org/wiki/B%E1%BA%A5t_%C4%91%E1%BB%99ng_s%E1%BA%A3n","https://vi.wikipedia.org/wiki/M%C3%B4i_gi%E1%BB%9Bi_b%E1%BA%A5t_%C4%91%E1%BB%99ng_s%E1%BA%A3n","https://vi.wikipedia.org/wiki/Ng%C6%B0%E1%BB%9Di_m%C3%B4i_gi%E1%BB%9Bi"], "paymentAccepted":"Cash, Visa, Mastercard, American Express, Debit, PayPal, Apple Pay", "mainEntityOfPage":"https://www.google.com/maps?cid=6255054938969620475", "hasmap":"https://search.google.com/local/writereview?placeid=ChIJ-UI6Mh5TNDER-z_Wh1NrzlY", "description":"Nội thất Dodo đón đầu xu hướng bất động sản 4.0 tại Việt Nam, tích hợp trí tuệ nhân tạo để xử lý các dữ liệu, phân tích nhu cầu của cả người mua lẫn người bán", "@id": "https://nhadatmoi.net/", "url": "https://nhadatmoi.net/", "telephone": "0936.33.81.39", "priceRange": "1000 $", "address": { "@type": "PostalAddress", "streetAddress": "Số 348 Tố Hữu, phường La Khê, quận Hà Đông", "addressLocality": "Hà Nội", "postalCode": "100000", "addressCountry": "VN"}, "geo": { "@type": "GeoCoordinates", "latitude": 20.9709496, "longitude": 105.7531617 }, "openingHoursSpecification": { "@type": "OpeningHoursSpecification","dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }, "sameAs": ["https://www.youtube.com/channel/UCCvlOD7vTPJeYRY8IrINguQ","https://bdsnhadatmoi.blogspot.com", "https://www.facebook.com/nhadatmoi.net", "https://bdsnhadatmoi.blogspot.com", "https://vi.gravatar.com/bdsnhadatmoi", "https://bdsnhadatmoi.tumblr.com", "https://bdsnhadatmoi.weebly.com", "https://twitter.com/bdsnhadatmoi", "https://www.reddit.com/user/bdsnhadatmoi", "https://www.diigo.com/profile/bdsnhadatmoi", "https://www.artfire.com/ext/people/bdsnhadatmoi", "https://www.smashwords.com/profile/view/bdsnhadatmoi", "http://play.fm/bdsnhadatmoi", "https://www.last.fm/user/bdsnhadatmoi", "https://www.strava.com/athletes/bdsnhadatmoi", "https://github.com/bdsnhadatmoi", "https://www.tripadvisor.com.vn/Profile/bdsnhadatmoi", "http://bit.ly/2uaZPLm", "https://getpocket.com/@bdsnhadatmoi", "https://www.pinterest.com/bdsnhadatmoi", "https://www.linkedin.com/in/bdsnhadatmoi", "https://www.flickr.com/people/bdsnhadatmoi", "https://about.me/bdsnhadatmoi", "https://www.instapaper.com/p/bdsnhadatmoi", "https://www.behance.net/bdsnhadatmoi", "https://myspace.com/bdsnhadatmoi", "https://www.goodreads.com/bdsnhadatmoi", "https://dribbble.com/bdsnhadatmoi", "https://www.deviantart.com/bdsnhadatmoi", "https://www.plurk.com/bdsnhadatmoi", "http://www.folkd.com/user/bdsnhadatmoi", "https://www.ted.com/profiles/19025977", "https://kinja.com/bdsnhadatmoi", "https://ello.co/bdsnhadatmoi", "https://coub.com/bdsnhadatmoi", "https://mix.com/bdsnhadatmoi", "http://www.authorstream.com/bdsnhadatmoi", "https://soundcloud.com/bdsnhadatmoi", "https://medium.com/@bdsnhadatmoi", "https://codepen.io/bdsnhadatmoi", "https://www.evernote.com/pub/ndmh269/tintuc", "https://disqus.com/by/bdsnhadatmoi", "https://www.scoop.it/u/b-t-ng-s-n-nha-t-m-i", "https://www.vingle.net/bdsnhadatmoi", "https://www.quora.com/profile/Bat-Dong-San-Nha-Dat-Moi", "https://bdsnhadatmoi.livejournal.com", "https://angel.co/bdsnhadatmoi", "https://www.producthunt.com/@bdsnhadatmoi", "https://speakerdeck.com/bdsnhadatmoi", "https://www.wikihow.com/User:Bdsnhadatmoi", "http://bdsnhadatmoi.brandyourself.com"]}';
+  let schemaObject = '{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Bất Động Sản Nội thất Dodo", "image": "https://pbs.twimg.com/profile_images/1230120113887531008/BPH75bW0_400x400.jpg", "additionalType":["https://vi.wikipedia.org/wiki/B%E1%BA%A5t_%C4%91%E1%BB%99ng_s%E1%BA%A3n","https://vi.wikipedia.org/wiki/M%C3%B4i_gi%E1%BB%9Bi_b%E1%BA%A5t_%C4%91%E1%BB%99ng_s%E1%BA%A3n","https://vi.wikipedia.org/wiki/Ng%C6%B0%E1%BB%9Di_m%C3%B4i_gi%E1%BB%9Bi"], "paymentAccepted":"Cash, Visa, Mastercard, American Express, Debit, PayPal, Apple Pay", "mainEntityOfPage":"https://www.google.com/maps?cid=6255054938969620475", "hasmap":"https://search.google.com/local/writereview?placeid=ChIJ-UI6Mh5TNDER-z_Wh1NrzlY", "description":"Nội thất Dodo đón đầu xu hướng bất động sản 4.0 tại Việt Nam, tích hợp trí tuệ nhân tạo để xử lý các dữ liệu, phân tích nhu cầu của cả người mua lẫn người bán", "@id": "https://nhadatmoi.net/", "url": "https://nhadatmoi.net/", "telephone": "0377 535 717", "priceRange": "1000 $", "address": { "@type": "PostalAddress", "streetAddress": "Số 348 Tố Hữu, phường La Khê, quận Hà Đông", "addressLocality": "Hà Nội", "postalCode": "100000", "addressCountry": "VN"}, "geo": { "@type": "GeoCoordinates", "latitude": 20.9709496, "longitude": 105.7531617 }, "openingHoursSpecification": { "@type": "OpeningHoursSpecification","dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59" }, "sameAs": ["https://www.youtube.com/channel/UCCvlOD7vTPJeYRY8IrINguQ","https://bdsnhadatmoi.blogspot.com", "https://www.facebook.com/nhadatmoi.net", "https://bdsnhadatmoi.blogspot.com", "https://vi.gravatar.com/bdsnhadatmoi", "https://bdsnhadatmoi.tumblr.com", "https://bdsnhadatmoi.weebly.com", "https://twitter.com/bdsnhadatmoi", "https://www.reddit.com/user/bdsnhadatmoi", "https://www.diigo.com/profile/bdsnhadatmoi", "https://www.artfire.com/ext/people/bdsnhadatmoi", "https://www.smashwords.com/profile/view/bdsnhadatmoi", "http://play.fm/bdsnhadatmoi", "https://www.last.fm/user/bdsnhadatmoi", "https://www.strava.com/athletes/bdsnhadatmoi", "https://github.com/bdsnhadatmoi", "https://www.tripadvisor.com.vn/Profile/bdsnhadatmoi", "http://bit.ly/2uaZPLm", "https://getpocket.com/@bdsnhadatmoi", "https://www.pinterest.com/bdsnhadatmoi", "https://www.linkedin.com/in/bdsnhadatmoi", "https://www.flickr.com/people/bdsnhadatmoi", "https://about.me/bdsnhadatmoi", "https://www.instapaper.com/p/bdsnhadatmoi", "https://www.behance.net/bdsnhadatmoi", "https://myspace.com/bdsnhadatmoi", "https://www.goodreads.com/bdsnhadatmoi", "https://dribbble.com/bdsnhadatmoi", "https://www.deviantart.com/bdsnhadatmoi", "https://www.plurk.com/bdsnhadatmoi", "http://www.folkd.com/user/bdsnhadatmoi", "https://www.ted.com/profiles/19025977", "https://kinja.com/bdsnhadatmoi", "https://ello.co/bdsnhadatmoi", "https://coub.com/bdsnhadatmoi", "https://mix.com/bdsnhadatmoi", "http://www.authorstream.com/bdsnhadatmoi", "https://soundcloud.com/bdsnhadatmoi", "https://medium.com/@bdsnhadatmoi", "https://codepen.io/bdsnhadatmoi", "https://www.evernote.com/pub/ndmh269/tintuc", "https://disqus.com/by/bdsnhadatmoi", "https://www.scoop.it/u/b-t-ng-s-n-nha-t-m-i", "https://www.vingle.net/bdsnhadatmoi", "https://www.quora.com/profile/Bat-Dong-San-Nha-Dat-Moi", "https://bdsnhadatmoi.livejournal.com", "https://angel.co/bdsnhadatmoi", "https://www.producthunt.com/@bdsnhadatmoi", "https://speakerdeck.com/bdsnhadatmoi", "https://www.wikihow.com/User:Bdsnhadatmoi", "http://bdsnhadatmoi.brandyourself.com"]}';
   return __jsx("div", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      lineNumber: 51,
+      columnNumber: 5
+    }
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
+      lineNumber: 52,
+      columnNumber: 7
+    }
   }, __jsx("title", {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
+      lineNumber: 53,
+      columnNumber: 9
+    }
   }, props.title), __jsx("meta", {
     charSet: "utf-8",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
+      lineNumber: 54,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     name: "viewport",
     content: "initial-scale=1.0, width=device-width",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
+      lineNumber: 55,
+      columnNumber: 9
+    }
   }), __jsx("link", {
     rel: "canonical",
     href: props.canonical,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
+      lineNumber: 56,
+      columnNumber: 9
+    }
   }), __jsx("link", {
     rel: "shortcut icon",
-    href: "https://static.nhadatmoi.net/default/icon.png",
+    href: Logo,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
+      lineNumber: 57,
+      columnNumber: 9
+    }
   }), __jsx("link", {
     href: "https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&display=swap&subset=vietnamese",
     rel: "stylesheet",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
+      lineNumber: 58,
+      columnNumber: 9
+    }
   }), __jsx("link", {
     rel: "stylesheet",
     type: "text/css",
     href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
+      lineNumber: 59,
+      columnNumber: 9
+    }
   }), __jsx("link", {
     rel: "stylesheet",
     type: "text/css",
     href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
+      lineNumber: 60,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     name: "google-site-verification",
-    content: _constants__WEBPACK_IMPORTED_MODULE_6__["googleSearchConsole"],
+    content: _constants__WEBPACK_IMPORTED_MODULE_4__["googleSearchConsole"],
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }), !_modules_validator__WEBPACK_IMPORTED_MODULE_5__["default"].isBlank(props.description) && __jsx("meta", {
+      lineNumber: 61,
+      columnNumber: 9
+    }
+  }), !_modules_validator__WEBPACK_IMPORTED_MODULE_3__["default"].isBlank(props.description) && __jsx("meta", {
     name: "description",
     content: props.description,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
+      lineNumber: 64,
+      columnNumber: 11
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:title",
     content: props.title,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: undefined
+      lineNumber: 67,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:type",
     content: "website",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
+      lineNumber: 68,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "fb:app_id",
     content: "937234366335504",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: undefined
+      lineNumber: 69,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "fb:admins",
     content: "100004244474013",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: undefined
+      lineNumber: 70,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:site_name",
     content: "N\u1ED9i th\u1EA5t Dodo",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
+      lineNumber: 71,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:url",
     content: props.canonical,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
+      lineNumber: 72,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:image",
     content: props.image,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: undefined
+      lineNumber: 73,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     property: "og:description",
     content: props.description,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: undefined
+      lineNumber: 74,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:card",
     content: "summary",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: undefined
+      lineNumber: 75,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:site",
     content: "@nhadatmoi",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: undefined
+      lineNumber: 76,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:creator",
     content: "@nhadatmoi",
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
+      lineNumber: 77,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:title",
     content: props.title,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
+      lineNumber: 78,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:description",
     content: props.description,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: undefined
+      lineNumber: 79,
+      columnNumber: 9
+    }
   }), __jsx("meta", {
     "data-n-head": "true",
     name: "twitter:image",
     content: props.image,
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
+      lineNumber: 80,
+      columnNumber: 9
+    }
   }), __jsx("script", {
     type: "application/ld+json",
     dangerouslySetInnerHTML: {
       __html: schemaObject
     },
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
-  })), __jsx(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    statusModal: typeof props.statusModal !== "undefined" ? props.statusModal : statusModal,
-    updateModal: updateModal,
-    dataCompare: dataCompareLocal,
+      lineNumber: 81,
+      columnNumber: 9
+    }
+  })), props.children, __jsx(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: undefined
-  })), props.children, __jsx(_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
+      lineNumber: 91,
+      columnNumber: 7
+    }
   }));
 };
 
@@ -6367,305 +2436,14 @@ const LayoutPage = props => {
 
 /***/ }),
 
-/***/ "./components/Login/Modal.tsx":
+/***/ "./components/Layout/logo.png":
 /*!************************************!*\
-  !*** ./components/Login/Modal.tsx ***!
+  !*** ./components/Layout/logo.png ***!
   \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Dialog */ "@material-ui/core/Dialog");
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Close */ "@material-ui/icons/Close");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./constants/index.ts");
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\components\\Login\\Modal.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-
-
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    margin: 'auto',
-    width: 'fit-content'
-  },
-  formControl: {
-    marginTop: theme.spacing(2),
-    minWidth: 120
-  },
-  formControlLabel: {
-    marginTop: theme.spacing(1)
-  }
-}));
-
-const LoginModal = props => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    fullWidth: true,
-    open: props.statusModal,
-    onClose: props.onClose,
-    "aria-labelledby": "max-width-dialog-title",
-    maxWidth: 'md',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "login",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "login__close",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    variant: "outlined",
-    className: "login__close__button",
-    onClick: props.onClose,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, __jsx(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: "login__modal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "login__modal__title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, "\u0110\u0103ng nh\u1EADp N\u1ED9i th\u1EA5t Dodo"), __jsx("div", {
-    className: "login__modal__description",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }, "Khi \u0110\u0103ng nh\u1EADp b\u1EA1n c\xF3 th\u1EC3 \u0111\u0103ng tin, theo d\xF5i, b\xECnh lu\u1EADn v\xE0 \u0111\xE1nh gi\xE1 c\xE1c tin rao v\xE0 r\u1EA5t nhi\u1EC1u t\xEDnh n\u0103ng h\u1EEFu \xEDch."), __jsx("div", {
-    className: "login__modal__block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    className: "login__modal__block__google",
-    href: _constants__WEBPACK_IMPORTED_MODULE_5__["googleLogin"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 533.5 544.3",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, __jsx("g", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
-  }, __jsx("path", {
-    className: "st0",
-    d: "M533.5,278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1,33.8-25.7,63.7-54.4,82.7v68h87.7\r C503.9,431.2,533.5,361.2,533.5,278.4z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M272.1,544.3c73.4,0,135.3-24.1,180.4-65.7l-87.7-68c-24.4,16.6-55.9,26-92.6,26c-71,0-131.2-47.9-152.8-112.3\r H28.9v70.1C75.1,486.3,169.2,544.3,272.1,544.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st2",
-    d: "M119.3,324.3c-11.4-33.8-11.4-70.4,0-104.2V150H28.9c-38.6,76.9-38.6,167.5,0,244.4L119.3,324.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st3",
-    d: "M272.1,107.7c38.8-0.6,76.3,14,104.4,40.8l0,0l77.7-77.7C405,24.6,339.7-0.8,272.1,0C169.2,0,75.1,58,28.9,150\r l90.4,70.1C140.8,155.6,201.1,107.7,272.1,107.7z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
-  }))), __jsx("p", {
-    className: "google",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
-  }, "\u0110\u0102NG NH\u1EACP B\u1EB0NG GOOGLE")), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    className: "login__modal__block__zalo",
-    href: _constants__WEBPACK_IMPORTED_MODULE_5__["zaloLogin"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 460.1 436.6",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
-  }, __jsx("path", {
-    className: "st0",
-    d: "M82.6 380.9c-1.8-.8-3.1-1.7-1-3.5 1.3-1 2.7-1.9 4.1-2.8 13.1-8.5 25.4-17.8 33.5-31.5 6.8-11.4 5.7-18.1-2.8-26.5C69 269.2 48.2 212.5 58.6 145.5 64.5 107.7 81.8 75 107 46.6c15.2-17.2 33.3-31.1 53.1-42.7 1.2-.7 2.9-.9 3.1-2.7-.4-1-1.1-.7-1.7-.7-33.7 0-67.4-.7-101 .2C28.3 1.7.5 26.6.6 62.3c.2 104.3 0 208.6 0 313 0 32.4 24.7 59.5 57 60.7 27.3 1.1 54.6.2 82 .1 2 .1 4 .2 6 .2H290c36 0 72 .2 108 0 33.4 0 60.5-27 60.5-60.3v-.6-58.5c0-1.4.5-2.9-.4-4.4-1.8.1-2.5 1.6-3.5 2.6-19.4 19.5-42.3 35.2-67.4 46.3-61.5 27.1-124.1 29-187.6 7.2-5.5-2-11.5-2.2-17.2-.8-8.4 2.1-16.7 4.6-25 7.1-24.4 7.6-49.3 11-74.8 6zm72.5-168.5c1.7-2.2 2.6-3.5 3.6-4.8 13.1-16.6 26.2-33.2 39.3-49.9 3.8-4.8 7.6-9.7 10-15.5 2.8-6.6-.2-12.8-7-15.2-3-.9-6.2-1.3-9.4-1.1-17.8-.1-35.7-.1-53.5 0-2.5 0-5 .3-7.4.9-5.6 1.4-9 7.1-7.6 12.8 1 3.8 4 6.8 7.8 7.7 2.4.6 4.9.9 7.4.8 10.8.1 21.7 0 32.5.1 1.2 0 2.7-.8 3.6 1-.9 1.2-1.8 2.4-2.7 3.5-15.5 19.6-30.9 39.3-46.4 58.9-3.8 4.9-5.8 10.3-3 16.3s8.5 7.1 14.3 7.5c4.6.3 9.3.1 14 .1 16.2 0 32.3.1 48.5-.1 8.6-.1 13.2-5.3 12.3-13.3-.7-6.3-5-9.6-13-9.7-14.1-.1-28.2 0-43.3 0zm116-52.6c-12.5-10.9-26.3-11.6-39.8-3.6-16.4 9.6-22.4 25.3-20.4 43.5 1.9 17 9.3 30.9 27.1 36.6 11.1 3.6 21.4 2.3 30.5-5.1 2.4-1.9 3.1-1.5 4.8.6 3.3 4.2 9 5.8 14 3.9 5-1.5 8.3-6.1 8.3-11.3.1-20 .2-40 0-60-.1-8-7.6-13.1-15.4-11.5-4.3.9-6.7 3.8-9.1 6.9zm69.3 37.1c-.4 25 20.3 43.9 46.3 41.3 23.9-2.4 39.4-20.3 38.6-45.6-.8-25-19.4-42.1-44.9-41.3-23.9.7-40.8 19.9-40 45.6zm-8.8-19.9c0-15.7.1-31.3 0-47 0-8-5.1-13-12.7-12.9-7.4.1-12.3 5.1-12.4 12.8-.1 4.7 0 9.3 0 14v79.5c0 6.2 3.8 11.6 8.8 12.9 6.9 1.9 14-2.2 15.8-9.1.3-1.2.5-2.4.4-3.7.2-15.5.1-31 .1-46.5z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M139.5 436.2c-27.3 0-54.7.9-82-.1-32.3-1.3-57-28.4-57-60.7 0-104.3.2-208.6 0-313C.5 26.7 28.4 1.8 60.5.9c33.6-.9 67.3-.2 101-.2.6 0 1.4-.3 1.7.7-.2 1.8-2 2-3.1 2.7-19.8 11.6-37.9 25.5-53.1 42.7-25.1 28.4-42.5 61-48.4 98.9-10.4 66.9 10.5 123.7 57.8 171.1 8.4 8.5 9.5 15.1 2.8 26.5-8.1 13.7-20.4 23-33.5 31.5-1.4.8-2.8 1.8-4.2 2.7-2.1 1.8-.8 2.7 1 3.5.4.9.9 1.7 1.5 2.5 11.5 10.2 22.4 21.1 33.7 31.5 5.3 4.9 10.6 10 15.7 15.1 2.1 1.9 5.6 2.5 6.1 6.1z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st2",
-    d: "M139.5 436.2c-.5-3.5-4-4.1-6.1-6.2-5.1-5.2-10.4-10.2-15.7-15.1-11.3-10.4-22.2-21.3-33.7-31.5-.6-.8-1.1-1.6-1.5-2.5 25.5 5 50.4 1.6 74.9-5.9 8.3-2.5 16.6-5 25-7.1 5.7-1.5 11.7-1.2 17.2.8 63.4 21.8 126 19.8 187.6-7.2 25.1-11.1 48-26.7 67.4-46.2 1-1 1.7-2.5 3.5-2.6.9 1.4.4 2.9.4 4.4v58.5c.2 33.4-26.6 60.6-60 60.9h-.5c-36 .2-72 0-108 0H145.5c-2-.2-4-.3-6-.3z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M155.1 212.4c15.1 0 29.3-.1 43.4 0 7.9.1 12.2 3.4 13 9.7.9 7.9-3.7 13.2-12.3 13.3-16.2.2-32.3.1-48.5.1-4.7 0-9.3.2-14-.1-5.8-.3-11.5-1.5-14.3-7.5s-.8-11.4 3-16.3c15.4-19.6 30.9-39.3 46.4-58.9.9-1.2 1.8-2.4 2.7-3.5-1-1.7-2.4-.9-3.6-1-10.8-.1-21.7 0-32.5-.1-2.5 0-5-.3-7.4-.8-5.7-1.3-9.2-7-7.9-12.6.9-3.8 3.9-6.9 7.7-7.8 2.4-.6 4.9-.9 7.4-.9 17.8-.1 35.7-.1 53.5 0 3.2-.1 6.3.3 9.4 1.1 6.8 2.3 9.7 8.6 7 15.2-2.4 5.7-6.2 10.6-10 15.5-13.1 16.7-26.2 33.3-39.3 49.8-1.1 1.3-2.1 2.6-3.7 4.8z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st1",
-    d: "M271.1 159.8c2.4-3.1 4.9-6 9-6.8 7.9-1.6 15.3 3.5 15.4 11.5.3 20 .2 40 0 60 0 5.2-3.4 9.8-8.3 11.3-5 1.9-10.7.4-14-3.9-1.7-2.1-2.4-2.5-4.8-.6-9.1 7.4-19.4 8.7-30.5 5.1-17.8-5.8-25.1-19.7-27.1-36.6-2.1-18.3 4-33.9 20.4-43.5 13.6-8.1 27.4-7.4 39.9 3.5zm-35.4 36.5c.2 4.4 1.6 8.6 4.2 12.1 5.4 7.2 15.7 8.7 23 3.3 1.2-.9 2.3-2 3.3-3.3 5.6-7.6 5.6-20.1 0-27.7-2.8-3.9-7.2-6.2-11.9-6.3-11-.7-18.7 7.8-18.6 21.9zM340.4 196.9c-.8-25.7 16.1-44.9 40.1-45.6 25.5-.8 44.1 16.3 44.9 41.3.8 25.3-14.7 43.2-38.6 45.6-26.1 2.6-46.8-16.3-46.4-41.3zm25.1-2.4c-.2 5 1.3 9.9 4.3 14 5.5 7.2 15.8 8.6 23 3 1.1-.8 2-1.8 2.9-2.8 5.8-7.6 5.8-20.4.1-28-2.8-3.8-7.2-6.2-11.9-6.3-10.8-.6-18.4 7.6-18.4 20.1zM331.6 177c0 15.5.1 31 0 46.5.1 7.1-5.5 13-12.6 13.2-1.2 0-2.5-.1-3.7-.4-5-1.3-8.8-6.6-8.8-12.9v-79.5c0-4.7-.1-9.3 0-14 .1-7.7 5-12.7 12.4-12.7 7.6-.1 12.7 4.9 12.7 12.9.1 15.6 0 31.3 0 46.9z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st0",
-    d: "M235.7 196.3c-.1-14.1 7.6-22.6 18.5-22 4.7.2 9.1 2.5 11.9 6.4 5.6 7.5 5.6 20.1 0 27.7-5.4 7.2-15.7 8.7-23 3.3-1.2-.9-2.3-2-3.3-3.3-2.5-3.5-3.9-7.7-4.1-12.1zM365.5 194.5c0-12.4 7.6-20.7 18.4-20.1 4.7.1 9.1 2.5 11.9 6.3 5.7 7.6 5.7 20.5-.1 28-5.6 7.1-16 8.3-23.1 2.7-1.1-.8-2-1.8-2.8-2.9-3-4.1-4.4-9-4.3-14z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: undefined
-  }), __jsx("path", {
-    className: "st3",
-    d: "M66 1h328.1c35.9 0 65 29.1 65 65v303c0 35.9-29.1 65-65 65H66c-35.9 0-65-29.1-65-65V66C1 30.1 30.1 1 66 1z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: undefined
-  })), __jsx("p", {
-    className: "zalo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, "\u0110\u0102NG NH\u1EACP B\u1EB0NG ZALO")), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    className: "login__modal__block__facebook",
-    href: _constants__WEBPACK_IMPORTED_MODULE_5__["facebookLogin"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: undefined
-  }, __jsx("svg", {
-    viewBox: "0 0 512 512",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }, __jsx("path", {
-    d: "M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
-  })), __jsx("p", {
-    className: "facebook",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }, "\u0110\u0102NG NH\u1EACP B\u1EB0NG FACEBOOK"))), __jsx("div", {
-    className: "login__modal__footer",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
-  }, "Khi \u1EA5n v\xE0o n\xFAt \u0110\u0103ng nh\u1EADp b\u1EA1n c\u1EA7n \u0111\u1ED3ng \xFD c\xE1c \u0110i\u1EC1u kho\u1EA3n v\xE0 Quy \u0111\u1ECBnh c\u1EE7a N\u1ED9i th\u1EA5t Dodo.")))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (LoginModal);
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADRSURBVEhL7ZMxCsJAEEW9hqfUylPkBHoB9QKClpZ24gm0UYSApdXKD1ky7nxjPhhMsQ9etVkem50dhT+Qo70iRYvtNRS7m1NFio5nR6pKjlJYEKoMP7o8lC44WV3q1e64KHsWi/29Xn0P2+Dm9HD7IMNF7Sms03UTQNgG2R+IMjpHoQ1H2oKQIUUhIpFz+aTfWBlSlA1NrydN7zC9Y7YHMly0mt7E+YfpteFqeslehou2wU7EhusbUjQNRlVylMKCUGX4UfYkoIoU/RU52iMhvACYfQkgWr5drAAAAABJRU5ErkJggg=="
 
 /***/ }),
 
@@ -6673,7 +2451,7 @@ const LoginModal = props => {
 /*!****************************!*\
   !*** ./constants/index.ts ***!
   \****************************/
-/*! exports provided: mainURL, upgradePlanURL, upgradeIconURL, logoURL, apiBaseURL, apiGraphQLURL, googleLogin, zaloLogin, facebookLogin, urlImageAdSellLease, urlImageBroker, urlImageProject, imageDefaultBroker, imageDefaultProject, imageDefaultSlider, googleAnalyticsCode, googleSearchConsole, localStorageCompareKey, adSellLeaseType, localStorageViewed, localStorageProjectViewed, adSellLeaseCategory */
+/*! exports provided: mainURL, upgradePlanURL, upgradeIconURL, logoURL, apiBaseURL, apiGraphQLURL, googleLogin, zaloLogin, facebookLogin, urlImageAdSellLease, urlImageBroker, urlImageProject, imageDefaultBroker, imageDefaultProject, imageDefaultSlider, googleAnalyticsCode, googleSearchConsole, localStorageCompareKey, adSellLeaseType, localStorageViewed, localStorageProjectViewed, adSellLeaseCategory, titles, listMenu, products */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6700,6 +2478,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "localStorageViewed", function() { return localStorageViewed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "localStorageProjectViewed", function() { return localStorageProjectViewed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adSellLeaseCategory", function() { return adSellLeaseCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titles", function() { return titles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "listMenu", function() { return listMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "products", function() { return products; });
 const mainURL = "https://nhadatmoi.net";
 const upgradePlanURL = "https://nhadatmoi.net";
 const upgradeIconURL = "https://react-material-dashboard.devias.io/images/undraw_resume_folder_2_arse.svg";
@@ -7108,6 +2889,391 @@ const adSellLeaseType = [{
   parent_slug: '',
   type1_slug: '/nha-dat-thue'
 }];
+const titles = [{
+  title: 'Giường ngủ',
+  elements: [{
+    element: 'Giường ngủ tự nhiên',
+    image: 'https://mundecor.vn/uploads/sanpham/giuongngugotunhien/giuong-ngu-go-tu-nhien-dep-GN034.jpeg'
+  }, {
+    element: 'Giường ngủ công nghiệp',
+    image: 'https://mundecor.vn/uploads/sanpham/giuongngugotunhien/giuong-ngu-go-tu-nhien-dep-GN034.jpeg'
+  }, {
+    element: 'Giường ngủ hiện đại',
+    image: 'https://mundecor.vn/uploads/sanpham/giuongngugotunhien/giuong-ngu-go-tu-nhien-dep-GN034.jpeg'
+  }, {
+    element: 'Giường ngủ cổ điển',
+    image: 'https://mundecor.vn/uploads/sanpham/giuongngugotunhien/giuong-ngu-go-tu-nhien-dep-GN034.jpeg'
+  }]
+}, {
+  title: 'Bàn ăn',
+  elements: [{
+    element: 'Bàn ăn tự nhiên',
+    image: 'https://dogonoithatviet.com/upload/sanpham/large/bo-ban-an-go-tu-nhien-cam-xe-mat-go-co-dien-1m8-8-ghe.jpg'
+  }, {
+    element: 'Bàn ăn ép cao cấp',
+    image: 'https://dogonoithatviet.com/upload/sanpham/large/bo-ban-an-go-tu-nhien-cam-xe-mat-go-co-dien-1m8-8-ghe.jpg'
+  }, {
+    element: 'Bàn ăn nhà hàng',
+    image: 'https://dogonoithatviet.com/upload/sanpham/large/bo-ban-an-go-tu-nhien-cam-xe-mat-go-co-dien-1m8-8-ghe.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://dogonoithatviet.com/upload/sanpham/large/bo-ban-an-go-tu-nhien-cam-xe-mat-go-co-dien-1m8-8-ghe.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://dogonoithatviet.com/upload/sanpham/large/bo-ban-an-go-tu-nhien-cam-xe-mat-go-co-dien-1m8-8-ghe.jpg'
+  }]
+}, {
+  title: 'Bàn phòng khách',
+  elements: [{
+    element: 'Bàn ăn tự nhiên',
+    image: 'https://noithatduongdai.vn/wp-content/uploads/2018/10/ban-ghe-phong-khach-go-oc-cho.jpg'
+  }, {
+    element: 'Bàn ăn ép cao cấp',
+    image: 'https://noithatduongdai.vn/wp-content/uploads/2018/10/ban-ghe-phong-khach-go-oc-cho.jpg'
+  }, {
+    element: 'Bàn ăn nhà hàng',
+    image: 'https://noithatduongdai.vn/wp-content/uploads/2018/10/ban-ghe-phong-khach-go-oc-cho.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://noithatduongdai.vn/wp-content/uploads/2018/10/ban-ghe-phong-khach-go-oc-cho.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://noithatduongdai.vn/wp-content/uploads/2018/10/ban-ghe-phong-khach-go-oc-cho.jpg'
+  }]
+}, {
+  title: 'Kệ tivi',
+  elements: [{
+    element: 'Bàn ăn tự nhiên',
+    image: 'https://gochuan.com/wp-content/uploads/2018/09/326841f37c759d2bc464.jpg'
+  }, {
+    element: 'Bàn ăn ép cao cấp',
+    image: 'https://gochuan.com/wp-content/uploads/2018/09/326841f37c759d2bc464.jpg'
+  }, {
+    element: 'Bàn ăn nhà hàng',
+    image: 'https://gochuan.com/wp-content/uploads/2018/09/326841f37c759d2bc464.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://gochuan.com/wp-content/uploads/2018/09/326841f37c759d2bc464.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://gochuan.com/wp-content/uploads/2018/09/326841f37c759d2bc464.jpg'
+  }]
+}, {
+  title: 'Tủ quần áo',
+  elements: [{
+    element: 'Bàn ăn tự nhiên',
+    image: 'https://dogolegia.com/wp-content/uploads/2018/03/Mau-tu-quan-ao-dep-LG-TQA030.jpg'
+  }, {
+    element: 'Bàn ăn ép cao cấp',
+    image: 'https://dogolegia.com/wp-content/uploads/2018/03/Mau-tu-quan-ao-dep-LG-TQA030.jpg'
+  }, {
+    element: 'Bàn ăn nhà hàng',
+    image: 'https://dogolegia.com/wp-content/uploads/2018/03/Mau-tu-quan-ao-dep-LG-TQA030.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://dogolegia.com/wp-content/uploads/2018/03/Mau-tu-quan-ao-dep-LG-TQA030.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://dogolegia.com/wp-content/uploads/2018/03/Mau-tu-quan-ao-dep-LG-TQA030.jpg'
+  }]
+}, {
+  title: 'Bàn trang điểm',
+  elements: [{
+    element: 'Bàn ăn tự nhiên',
+    image: 'https://noithatluongson.vn/wp-content/uploads/2019/08/ban-trang-diem-60-1.jpg'
+  }, {
+    element: 'Bàn ăn ép cao cấp',
+    image: 'https://noithatluongson.vn/wp-content/uploads/2019/08/ban-trang-diem-60-1.jpg'
+  }, {
+    element: 'Bàn ăn nhà hàng',
+    image: 'https://noithatluongson.vn/wp-content/uploads/2019/08/ban-trang-diem-60-1.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://noithatluongson.vn/wp-content/uploads/2019/08/ban-trang-diem-60-1.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://noithatluongson.vn/wp-content/uploads/2019/08/ban-trang-diem-60-1.jpg'
+  }]
+}, {
+  title: 'Tủ giày',
+  elements: [{
+    element: 'Tủ giày tự nhiên',
+    image: 'https://file.hstatic.net/1000294146/file/3_grande.jpg'
+  }, {
+    element: 'Tủ giày ép cao cấp',
+    image: 'https://file.hstatic.net/1000294146/file/3_grande.jpg'
+  }, {
+    element: 'Tủ giày nhà hàng',
+    image: 'https://file.hstatic.net/1000294146/file/3_grande.jpg'
+  }, {
+    element: 'Bàn ăn 4 ghế',
+    image: 'https://file.hstatic.net/1000294146/file/3_grande.jpg'
+  }, {
+    element: 'Bàn ăn 6 ghế',
+    image: 'https://file.hstatic.net/1000294146/file/3_grande.jpg'
+  }]
+}];
+const listMenu = [{
+  title: 'Nội Thất Phòng Ngủ',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Nội Thất Phòng Khách',
+  rooms: [{
+    room: 'Bàn ghế gỗ'
+  }, {
+    room: 'Tủ Giày Dép'
+  }, {
+    room: 'Kệ Tivi'
+  }, {
+    room: 'Kệ để giày'
+  }, {
+    room: 'Tủ rượu'
+  }]
+}, {
+  title: 'Nội Thất Nhà Bếp',
+  rooms: [{
+    room: 'Tủ bếp'
+  }, {
+    room: 'Bộ bàn ăn'
+  }, {
+    room: 'Ghế phòng ăn'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Nội Thất Phòng Thờ',
+  rooms: [{
+    room: 'Bàn Thờ'
+  }, {
+    room: 'Tủ Thờ'
+  }, {
+    room: 'Bàn Thờ Thần Tài'
+  }, {
+    room: 'Bàn Thờ Treo Tường'
+  }, {
+    room: 'Sập Thờ'
+  }]
+}, {
+  title: 'Nội Thất Văn Phòng',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Đồ Gỗ Mỹ Nghệ',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Sản Phẩm Khuyến Mại',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Sản Phẩm Đã Xem',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Đơn hàng đã đặt',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Sản phẩm bán chạy',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}, {
+  title: 'Sản phẩm mới',
+  rooms: [{
+    room: 'Giường ngủ'
+  }, {
+    room: 'Tủ quần áo'
+  }, {
+    room: 'Bàn trang điểm'
+  }, {
+    room: 'Bàn ghế phòng ngủ'
+  }, {
+    room: 'Tủ đầu giường'
+  }, {
+    room: 'Giường tầng'
+  }, {
+    room: 'Bộ phòng ngủ'
+  }]
+}];
+const products = [{
+  image: 'https://www.nhadepkientruc.net/wp-content/uploads/2014/06/tu-quan-ao-go-dep-01.jpg',
+  title: 'Tủ quần áo đẹp- TQA099',
+  moneyOld: 5000000,
+  moneyNew: 4500000
+}, {
+  image: 'https://dienmaycholon.vn/public/userupload/images/ke%20tivi%20go%20cao%20cap.png',
+  title: 'Kệ Tivi phòng khách',
+  moneyOld: 6000000,
+  moneyNew: 5000000
+}, {
+  image: 'https://dienmaycholon.vn/public/userupload/images/ke%20tivi%20go%20cao%20cap.png',
+  title: 'Giường ngủ gỗ tự nhiên - GNCD01',
+  moneyOld: 3000000,
+  moneyNew: 2000000
+}, {
+  image: 'https://noithatthaibinh.com/wp-content/uploads/2018/10/giuong-ngu-go-go-do-9656.jpg',
+  title: 'Giường ngủ thời trang - G003',
+  moneyOld: 4500000,
+  moneyNew: 3500000
+}, {
+  image: 'https://phogovip.vn/uploads/news/2017_12/giuong-ngu-go-tu-nhien-4-copy.jpg',
+  title: 'Giường ngủ hiện đại - GN003',
+  moneyOld: 4000000,
+  moneyNew: 3500000
+}, {
+  image: 'https://noithatihouse.com/wp-content/uploads/2019/11/O1CN01Ziuj8F1ySlsFWXvny_27360165.jpg',
+  title: 'Kệ Tivi phòng khách',
+  moneyOld: 6000000,
+  moneyNew: 5000000
+}, {
+  image: 'https://noithatihouse.com/wp-content/uploads/2019/11/O1CN01Ziuj8F1ySlsFWXvny_27360165.jpg',
+  title: 'Bàn ăn 6 ghế - BA001',
+  moneyOld: 4000000,
+  moneyNew: 3000000
+}, {
+  image: 'https://www.nhadepkientruc.net/wp-content/uploads/2014/06/tu-quan-ao-go-dep-01.jpg',
+  title: 'Bàn ăn gỗ nhập khẩu - BA002',
+  moneyOld: 3500000,
+  moneyNew: 3000000
+}, {
+  image: 'https://www.nhadepkientruc.net/wp-content/uploads/2014/06/tu-quan-ao-go-dep-01.jpg',
+  title: 'Tủ quần áo đẹp- TQA099',
+  moneyOld: 4000000,
+  moneyNew: 3500000
+}, {
+  image: 'https://dienmaycholon.vn/public/userupload/images/ke%20tivi%20go%20cao%20cap.png',
+  title: 'Kệ Tivi phòng khách',
+  moneyOld: 6000000,
+  moneyNew: 5000000
+}, {
+  image: 'https://noithatthaibinh.com/wp-content/uploads/2018/10/giuong-ngu-go-go-do-9656.jpg',
+  title: 'Giường ngủ cổ điển - GNCD01',
+  moneyOld: 6000000,
+  moneyNew: 5500000
+}, {
+  image: 'https://noithatthaibinh.com/wp-content/uploads/2018/10/giuong-ngu-go-go-do-9656.jpg',
+  title: 'Giường ngủ thời trang - G003',
+  moneyOld: 4500000,
+  moneyNew: 3500000
+}, {
+  image: 'https://noithatthaibinh.com/wp-content/uploads/2018/10/giuong-ngu-go-go-do-9656.jpg',
+  title: 'Giường ngủ cổ điển - GNCD01',
+  moneyOld: 6000000,
+  moneyNew: 5500000
+}, {
+  image: 'https://noithatthaibinh.com/wp-content/uploads/2018/10/giuong-ngu-go-go-do-9656.jpg',
+  title: 'Giường ngủ thời trang - G003',
+  moneyOld: 4500000,
+  moneyNew: 3500000
+}, {
+  image: 'https://www.nhadepkientruc.net/wp-content/uploads/2014/06/tu-quan-ao-go-dep-01.jpg',
+  title: 'Tủ quần áo đẹp- TQA099',
+  moneyOld: 4000000,
+  moneyNew: 3500000
+}, {
+  image: 'https://dienmaycholon.vn/public/userupload/images/ke%20tivi%20go%20cao%20cap.png',
+  title: 'Kệ Tivi phòng khách',
+  moneyOld: 6000000,
+  moneyNew: 5000000
+}];
 
 
 /***/ }),
@@ -7514,147 +3680,6 @@ const GET_AD_SELL_LEASE_WISH_LIST = graphql_tag__WEBPACK_IMPORTED_MODULE_0___def
           }
         }
       }
-    }
-  }
-`;
-
-
-/***/ }),
-
-/***/ "./graphql/chat/mutation/index.ts":
-/*!****************************************!*\
-  !*** ./graphql/chat/mutation/index.ts ***!
-  \****************************************/
-/*! exports provided: CREATE_MESSAGE */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_MESSAGE", function() { return CREATE_MESSAGE; });
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
-
-const CREATE_MESSAGE = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-  mutation conversation($input: ConversationInput!) {
-    conversation(input: $input) {
-      id
-      chat {
-        send_user_id
-        message {
-          text
-        }
-      }
-    }
-  }
-`;
-
-
-/***/ }),
-
-/***/ "./graphql/chat/queries/index.ts":
-/*!***************************************!*\
-  !*** ./graphql/chat/queries/index.ts ***!
-  \***************************************/
-/*! exports provided: GET_LIST_MESSAGE, GET_MESSAGE_BY_ID */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_LIST_MESSAGE", function() { return GET_LIST_MESSAGE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MESSAGE_BY_ID", function() { return GET_MESSAGE_BY_ID; });
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
-
-const GET_LIST_MESSAGE = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-  query conversations ($page: Int!, $limit: Int!) {
-    conversations (page: $page, limit: $limit) {
-      pageInfo {
-        length
-        hasNextPage
-        hasPreviousPage
-      }
-      edges {
-        node {
-          id
-          target {
-            id
-            avatar
-            first_name
-            last_name
-            status
-            last_activity
-          }
-        }
-      }
-    }
-  }
-`;
-const GET_MESSAGE_BY_ID = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-  query conversation ($id: String!) {
-    conversation (id: $id) {
-      id
-      target{
-        id
-        avatar
-        first_name
-        last_name
-        status
-        last_activity
-      }
-      chat{
-        id
-        send_user_id
-        message{
-          text
-          attachment{
-            type
-            payload{
-              url
-            }
-          }
-        }
-        status_check
-        send_at
-        read_at 
-      }
-      created_at
-      updated_at
-    }
-  }
-`;
-
-
-/***/ }),
-
-/***/ "./graphql/profile/queries/index.ts":
-/*!******************************************!*\
-  !*** ./graphql/profile/queries/index.ts ***!
-  \******************************************/
-/*! exports provided: GET_PROFILE, LOG_OUT */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_PROFILE", function() { return GET_PROFILE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
-
-const GET_PROFILE = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-    query getProfile {
-        profile {
-            id,
-            first_name,
-            last_name,
-            email,
-            avatar,
-        }
-    }
-`;
-const LOG_OUT = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-  query logoutProfile {
-    logout {
-      status
     }
   }
 `;
@@ -8079,17 +4104,6 @@ const isUrl = value => {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "core-js/library/fn/array/is-array");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
@@ -8134,17 +4148,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "co
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "core-js/library/fn/object/define-properties");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
@@ -8164,28 +4167,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptors */ "core-js/library/fn/object/get-own-property-descriptors");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 
@@ -8301,36 +4282,6 @@ function _asyncToGenerator(fn) {
 }
 
 module.exports = _asyncToGenerator;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
 
 /***/ }),
 
@@ -10502,7 +6453,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Layout_ErrorMainPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Layout/ErrorMainPage */ "./components/Layout/ErrorMainPage.tsx");
 
 
-var _jsxFileName = "C:\\Users\\toan\\Desktop\\nhadatmoi\\pages\\_app.tsx";
+var _jsxFileName = "C:\\Users\\toan\\Documents\\nhadatmoi\\pages\\_app.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 
@@ -10631,20 +6582,22 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
     if (!_modules_validator__WEBPACK_IMPORTED_MODULE_9__["default"].isBlank(pageProps.statusCode) && pageProps.statusCode !== 200) {
       return __jsx(_components_Layout_ErrorMainPage__WEBPACK_IMPORTED_MODULE_10__["default"], {
         statusCode: pageProps.statusCode,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
-        },
-        __self: this
+          lineNumber: 110,
+          columnNumber: 14
+        }
       });
     }
 
     return __jsx(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+      __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
-      },
-      __self: this
+        lineNumber: 114,
+        columnNumber: 9
+      }
     })));
   }
 
@@ -10751,61 +6704,6 @@ module.exports = require("@material-ui/core/Button");
 
 /***/ }),
 
-/***/ "@material-ui/core/Card":
-/*!*****************************************!*\
-  !*** external "@material-ui/core/Card" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Card");
-
-/***/ }),
-
-/***/ "@material-ui/core/CardContent":
-/*!************************************************!*\
-  !*** external "@material-ui/core/CardContent" ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/CardContent");
-
-/***/ }),
-
-/***/ "@material-ui/core/Dialog":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/Dialog" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Dialog");
-
-/***/ }),
-
-/***/ "@material-ui/core/Drawer":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/Drawer" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Drawer");
-
-/***/ }),
-
-/***/ "@material-ui/core/Fab":
-/*!****************************************!*\
-  !*** external "@material-ui/core/Fab" ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Fab");
-
-/***/ }),
-
 /***/ "@material-ui/core/Grid":
 /*!*****************************************!*\
   !*** external "@material-ui/core/Grid" ***!
@@ -10828,17 +6726,6 @@ module.exports = require("@material-ui/core/Hidden");
 
 /***/ }),
 
-/***/ "@material-ui/core/IconButton":
-/*!***********************************************!*\
-  !*** external "@material-ui/core/IconButton" ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/IconButton");
-
-/***/ }),
-
 /***/ "@material-ui/core/InputBase":
 /*!**********************************************!*\
   !*** external "@material-ui/core/InputBase" ***!
@@ -10850,83 +6737,6 @@ module.exports = require("@material-ui/core/InputBase");
 
 /***/ }),
 
-/***/ "@material-ui/core/Popper":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/Popper" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Popper");
-
-/***/ }),
-
-/***/ "@material-ui/core/Tooltip":
-/*!********************************************!*\
-  !*** external "@material-ui/core/Tooltip" ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Tooltip");
-
-/***/ }),
-
-/***/ "@material-ui/core/styles":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/styles" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/styles");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Add":
-/*!*****************************************!*\
-  !*** external "@material-ui/icons/Add" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Add");
-
-/***/ }),
-
-/***/ "@material-ui/icons/AddCircle":
-/*!***********************************************!*\
-  !*** external "@material-ui/icons/AddCircle" ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/AddCircle");
-
-/***/ }),
-
-/***/ "@material-ui/icons/AddCircleOutline":
-/*!******************************************************!*\
-  !*** external "@material-ui/icons/AddCircleOutline" ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/AddCircleOutline");
-
-/***/ }),
-
-/***/ "@material-ui/icons/ArrowForward":
-/*!**************************************************!*\
-  !*** external "@material-ui/icons/ArrowForward" ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/ArrowForward");
-
-/***/ }),
-
 /***/ "@material-ui/icons/CalendarToday":
 /*!***************************************************!*\
   !*** external "@material-ui/icons/CalendarToday" ***!
@@ -10935,17 +6745,6 @@ module.exports = require("@material-ui/icons/ArrowForward");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/CalendarToday");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Close":
-/*!*******************************************!*\
-  !*** external "@material-ui/icons/Close" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Close");
 
 /***/ }),
 
@@ -10971,28 +6770,6 @@ module.exports = require("@material-ui/icons/Email");
 
 /***/ }),
 
-/***/ "@material-ui/icons/ExitToApp":
-/*!***********************************************!*\
-  !*** external "@material-ui/icons/ExitToApp" ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/ExitToApp");
-
-/***/ }),
-
-/***/ "@material-ui/icons/ExpandMore":
-/*!************************************************!*\
-  !*** external "@material-ui/icons/ExpandMore" ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/ExpandMore");
-
-/***/ }),
-
 /***/ "@material-ui/icons/Favorite":
 /*!**********************************************!*\
   !*** external "@material-ui/icons/Favorite" ***!
@@ -11015,61 +6792,6 @@ module.exports = require("@material-ui/icons/FavoriteBorder");
 
 /***/ }),
 
-/***/ "@material-ui/icons/FilterVintage":
-/*!***************************************************!*\
-  !*** external "@material-ui/icons/FilterVintage" ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/FilterVintage");
-
-/***/ }),
-
-/***/ "@material-ui/icons/GroupAdd":
-/*!**********************************************!*\
-  !*** external "@material-ui/icons/GroupAdd" ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/GroupAdd");
-
-/***/ }),
-
-/***/ "@material-ui/icons/List":
-/*!******************************************!*\
-  !*** external "@material-ui/icons/List" ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/List");
-
-/***/ }),
-
-/***/ "@material-ui/icons/ListAlt":
-/*!*********************************************!*\
-  !*** external "@material-ui/icons/ListAlt" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/ListAlt");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Menu":
-/*!******************************************!*\
-  !*** external "@material-ui/icons/Menu" ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Menu");
-
-/***/ }),
-
 /***/ "@material-ui/icons/PhoneIphone":
 /*!*************************************************!*\
   !*** external "@material-ui/icons/PhoneIphone" ***!
@@ -11089,39 +6811,6 @@ module.exports = require("@material-ui/icons/PhoneIphone");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Search");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Send":
-/*!******************************************!*\
-  !*** external "@material-ui/icons/Send" ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Send");
-
-/***/ }),
-
-/***/ "@material-ui/icons/Settings":
-/*!**********************************************!*\
-  !*** external "@material-ui/icons/Settings" ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/Settings");
-
-/***/ }),
-
-/***/ "@material-ui/icons/TagFaces":
-/*!**********************************************!*\
-  !*** external "@material-ui/icons/TagFaces" ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/icons/TagFaces");
 
 /***/ }),
 
@@ -11169,17 +6858,6 @@ module.exports = require("axios");
 
 /***/ }),
 
-/***/ "core-js/library/fn/array/is-array":
-/*!****************************************************!*\
-  !*** external "core-js/library/fn/array/is-array" ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/array/is-array");
-
-/***/ }),
-
 /***/ "core-js/library/fn/json/stringify":
 /*!****************************************************!*\
   !*** external "core-js/library/fn/json/stringify" ***!
@@ -11224,17 +6902,6 @@ module.exports = require("core-js/library/fn/object/create");
 
 /***/ }),
 
-/***/ "core-js/library/fn/object/define-properties":
-/*!**************************************************************!*\
-  !*** external "core-js/library/fn/object/define-properties" ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/object/define-properties");
-
-/***/ }),
-
 /***/ "core-js/library/fn/object/define-property":
 /*!************************************************************!*\
   !*** external "core-js/library/fn/object/define-property" ***!
@@ -11254,28 +6921,6 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
-
-/***/ }),
-
-/***/ "core-js/library/fn/object/get-own-property-descriptors":
-/*!*************************************************************************!*\
-  !*** external "core-js/library/fn/object/get-own-property-descriptors" ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/object/get-own-property-descriptors");
-
-/***/ }),
-
-/***/ "core-js/library/fn/object/get-own-property-symbols":
-/*!*********************************************************************!*\
-  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/object/get-own-property-symbols");
 
 /***/ }),
 
@@ -11367,61 +7012,6 @@ module.exports = require("graphql-tag");
 
 /***/ }),
 
-/***/ "jss":
-/*!**********************!*\
-  !*** external "jss" ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("jss");
-
-/***/ }),
-
-/***/ "jss-rtl":
-/*!**************************!*\
-  !*** external "jss-rtl" ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("jss-rtl");
-
-/***/ }),
-
-/***/ "lodash":
-/*!*************************!*\
-  !*** external "lodash" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("lodash");
-
-/***/ }),
-
-/***/ "moment":
-/*!*************************!*\
-  !*** external "moment" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("moment");
-
-/***/ }),
-
-/***/ "moment/locale/es":
-/*!***********************************!*\
-  !*** external "moment/locale/es" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("moment/locale/es");
-
-/***/ }),
-
 /***/ "next-cookies":
 /*!*******************************!*\
   !*** external "next-cookies" ***!
@@ -11466,17 +7056,6 @@ module.exports = require("next/router");
 
 /***/ }),
 
-/***/ "nextjs-progressbar":
-/*!*************************************!*\
-  !*** external "nextjs-progressbar" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("nextjs-progressbar");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -11499,17 +7078,6 @@ module.exports = require("prop-types-exact");
 
 /***/ }),
 
-/***/ "query-string":
-/*!*******************************!*\
-  !*** external "query-string" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("query-string");
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -11529,17 +7097,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-moment");
-
-/***/ }),
-
-/***/ "react-scroll":
-/*!*******************************!*\
-  !*** external "react-scroll" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-scroll");
 
 /***/ }),
 

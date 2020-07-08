@@ -197,7 +197,7 @@ body {
   margin: 0 auto; }
 
 .content_index_button {
-  width: 100%;
+  width: 300px;
   float: left;
   text-align: center;
   padding: 0 30px;
@@ -212,15 +212,15 @@ body {
     font-size: 14px;
     font-weight: 900;
     margin: -15px 0 30px 0;
-    color: #aaa;
+    color: white;
     padding: 10px 15px !important;
     cursor: pointer;
-    background: #fff;
+    background: #1976d2;
     width: 100%;
     border-radius: 4px;
     border: 2px solid #e6e6e6; }
     .content_index_button button:hover {
-      background: #f0f0f0; }
+      background: #2196f3; }
 
 .zalo-share-button {
   display: none; }
@@ -276,7 +276,7 @@ BASE COLOR
 BREAKPOINTS
 *********************/
 .footer {
-  background-color: #fafbfb;
+  background-color: #e0e0e0;
   min-height: 30px;
   padding: 0 30px;
   font-family: "Roboto", sans-serif;
@@ -480,7 +480,7 @@ BREAKPOINTS
           fill: #aaa;
           margin: 14px 13px; }
       .header__center__search__box {
-        width: calc(100% - 130px - 60px);
+        width: calc(100% - 100px);
         height: 45px;
         float: left;
         line-height: 45px;
@@ -1134,233 +1134,6 @@ BASE COLOR
 /*********************
 BREAKPOINTS
 *********************/
-.search_homepage__banner {
-  width: 100%;
-  min-height: 500px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100%;
-  opacity: 1;
-  position: relative;
-  /***
-    Breakpoint Up
-   */ }
-  @media (max-width: 1279px) {
-    .search_homepage__banner {
-      background-size: unset;
-      min-height: 400px; } }
-  .search_homepage__banner .search_homepage__body {
-    position: absolute;
-    width: 800px;
-    max-width: 100%; }
-    .search_homepage__banner .search_homepage__body .search_homepage__body_title {
-      text-align: center;
-      width: 100%;
-      float: left;
-      font-size: 40px;
-      color: #fff;
-      font-family: "Roboto", sans-serif;
-      font-weight: 900;
-      /***
-    Breakpoint Up
-   */
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 1279px) {
-        .search_homepage__banner .search_homepage__body .search_homepage__body_title {
-          padding: 0 20px 0 20px;
-          font-size: 30px; } }
-      @media (max-width: 599px) {
-        .search_homepage__banner .search_homepage__body .search_homepage__body_title {
-          font-size: 26px; } }
-    .search_homepage__banner .search_homepage__body .search_homepage__body_description {
-      text-align: center;
-      width: 100%;
-      float: left;
-      font-size: 20px;
-      color: #fff;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      margin: 5px 0 15px 0;
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 1279px) {
-        .search_homepage__banner .search_homepage__body .search_homepage__body_description {
-          font-size: 15px;
-          padding: 0 20px 0 20px;
-          color: #f0f0f0; } }
-    .search_homepage__banner .search_homepage__body .search_homepage__body_example {
-      text-align: center;
-      width: 100%;
-      float: left;
-      font-size: 15px;
-      color: #f0f0f0;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      margin: 25px 0 0 0;
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 1279px) {
-        .search_homepage__banner .search_homepage__body .search_homepage__body_example {
-          padding: 0 20px 0 20px;
-          font-size: 15px;
-          color: #f0f0f0; } }
-
-.search_homepage__body__box {
-  width: 100%;
-  background-color: #fff;
-  height: 60px;
-  border-radius: 4px 5px 5px 4px;
-  float: left;
-  color: #444;
-  /***
-    Breakpoint Up
-   */
-  /***
-    Breakpoint Up
-   */ }
-  @media (max-width: 1279px) {
-    .search_homepage__body__box {
-      width: calc(100% - 40px);
-      margin: 0 20px 0 20px; } }
-  @media (max-width: 599px) {
-    .search_homepage__body__box {
-      height: 50px; } }
-  .search_homepage__body__box__select {
-    width: 202px;
-    float: left;
-    height: 60px;
-    margin: 0 -2px 0 0;
-    padding: 0;
-    line-height: 60px;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    color: #444;
-    position: relative;
-    /***
-    Breakpoint Up
-   */ }
-    .search_homepage__body__box__select button {
-      width: 100% !important;
-      height: 60px;
-      margin: 0 0 0 -1px !important;
-      padding: 0 30px 0 30px !important;
-      border-radius: 0;
-      font-size: 14px !important;
-      font-family: "Roboto", sans-serif !important;
-      font-weight: 700 !important;
-      color: #444 !important;
-      text-transform: unset !important;
-      text-align: left; }
-      .search_homepage__body__box__select button .MuiButton-label {
-        display: unset !important;
-        justify-content: unset !important; }
-      .search_homepage__body__box__select button:hover {
-        background-color: unset !important; }
-    @media (max-width: 599px) {
-      .search_homepage__body__box__select {
-        display: none; } }
-    .search_homepage__body__box__select svg {
-      width: 14px;
-      height: 14px;
-      fill: #444;
-      margin: 5px 8px -3px 0;
-      float: right; }
-  .search_homepage__body__box .search_homepage__body_box_input {
-    width: calc(100% - 200px - 60px);
-    float: left;
-    /***
-    Breakpoint Up
-   */ }
-    @media (max-width: 599px) {
-      .search_homepage__body__box .search_homepage__body_box_input {
-        width: calc(100% - 50px); } }
-    .search_homepage__body__box .search_homepage__body_box_input .search_homepage__body_box_input_base {
-      height: 30px;
-      width: 100%;
-      padding: 0 15px 0 15px;
-      border-left: 1px #e0e0e0 solid;
-      margin: 15px 0 15px 0;
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 599px) {
-        .search_homepage__body__box .search_homepage__body_box_input .search_homepage__body_box_input_base {
-          margin: 10px 0 10px 0;
-          padding: 0 15px 0 20px;
-          font-size: 16px;
-          border-left: 0; } }
-  .search_homepage__body__box .search_homepage__body_box_button {
-    width: 60px;
-    background-color: #1976d2;
-    height: 60px;
-    float: left;
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    min-width: unset;
-    border-radius: 0 4px 4px 0;
-    /***
-    Breakpoint Up
-   */ }
-    @media (max-width: 599px) {
-      .search_homepage__body__box .search_homepage__body_box_button {
-        background: unset;
-        width: 50px;
-        height: 50px; } }
-    .search_homepage__body__box .search_homepage__body_box_button svg {
-      width: 30px;
-      height: 30px;
-      fill: #fff;
-      margin: 15px;
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 599px) {
-        .search_homepage__body__box .search_homepage__body_box_button svg {
-          fill: #1976d2;
-          margin: 10px; } }
-
-.search_homepage__body__box__select__popup {
-  top: 1px !important;
-  position: absolute;
-  width: 840px;
-  margin: 0 auto;
-  max-width: 100%;
-  /***
-    Breakpoint Up
-   */ }
-  @media (max-width: 1279px) {
-    .search_homepage__body__box__select__popup {
-      width: 800px; } }
-  .search_homepage__body__box__select__popup .MuiPaper-root {
-    left: 20px !important; }
-  .search_homepage__body__box__select__popup .MuiListItemText-multiline {
-    padding-right: 20px; }
-  .search_homepage__body__box__select__popup .MuiButtonBase-root {
-    padding-left: 20px;
-    padding-right: 20px; }
-    .search_homepage__body__box__select__popup .MuiButtonBase-root .MuiListItemIcon-root {
-      min-width: 40px; }
-    .search_homepage__body__box__select__popup .MuiButtonBase-root .MuiListItemText-root {
-      width: 120px; }
-      .search_homepage__body__box__select__popup .MuiButtonBase-root .MuiListItemText-root span {
-        color: #444;
-        font-weight: 400;
-        font-size: 15px;
-        font-family: "Roboto", sans-serif; }
-
-/*********************
-BASE COLOR
-*********************/
-/*********************
-BREAKPOINTS
-*********************/
 .title_block {
   width: 100%;
   float: left;
@@ -1525,7 +1298,6 @@ BREAKPOINTS
     font-weight: 700;
     border-radius: 4px;
     outline: none;
-    opacity: 0.8;
     background-color: #f0f0f0;
     position: relative;
     width: 400px;
@@ -1541,24 +1313,6 @@ BREAKPOINTS
         height: 250px; } }
     .hot-locations__item :hover {
       background: rgba(0, 0, 0, 0.4); }
-    .hot-locations__item__title {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      position: absolute;
-      z-index: 200;
-      text-align: center;
-      line-height: 250px;
-      color: #fff;
-      font-family: "Roboto", sans-serif;
-      font-size: 40px;
-      /***
-    Breakpoint Up
-   */ }
-      @media (max-width: 599px) {
-        .hot-locations__item__title {
-          font-size: 30px; } }
     .hot-locations__item__image {
       position: absolute;
       top: 0;
@@ -1883,10 +1637,10 @@ BREAKPOINTS
       padding: 0 20px 0 20px; } }
   .keyword-search .slick-slide {
     margin: 0 5px !important;
-    height: 50px !important;
+    height: 80px !important;
     min-width: 150px; }
   .keyword-search .slick-slider {
-    height: 50px;
+    height: 80px;
     text-align: center;
     border-radius: 4px;
     overflow: hidden; }
@@ -1905,25 +1659,26 @@ BREAKPOINTS
     border-radius: 4px;
     outline: none;
     opacity: 0.8;
-    height: 50px;
+    height: 80px;
     line-height: 50px;
     padding-left: 20px;
     padding-right: 20px;
     background: #e0e0e0;
     cursor: pointer; }
   .keyword-search__prev__arrow, .keyword-search__next__arrow {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(221, 221, 235, 0.664);
     width: 30px;
-    height: 50px;
+    height: 80px;
     left: 0;
     top: 0;
     position: absolute;
     z-index: 300;
     cursor: pointer;
-    border-radius: 4px; }
+    border-radius: 50%; }
     .keyword-search__prev__arrow svg, .keyword-search__next__arrow svg {
       width: 30px;
-      height: 30px;
+      border-radius: 10px;
+      height: 60px;
       margin: 10px 0;
       fill: #fff; }
   .keyword-search__next__arrow {
@@ -3107,14 +2862,6 @@ BREAKPOINTS
       border-radius: 4px; }
 
 .login {
-  width: 100%;
-  text-align: center;
-  background-image: url("https://static.nhadatmoi.net/default/login-background.svg");
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 100%;
-  position: relative;
-  padding: 0 20px;
   /***
     Breakpoint Up
    */ }
@@ -3139,99 +2886,88 @@ BREAKPOINTS
         width: 30px;
         height: 30px;
         margin: 5px; }
-  .login__modal {
-    max-width: 350px;
-    margin: 0 auto; }
-    .login__modal__title {
+  .login__modal__title {
+    float: left;
+    margin: 70px 0 10px 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #1976d2;
+    width: 100%;
+    text-align: center;
+    /***
+    Breakpoint Up
+   */ }
+    @media (max-width: 1279px) {
+      .login__modal__title {
+        font-size: 20px; } }
+  .login__modal__description {
+    float: left;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0000008a;
+    width: 100%;
+    text-align: center; }
+  .login__modal__block {
+    width: 100%;
+    margin: 10px 0 10px 0;
+    float: left;
+    text-align: left; }
+    .login__modal__block .MuiButton-label {
+      justify-content: unset !important; }
+    .login__modal__block svg {
+      width: 20px;
+      height: 20px;
+      fill: #1976d2;
+      float: left; }
+    .login__modal__block p {
       float: left;
-      margin: 70px 0 10px 0;
+      line-height: 20px;
       font-family: "Roboto", sans-serif;
-      font-size: 30px;
+      font-size: 13px;
       font-weight: 900;
-      color: #1976d2;
+      color: #444;
+      margin: 0 0 0 10px; }
+    .login__modal__block__google, .login__modal__block__email, .login__modal__block__zalo, .login__modal__block__facebook {
+      float: left;
       width: 100%;
-      text-align: center;
+      border-radius: 30px !important;
+      border: 1px #ccc solid !important;
+      padding: 15px 30px 13px 30px !important;
+      margin: 10px 0 0 0 !important;
       /***
     Breakpoint Up
    */ }
-      @media (max-width: 1279px) {
-        .login__modal__title {
-          font-size: 20px; } }
-    .login__modal__description {
-      float: left;
-      font-family: "Roboto", sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #0000008a;
-      width: 100%;
-      text-align: center; }
-    .login__modal__block {
-      width: 100%;
-      margin: 10px 0 10px 0;
-      float: left;
-      text-align: left; }
-      .login__modal__block .MuiButton-label {
-        justify-content: unset !important; }
-      .login__modal__block svg {
-        width: 20px;
-        height: 20px;
-        fill: #1976d2;
-        float: left; }
-      .login__modal__block p {
-        float: left;
-        line-height: 20px;
-        font-family: "Roboto", sans-serif;
-        font-size: 13px;
-        font-weight: 900;
-        color: #444;
-        margin: 0 0 0 10px; }
-      .login__modal__block__google, .login__modal__block__email, .login__modal__block__zalo, .login__modal__block__facebook {
-        float: left;
-        width: 100%;
-        border-radius: 30px !important;
-        border: 1px #ccc solid !important;
-        padding: 15px 30px 13px 30px !important;
-        margin: 10px 0 0 0 !important;
-        /***
-    Breakpoint Up
-   */ }
-        @media (max-width: 599px) {
-          .login__modal__block__google, .login__modal__block__email, .login__modal__block__zalo, .login__modal__block__facebook {
-            padding: 15px 15px 13px 15px !important; } }
-        .login__modal__block__google:hover, .login__modal__block__email:hover, .login__modal__block__zalo:hover, .login__modal__block__facebook:hover {
-          background: #fff !important;
-          border: 1px #1976d2 solid !important;
-          transition: 0.2s all; }
-      .login__modal__block__zalo .st0 {
-        fill: #fdfefe; }
-      .login__modal__block__zalo .st1 {
-        fill: #0180c7; }
-      .login__modal__block__zalo .st2 {
-        fill: #0180c7; }
-      .login__modal__block__zalo .st3 {
-        fill: none;
-        stroke: #0180c7;
-        stroke-width: 2;
-        stroke-miterlimit: 10; }
-      .login__modal__block__email {
-        opacity: 0.3; }
-      .login__modal__block__google .st0 {
-        fill: #4285F4; }
-      .login__modal__block__google .st1 {
-        fill: #34A853; }
-      .login__modal__block__google .st2 {
-        fill: #FBBC04; }
-      .login__modal__block__google .st3 {
-        fill: #EA4335; }
-    .login__modal__footer {
-      width: 100%;
-      float: left;
-      margin: 10px 0 120px 0;
-      line-height: 1.5;
-      font-family: "Roboto", sans-serif;
-      font-size: 14px;
-      color: #0000008a; }
+      @media (max-width: 599px) {
+        .login__modal__block__google, .login__modal__block__email, .login__modal__block__zalo, .login__modal__block__facebook {
+          padding: 15px 15px 13px 15px !important; } }
+      .login__modal__block__google:hover, .login__modal__block__email:hover, .login__modal__block__zalo:hover, .login__modal__block__facebook:hover {
+        background: #fff !important;
+        border: 1px #1976d2 solid !important;
+        transition: 0.2s all; }
+    .login__modal__block__zalo .st0 {
+      fill: #fdfefe; }
+    .login__modal__block__zalo .st1 {
+      fill: #0180c7; }
+    .login__modal__block__zalo .st2 {
+      fill: #0180c7; }
+    .login__modal__block__zalo .st3 {
+      fill: none;
+      stroke: #0180c7;
+      stroke-width: 2;
+      stroke-miterlimit: 10; }
+    .login__modal__block__email {
+      opacity: 0.3; }
+    .login__modal__block__google .st0 {
+      fill: #4285F4; }
+    .login__modal__block__google .st1 {
+      fill: #34A853; }
+    .login__modal__block__google .st2 {
+      fill: #FBBC04; }
+    .login__modal__block__google .st3 {
+      fill: #EA4335; }
 
 .pagination {
   width: 100%; }
@@ -3694,6 +3430,66 @@ BREAKPOINTS
       line-height: 1.5;
       margin-bottom: -1px;
       float: left; }
+
+.partner {
+  width: 100%;
+  float: left;
+  padding: 0 30px 0 30px;
+  margin: 0 0 50px 0;
+  /***
+    Breakpoint Up
+   */ }
+  @media (max-width: 959px) {
+    .partner {
+      padding: 0 20px 0 20px; } }
+  .partner .slick-slide {
+    margin: 0 5px !important;
+    height: 100px !important;
+    min-width: 150px; }
+  .partner .slick-slider {
+    height: 100px;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; }
+  .partner__heading {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #444;
+    margin: 10px 0 20px 0; }
+  .partner__item {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    color: #444;
+    border-radius: 4px;
+    outline: none;
+    opacity: 0.8;
+    height: 100px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #e0e0e0;
+    cursor: pointer; }
+  .partner__prev__arrow, .partner__next__arrow {
+    background: rgba(221, 221, 235, 0.664);
+    width: 30px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 300;
+    cursor: pointer;
+    border-radius: 50%; }
+    .partner__prev__arrow svg, .partner__next__arrow svg {
+      width: 30px;
+      height: 80px;
+      margin: 10px 0;
+      fill: #fff; }
+  .partner__next__arrow {
+    right: 0;
+    left: unset; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
