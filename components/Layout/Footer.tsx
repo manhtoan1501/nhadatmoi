@@ -18,7 +18,7 @@ const FooterPage: FunctionComponent<IFooterProps> = (props: IFooterProps) => {
               justify="center">
           <Grid item md={4} sm={12} className="footer_body__item border_bottom_mobile">
             <div className="footer_body__item_title">
-              CÔNG TY CỔ PHẦN BẤT ĐỘNG SẢN MỚI
+              CÔNG TY CỔ PHẦN NỘI THẤT DODO
             </div>
             <div className="footer_body__item_description">
               <div className="footer_body__item_description_icon">
@@ -41,7 +41,7 @@ const FooterPage: FunctionComponent<IFooterProps> = (props: IFooterProps) => {
               <div className="footer_body__item_description_text">
                 <p className="footer_body__item_description_text_title">Điện thoại</p>
                 <p className="footer_body__item_description_text_content">
-                  0936.33.81.39
+                  0377 535 717
                 </p>
               </div>
             </div>
@@ -153,24 +153,6 @@ const FooterPage: FunctionComponent<IFooterProps> = (props: IFooterProps) => {
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={0} className="footer_bottom"
-              justify="center">
-          <Hidden smDown>
-            <Grid item xs={6} className="footer_bottom__left">
-              © 2020 - Bản quyền của công ty Cổ phần Nội Thất Đô Đô - noithatdodo.com
-            </Grid>
-            <Grid item xs={6} className="footer_bottom__right">
-              <a href="/">Phản hồi</a>
-              <a href="/">Điều khoản</a>
-              <a href="/">Chính sách bảo mật</a>
-            </Grid>
-          </Hidden>
-          <Hidden lgUp>
-            <Grid item xs={12} className="footer_bottom__center">
-              © 2019 - Bản quyền của công ty Cổ phần Bất Động Sản Mới
-            </Grid>
-          </Hidden>
         </Grid>
       </Grid>
   );

@@ -5,7 +5,7 @@ import nextCookie from "next-cookies";
 import Router from "next/router";
 // @ts-ignore
 import withGA from "next-ga";
-import {googleAnalyticsCode} from '../constants';
+import { googleAnalyticsCode } from '../constants';
 import ErrorPage from "next/error";
 import Validator from "../modules/validator";
 import ErrorMainPage from '../components/Layout/ErrorMainPage';
@@ -21,7 +21,7 @@ const adSellLeaseCategory = '/tin-rao.aspx';
 
 
 class MyApp extends App {
-  static async getInitialProps({Component, ctx, res}: any) {
+  static async getInitialProps({ Component, ctx, res }: any) {
     if (ctx.asPath) {
       let urlObject = Url.parse(ctx.asPath);
 
@@ -54,7 +54,7 @@ class MyApp extends App {
       if (queryString && (pathName === projectDetailPathname || pathName === newLandDetailPathname)) {
         let urlRedirect = '/';
         if (queryString.indexOf('project_id=') === -1) {
-          queryString = queryString.replace('.html','');
+          queryString = queryString.replace('.html', '');
           urlRedirect = projectDetailNew + queryString;
         }
 
@@ -67,7 +67,7 @@ class MyApp extends App {
         let urlRedirect = '/';
 
         if (queryString.indexOf('ad_sell_lease_id=') === -1) {
-          queryString = queryString.replace('.html','');
+          queryString = queryString.replace('.html', '');
           urlRedirect = adSellLeaseDetailNew + queryString;
         }
 
@@ -99,19 +99,19 @@ class MyApp extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
-    let {user} = nextCookie(ctx);
-    pageProps = Object.assign(pageProps,{user: user});
+    let { user } = nextCookie(ctx);
+    pageProps = Object.assign(pageProps, { user: user });
     return { pageProps }
   }
 
   render() {
-    const { Component, pageProps} = this.props;
+    const { Component, pageProps } = this.props;
     if (!Validator.isBlank(pageProps.statusCode) && pageProps.statusCode !== 200) {
-      return <ErrorMainPage statusCode={pageProps.statusCode}/>;
+      return <ErrorMainPage statusCode={pageProps.statusCode} />;
     }
     return (
       <>
-        <Component {...pageProps}/>
+        <Component {...pageProps} />
       </>
     )
   }

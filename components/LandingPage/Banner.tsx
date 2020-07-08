@@ -7,7 +7,7 @@ const Banner = () =>{
         <div className={"wraper-banner"}>
             <div className={"wraper-banner__content"}>
                 <p className={"wraper-banner__content__title"}>
-                    Sàn thương mại điện tử Bất động sản đầu tiên tại Việt Nam
+                    Nội thất Dodo sự lựa chọn tin cậy của bạn
                 </p>
 
                 <p className={"wraper-banner__content__slogan"}>

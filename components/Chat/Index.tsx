@@ -53,7 +53,7 @@ import { jssPreset } from '@material-ui/core/styles';
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 
 function BootstrapTooltip(props: TooltipProps) {
-  const classes = useStylesBootstrap()
+  const classes = useStyles()
   return <Tooltip arrow classes={classes} {...props} />;
 };
 

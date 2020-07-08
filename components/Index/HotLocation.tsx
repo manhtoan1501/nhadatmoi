@@ -1,9 +1,9 @@
-import React, {FunctionComponent} from "react";
+import React, { FunctionComponent } from "react";
 
 import NavigateNext from '@material-ui/icons/NavigateNext';
 import NavigateBefore from '@material-ui/icons/NavigateBefore';
 
-interface HotLocationProps {};
+interface HotLocationProps { };
 interface LocationProps {
   image: string;
   title: string;
@@ -25,7 +25,7 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
       <div
         className={'hot-locations__next__arrow'}
         onClick={props.onClick}>
-        <NavigateNext/>
+        <NavigateNext />
       </div>
     );
   };
@@ -34,7 +34,7 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
       <div
         className={'hot-locations__prev__arrow'}
         onClick={props.onClick}>
-        <NavigateBefore/>
+        <NavigateBefore />
       </div>
     );
   };
@@ -45,8 +45,8 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
     speed: 500,
     slidesToScroll: 3,
     initialSlide: 0,
-    nextArrow: <NextArrow  className="" onClick={[]}/>,
-    prevArrow: <PrevArrow className="" onClick={[]}/>,
+    nextArrow: <NextArrow className="" onClick={[]} />,
+    prevArrow: <PrevArrow className="" onClick={[]} />,
     variableWidth: true,
     responsive: [
       {
@@ -73,47 +73,22 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
   let dataLocation = [
     {
       title: "Hà Nội",
-      image: "https://static.nhadatmoi.net/default/location/ha-noi.jpg",
+      image: "https://inhome.vn/hm_content/uploads/tin-tuc/4/thiet-ke-noi-that-phong-khach-bang-go-hien-dai-dep/thiet-ke-noi-that-phong-khach-don-gian-ma-dep-4.jpg",
       path: "/nha-dat-ban/nha-dat-ban-tai-ha-noi"
     },
     {
       title: "Hồ Chí Minh",
-      image: "https://static.nhadatmoi.net/default/location/ho-chi-minh.jpg",
+      image: "https://noithatmanhhe.vn/media/17531/sang-trong-boi-phong-khach-noi-that-go-tu-nhien-noi-that-manh-he.jpg?width=700&height=422.4418604651163",
       path: "/nha-dat-ban/nha-dat-ban-tai-ho-chi-minh"
     },
     {
       title: "Đà Nẵng",
-      image: "https://static.nhadatmoi.net/default/location/da-nang.jpg",
+      image: "https://kientrucroman.com.vn/wp-content/uploads/phong-khach-bang-go-cao-cap-2.jpg",
       path: "/nha-dat-ban/nha-dat-ban-tai-da-nang"
     },
     {
-      title: "Khánh Hoà",
-      image: "https://static.nhadatmoi.net/default/location/khanh-hoa.jpg",
-      path: "/nha-dat-ban/nha-dat-ban-tai-khanh-hoa"
-    },
-    {
-      title: "Quảng Ninh",
-      image: "https://static.nhadatmoi.net/default/location/quang-ninh.jpg",
-      path: "/nha-dat-ban/nha-dat-ban-tai-quang-ninh"
-    },
-    {
-      title: "Hải Phòng",
-      image: "https://static.nhadatmoi.net/default/location/hai-phong.jpg",
-      path: "/nha-dat-ban/nha-dat-ban-tai-hai-phong"
-    },
-    {
-      title: "Thanh Hoá",
-      image: "https://static.nhadatmoi.net/default/location/thanh-hoa.jpg",
-      path: "/nha-dat-ban/nha-dat-ban-tai-thanh-hoa"
-    },
-    {
-      title: "Kiên Giang",
-      image: "https://static.nhadatmoi.net/default/location/kien-giang.jpg",
-      path: "/nha-dat-ban/nha-dat-ban-tai-kien-giang"
-    },
-    {
       title: "Lâm Đồng",
-      image: "https://static.nhadatmoi.net/default/location/lam-dong.jpg",
+      image: "https://nhabephoanggia.vn/contents/posts/2390.jpg",
       path: "/nha-dat-ban/nha-dat-ban-tai-lam-dong"
     }
   ];
@@ -125,15 +100,15 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
           dataLocation.map((imageObject: LocationProps, index) => {
             return (
               <div key={"location_" + String(index)}>
-              <Link href='/nha-dat-ban/[slug]' as={imageObject.path}><a>
-                <div className="hot-locations__item">
-                  <div className="hot-locations__item__title">{imageObject.title}</div>
-                  <div className="hot-locations__item__image">
-                    <div className="hot-locations__item__image__background"/>
-                    <img src={String(imageObject.image)} alt={"Tìm kiếm nhà Đất tại " + imageObject.title}/>
+                <Link href='/nha-dat-ban/[slug]' as={imageObject.path}><a>
+                  <div className="hot-locations__item">
+                    {/* <div className="hot-locations__item__title">{imageObject.title}</div> */}
+                    <div className="hot-locations__item__image">
+                      <div className="hot-locations__item__image__background" />
+                      <img src={String(imageObject.image)} alt={"Tìm kiếm nhà Đất tại " + imageObject.title} />
+                    </div>
                   </div>
-                </div>
-              </a></Link></div>
+                </a></Link></div>
             )
           })
         }

@@ -1,12 +1,12 @@
 .login {
-  width: 100%;
-  text-align: center;
-  background-image: url("https://static.nhadatmoi.net/default/login-background.svg");
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 100%;
-  position: relative;
-  padding: 0 20px;
+  // width: 100%;
+  // text-align: center;
+  // background-image: url("https://static.nhadatmoi.net/default/login-background.svg");
+  // background-repeat: no-repeat;
+  // background-position: bottom center;
+  // background-size: 100%;
+  // position: relative;
+  // padding: 0 20px;
   @include breakpoint(lgDown) {
     background-image: unset;
   }
@@ -32,8 +32,8 @@
     }
   }
   &__modal {
-    max-width: 350px;
-    margin: 0 auto;
+    // max-width: 350px;
+    // margin: 0 auto;
     &__title {
       float: left;
       margin: 70px 0 10px 0;
@@ -124,13 +124,13 @@
       }
     }
     &__footer {
-      width: 100%;
-      float: left;
-      margin: 10px 0 120px 0;
-      line-height: 1.5;
-      font-family: $fontFamily;
-      font-size: 14px;
-      color: #0000008a;
+      // width: 100%;
+      // float: left;
+      // margin: 10px 0 120px 0;
+      // line-height: 1.5;
+      // font-family: $fontFamily;
+      // font-size: 14px;
+      // color: #0000008a;
     }
   }
 }

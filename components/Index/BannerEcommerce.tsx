@@ -41,7 +41,7 @@ const BannerEcommerce: FunctionComponent<BannerEcommerceProps> = (props: BannerE
         <div className="banner_ecommerce__body">
           <div className="banner_ecommerce__body__left">
             <div className="banner_ecommerce__body__left__title">
-              Sàn Thương Mại Điện Tử Bất Động Sản đầu tiên tại Việt Nam
+              Nội thất Dodo sự lựa chọn tin cậy của bạn
             </div>
             <div className="banner_ecommerce__body__left__description">
               Công nghệ dẫn đầu - Bắc cầu mua bán

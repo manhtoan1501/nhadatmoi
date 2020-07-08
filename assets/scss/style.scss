@@ -9,7 +9,6 @@
 @import "./components/Layout/layout";
 
 //Import Index
-@import "./components/Index/search_homepage";
 @import "./components/Index/title_block";
 @import "./components/Index/banner_ecommerce";
 @import "./components/Index/hot_location";
@@ -66,3 +65,9 @@
 
 //Compare Page
 @import "./components/Compare/compare_main";
+// Partner
+@import "./components/Search/partner.scss"
+// 
+// OwlCarousel
+// @import "./components/OwlCarousel/styles.scss";
+// @import "./components/OwlCarousel/styles.css.map";
