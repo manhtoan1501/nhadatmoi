@@ -199,7 +199,7 @@ const KeywordSlide = (props) => {
 
   return (
     <div className="partner" style={{ height: 200 }} >
-      <Typography variant='h5' style={{ textAlign: 'center', fonrtWeight: 500 }} color='primary'>
+      <Typography style={{ fontSize: 20, padding: 10, fontWeight: 700, color: '#1976d2' }}>
         Khách hàng - đối tác
       </Typography>
       <Slider {...settings}>

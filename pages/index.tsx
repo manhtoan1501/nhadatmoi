@@ -26,7 +26,6 @@ import Partner from "../components/Home/Partner";
 import PopoverFilter from "../components/Popover/Index";
 import ListMenu from '../components/Home/ListMenu';
 import GamepadIcon from '@material-ui/icons/Gamepad';
-import Header_ from '../components/Home/Header';
 import Product from '../components/Home/Products';
 //Import SCSS
 import "../assets/scss/style.scss";
@@ -199,7 +198,6 @@ const IndexPage = (props) => {
       canonical={mainURL}
       path={''}
     >
-      <Header_ />
       <Grid container spacing={0} justify='center'>
         <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
         <Grid item xs={2} style={{ textAlign: 'center' }}>
@@ -212,7 +210,7 @@ const IndexPage = (props) => {
             <What />
           </div>
           <ButtonViews />
-          <Product />
+          {/* <Product /> */}
         </Grid>
         <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
       </Grid>

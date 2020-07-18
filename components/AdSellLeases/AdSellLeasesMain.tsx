@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect} from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import PageDetailInfo from "../PageDetail/PageDetailInfo";
 import TitleBlock from "../PageDetail/TitleBlock";
 import ContactBlock from "../PageDetail/ContactBlock";
@@ -9,10 +9,10 @@ import ProjectPrice from "./ProjectPrice";
 import RelatedAdSellLeases from './RelatedAdSellLeases';
 import SameTypeASL from "./SameTypeASL";
 import SameUserASL from './SameUserASL';
-import {AdSellLeaseItem} from '../../interfaces/adSellLeaseItem';
-import {adSellLeaseType, localStorageViewed} from '../../constants';
+import { AdSellLeaseItem } from '../../interfaces/adSellLeaseItem';
+import { adSellLeaseType, localStorageViewed } from '../../constants';
 import ViewedASLList from "../../components/AdSellLeases/ViewedASLList";
-import SuggestASL from  '../../components/AdSellLeases/SuggestASL';
+import SuggestASL from '../../components/AdSellLeases/SuggestASL';
 import YoutubeBlock from '../PageDetail/YoutubeBlock';
 
 // Material - UI
@@ -87,32 +87,32 @@ const AdSellLeasesMain: FunctionComponent<ProjectMainProps> = (props: ProjectMai
             image={props.image}
             type={'ad_sell_lease'}
           />
-          <ProjectPrice price={priceValue}/>
-          <PageDetailInfo dataObject={props.dataObject} type={'ad_sell_lease'}/>
+          <ProjectPrice price={priceValue} />
+          <PageDetailInfo dataObject={props.dataObject} type={'ad_sell_lease'} />
           {
             props.dataObject && props.dataObject.video &&
-            <YoutubeBlock videoLink={props.dataObject.video}/>
+            <YoutubeBlock videoLink={props.dataObject.video} />
           }
 
-          <AlbumImageBlock images={props.dataObject.image} imageType={props.imageType}/>
+          <AlbumImageBlock images={props.dataObject.image} imageType={props.imageType} />
           {
             props.dataObject.project && !Validator.isBlank(props.dataObject.project) &&
-            <BelongProject project={props.dataObject.project}/>
+            <BelongProject project={props.dataObject.project} />
           }
-          <CommentArea dataObject={props.dataObject} type={'ad_sell_lease'}/>
+          <CommentArea dataObject={props.dataObject} type={'ad_sell_lease'} />
           <ViewedASLList dataObject={props.dataObject} />
-          <RelatedAdSellLeases dataObject={props.dataObject} address={props.dataObject.address} type2Name={type2Name}/>
-          <SameUserASL dataObject={props.dataObject} type2Name={type2Name}/>
-          <SuggestASL dataObject={props.dataObject}/>
+          <RelatedAdSellLeases dataObject={props.dataObject} address={props.dataObject.address} type2Name={type2Name} />
+          <SameUserASL dataObject={props.dataObject} type2Name={type2Name} />
+          <SuggestASL dataObject={props.dataObject} />
           {
             props.dataObject && props.dataObject.type && props.dataObject.type.type2 &&
-            <SameTypeASL dataObject={props.dataObject} type2Name={type2Name}/>
+            <SameTypeASL dataObject={props.dataObject} type2Name={type2Name} />
           }
 
         </Grid>
         <Grid item className="project-detail__right">
           <div className="contact-area">
-            <ContactBlock dataObject={props.dataObject} type={'ad_sell_lease'}/>
+            <ContactBlock dataObject={props.dataObject} type={'ad_sell_lease'} />
           </div>
         </Grid>
       </Grid>

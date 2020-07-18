@@ -6,7 +6,7 @@ import NavigateBefore from '@material-ui/icons/NavigateBefore';
 import Link from 'next/link';
 import { keys } from "@material-ui/core/styles/createBreakpoints";
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 }));
 
@@ -118,7 +118,7 @@ const KeywordSlide = (props) => {
 
   return (
     <div className="keyword-search">
-      <h3 className="keyword-search__heading">Từ khóa tìm kiếm HOT</h3>
+      <Typography style={{ fontSize: 20, padding: 10, fontWeight: 700, color: '#1976d2' }}>Từ khóa tìm kiếm HOT</Typography>
       <Slider {...settings}>
         {
           dataSearch.map((searchObject, index) => {
