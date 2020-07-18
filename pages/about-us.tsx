@@ -1,6 +1,6 @@
 import React from "react";
 
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import Layout from '../components/Layout/Layout';
 
 import Banner from "../components/LandingPage/Banner";
@@ -9,7 +9,7 @@ import Mission from "../components/LandingPage/Mission";
 import Strengths from "../components/LandingPage/Strengths";
 import AboutUs from "../components/LandingPage/AboutUs";
 import "../assets/scss/style.scss";
-import {mainURL} from "../constants";
+import { mainURL } from "../constants";
 
 interface LandingPageProps {
 
@@ -23,14 +23,14 @@ const LandingPage: NextPage<LandingPageProps> = (prop: LandingPageProps) => {
       title={pageTitle}
       description={pageDescription}
       {...prop}
-      canonical={ canonicalTagUrl }
+      canonical={canonicalTagUrl}
       path={''}
     >
-      <Banner/>
-      <Cards/>
-      <Mission/>
-      <Strengths/>
-      <AboutUs/>
+      <Banner />
+      <Cards />
+      <Mission />
+      <Strengths />
+      <AboutUs />
     </Layout>
   );
 };

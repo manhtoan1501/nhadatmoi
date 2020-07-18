@@ -81,12 +81,7 @@ const LayoutPage: FunctionComponent<LayoutPageProps> = (props: LayoutPageProps) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaObject }} >
         </script>
       </Head>
-      {/* <Header
-        {...props}
-        statusModal={(typeof props.statusModal !== "undefined") ? props.statusModal : statusModal}
-        updateModal={updateModal}
-        dataCompare={dataCompareLocal}
-      /> */}
+      <Header />
       {props.children}
       <Footer />
     </div>

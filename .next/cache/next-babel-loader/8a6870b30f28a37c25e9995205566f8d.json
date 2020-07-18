@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\n\nvar CompareMainPage = function CompareMainPage(props) {\n  return __jsx(React.Fragment, null);\n};\n\nexport default CompareMainPage;","map":null,"metadata":{},"sourceType":"module"}

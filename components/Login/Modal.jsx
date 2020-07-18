@@ -17,6 +17,7 @@ import TextField from '@material-ui/core/TextField';
 import { googleLogin } from "../../constants";
 import { facebookLogin } from "../../constants";
 import { zaloLogin } from "../../constants";
+import ImageLogin from '../../public/Image/login.png';
 
 const useStyles = makeStyles(theme => ({
   longIn: {
@@ -49,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     float: 'left',
-    margin: '70px 0 10px 0',
+    margin: '70px 0 8px 0',
     // font-family: $fontFamily;
     fontSize: '30px',
     fontWeight: 900,
@@ -67,15 +68,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     textAlign: 'center',
   },
-  footer: {
-    width: '100%',
-    float: 'left',
-    margin: '10px 0 120px 0',
-    lineHeight: 1.5,
-    // font-family: $fontFamily,
-    fontSize: '14px',
-    color: '#0000008a',
-  }
 }));
 
 
@@ -146,14 +138,15 @@ const LoginModal = () => {
             indicatorColor="primary"
             textColor="primary"
             variant="standard"
+            centered
             value={valueTab}
           >
             {tabs.map((tab) => <Tab key={tab.value} label={tab.label} value={tab.value} />)}
           </Tabs>
-          <CardContent>
+          <>
             {valueTab === 1 && renderLogin()}
             {valueTab === 2 && renderCreateAccount()}
-          </CardContent>
+          </>
         </Paper>
       </div>
     );
@@ -161,46 +154,63 @@ const LoginModal = () => {
 
   const renderLogin = () => {
     return (
-      <div className="login__modal__block">
-        {renderGoogle()}
-        {renderZalo()}
-        {renderFace()}
+      <div className="login__modal__block" style={{ padding: '10px 40px' }}>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Email / SĐT" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Mật khẩu" variant="outlined" />
+        </div>
+        <div style={{ height: 30, padding: '8px 0', float: 'left', width: 300 }}>
+          <Typography style={{ color: '#1976d2', cursor: 'default' }} >Quên mật khẩu?</Typography>
+        </div>
+        <div style={{ float: 'right' }}>
+          <Button variant='contained' style={{ color: '#1976d2' }}>Đăng nhập</Button>
+        </div>
+        <div style={{ padding: '60px 0' }}>
+          {renderGoogle()}
+          {renderZalo()}
+          {renderFace()}
+        </div>
       </div>
     );
   }
 
+
+
   const renderCreateAccount = () => {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="Họ tên" variant="outlined" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="SĐT" variant="outlined" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="Mã xác thực" variant="outlined" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="Email" variant="outlined" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="Mật khẩu" variant="outlined" />
-        </Grid>
-        <Grid item xs={6}>
-          <TextField id="outlined-basic" size="small" label="Giới tính" variant="outlined" />
-        </Grid>
-      </Grid>
+      <div className="login__modal__block" style={{ padding: '10px 40px' }}>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Họ tên" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="SĐT" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Email" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Mã xác thực" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Mật khẩu" variant="outlined" />
+        </div>
+        <div style={{ padding: '8px 0' }}>
+          <TextField fullWidth size="small" label="Giới tính" variant="outlined" />
+        </div>
+        <Button variant='contained' style={{ float: 'right', color: '#1976d2' }}>Tạo tài khoản</Button>
+      </div>
     );
   }
 
   return (
     <React.Fragment>
-      <Button
+      <Typography
         color='inherit'
-        style={{ color: 'white', fontWeight: 500, padding: '0 20px', float: 'right' }}
+        style={{ color: 'white', fontWeight: 500, padding: '0 20px', float: 'right', cursor: 'default' }}
         onClick={() => setOpen(true)}>Đăng nhập
-      </Button>
+      </Typography>
       <Dialog
         fullWidth
         open={open}
@@ -216,28 +226,33 @@ const LoginModal = () => {
           </div>
           <div className={classes.modal}>
             <Grid container spacing={0}>
-              <Grid item xs={4}>
-                <div className={classes.title}>
-                  Đăng nhập Nội thất Dodo
-                </div>
-                <div className={classes.description}>
-                  Khi Đăng nhập bạn có thể đăng tin, theo dõi, bình luận và đánh giá các tin rao và rất nhiều tính năng hữu ích.
-                </div>
-                <div className={classes.footer}>
-                  {/* Khi ấn vào nút Đăng nhập bạn cần đồng ý các Điều khoản và Quy định của Nội thất Dodo. */}
-                </div>
-              </Grid>
+              {valueTab === 1 &&
+                <Grid item xs={4} style={{ borderRight: '4px solid #e0e0e0', height: 600 }}>
+                  <div className={classes.title}> Đăng nhập </div>
+                  <div className={classes.description}>
+                    Đăng nhập để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích, nhận nhiều ưu đãi hấp dẫn.
+                    </div>
+                  <img src={ImageLogin} style={{ height: 350, width: '100%' }} />
+                </Grid>
+              }
+              {valueTab === 2 &&
+                <Grid item xs={4} style={{ borderRight: '4px solid #e0e0e0', height: 600 }}>
+                  <div className={classes.title}> Tạo tài khoản </div>
+                  <div className={classes.description}>
+                    Tạo tài khoản để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích, nhận nhiều ưu đãi hấp dẫn
+                    </div>
+                  <img src={ImageLogin} style={{ height: 350, width: '100%' }} />
+                </Grid>
+              }
               <Grid item xs={8}>
-                <Typography style={{ padding: '8px 0 0 0', color: '#1976d2' }}>Nội thất Dodo</Typography>
-                <CardContent>
-                  {renderTabs()}
-                </CardContent>
+                <Typography style={{ padding: '8px 0 0 0', color: '#1976d2', fontSize: 20, fontWeight: 500 }}>Nội thất Dodo</Typography>
+                {renderTabs()}
               </Grid>
             </Grid>
           </div>
         </div>
-      </Dialog>
-    </React.Fragment>
+      </Dialog >
+    </React.Fragment >
   );
 };
 export default LoginModal;

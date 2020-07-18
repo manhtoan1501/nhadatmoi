@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { default } from './Page';","map":{"version":3,"sources":["C:/Users/manh nhan/Desktop/Nhadatmoi/components/Page/index.tsx"],"names":["default"],"mappings":"AAAA,SAASA,OAAT,QAAwB,QAAxB","sourcesContent":["export { default } from './Page';\n"]},"metadata":{},"sourceType":"module"}
