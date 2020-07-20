@@ -209,7 +209,7 @@ const IndexPage = (props) => {
             <What />
           </div>
           <ButtonViews />
-          {/* <Product /> */}
+          <Product />
         </Grid>
         <Grid item xs={1}></Grid>
       </Grid>
