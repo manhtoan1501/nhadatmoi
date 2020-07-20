@@ -21,7 +21,6 @@ import fetch from 'isomorphic-unfetch';
 import What from '../components/Home/What';
 import ButtonViews from '../components/Home/ButtonViews';
 import NewHot from '../components/Home/NewHot';
-import ListProduct from '../components/Home/ListProduct';
 import Partner from "../components/Home/Partner";
 import PopoverFilter from "../components/Popover/Index";
 import ListMenu from '../components/Home/ListMenu';
@@ -199,7 +198,7 @@ const IndexPage = (props) => {
       path={''}
     >
       <Grid container spacing={0} justify='center'>
-        <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
+        <Grid item xs={1}></Grid>
         <Grid item xs={2} style={{ textAlign: 'center' }}>
           <ListMenu />
           <NewHot />
@@ -212,7 +211,7 @@ const IndexPage = (props) => {
           <ButtonViews />
           {/* <Product /> */}
         </Grid>
-        <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
+        <Grid item xs={1}></Grid>
       </Grid>
 
       <div className="body_container">
@@ -227,7 +226,6 @@ const IndexPage = (props) => {
       </div>
       <Partner />
       <SearchKeyword />
-      <ListProduct />
       {renderIcon()}
     </Layout>
   )
