@@ -115,6 +115,6 @@ const HotLocation: FunctionComponent<HotLocationProps> = (props: HotLocationProp
       </Slider>
     </div>
   );
-};
+}
 
 export default HotLocation;
