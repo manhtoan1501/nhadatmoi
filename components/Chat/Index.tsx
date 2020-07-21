@@ -1,18 +1,18 @@
 import React from 'react';
 import Popper, { PopperPlacementType } from '@material-ui/core/Popper';
 import { ThemeProvider } from '@material-ui/core/styles';
-import { Element , animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Element, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import _ from 'lodash';
-import { 
-  Grid, 
-  InputBase, 
+import {
+  Grid,
+  InputBase,
   Fade,
-  Typography, 
-  Paper, 
+  Typography,
+  Paper,
   CardHeader,
-  Avatar, 
-  Divider, 
-  Input, 
+  Avatar,
+  Divider,
+  Input,
   IconButton,
   Hidden,
 } from '@material-ui/core';
@@ -22,29 +22,29 @@ import TagFacesIcon from '@material-ui/icons/TagFaces';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
-import { 
-  dataEmoji, 
-  giphyDefault, 
+import {
+  dataEmoji,
+  giphyDefault,
   useStyles,
-  themeTextFieldAdmin, 
-  themeTextFieldUser, 
+  themeTextFieldAdmin,
+  themeTextFieldUser,
   StyledBadge,
   themeInput,
   themeInputBase,
-  useStylesBootstrap, 
+  useStylesBootstrap,
 } from "./constant";
 import { create } from 'jss';
 import rtl from 'jss-rtl';
-import axios, {Method} from "axios";
-import {apiBaseURL} from "../../constants";
+import axios, { Method } from "axios";
+import { apiBaseURL } from "../../constants";
 import "cross-fetch/polyfill";
 import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip';
 import ApolloClient from "apollo-boost";
-import {apolloClient} from "../../utils";
+import { apolloClient } from "../../utils";
 import { CREATE_MESSAGE } from "../../graphql/chat/mutation";
 import { GET_LIST_MESSAGE, GET_MESSAGE_BY_ID } from "../../graphql/chat/queries";
 const client = axios.create({ baseURL: apiBaseURL, timeout: 30000 });
-import {FunctionComponent} from "react";
+import { FunctionComponent } from "react";
 import moment from "moment";
 import 'moment/locale/es';
 moment.locale('vi');
@@ -82,7 +82,7 @@ interface Chat {
     text: string
     attachment: {
       type: string
-      payload:{
+      payload: {
         url: string
       }
     }
@@ -119,7 +119,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
   const [openEmojiGiphy, setOpenEmojiGiphy] = React.useState<boolean>(false);
   const [valueSearchGiphy, setValueSearchGiphy] = React.useState("");
   const [avatarImage, setAvatarImage] = React.useState("https://image.crisp.chat/avatar/operator/da8d4459-5ea3-4119-bca1-9170f49ee69c/240/?1585999578742&quot");
-  let   [valueInput, setValueInput] = React.useState("");
+  let [valueInput, setValueInput] = React.useState("");
   const [viewEmoji, setViewEmoji] = React.useState(false);
   const [reload, setReload] = React.useState(true);
   const [checkLogin, setCheckLogin] = React.useState<boolean>(true);
@@ -144,7 +144,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     }
   };
 
-  const sendMessageChat = async (value: string, url: string)=> { 
+  const sendMessageChat = async (value: string, url: string) => {
     chat.push({
       id: chatId,
       send_user_id: props.userLogin,
@@ -164,22 +164,24 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
 
     setChat(chat)
 
-    apolloClient.mutate({mutation: CREATE_MESSAGE, variables: {
-      "input": {
-        "target": userId,
-        "message": {
-          "text": `${value}`,
-          "attachment": {
-            "type": "",
-            "payload": {
-              "url" : `${url}`
+    apolloClient.mutate({
+      mutation: CREATE_MESSAGE, variables: {
+        "input": {
+          "target": userId,
+          "message": {
+            "text": `${value}`,
+            "attachment": {
+              "type": "",
+              "payload": {
+                "url": `${url}`
+              }
             }
           }
         }
       }
-    }})
-      .then((response: any) => {
     })
+      .then((response: any) => {
+      })
     setReload(!reload)
     setValueInput("")
     setScrollTo()
@@ -188,82 +190,83 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
   const renderHeader = () => {
     return (
       <div >
-          <CardHeader
-            className={classes.header} 
-            avatar={
-              <StyledBadge
-                overlap="circle"
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                variant="standard"
-              >
-                <Avatar src={avatarImage} className={classes.sizeAvatarSmall} alt="nhadatmoi.net" />
-              </StyledBadge>
-            }
-            title={name}
-            subheader={ 
-              <Typography variant="caption" align="center" className={classes.timeWork}>
-                Hoạt động: {moment(Number(last_activity)).format('DD/MM/YYYY')}
-              </Typography>
-            }
-            action={
-              <IconButton color='inherit' aria-label="settings" onClick={() => onCloseChat()} >
-                <CloseIcon/>
-              </IconButton>
-            }
-          />
+        <CardHeader
+          className={classes.header}
+          avatar={
+            <StyledBadge
+              overlap="circle"
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              variant="standard"
+            >
+              <Avatar src={avatarImage} className={classes.sizeAvatarSmall} alt="nhadatmoi.net" />
+            </StyledBadge>
+          }
+          title={name}
+          subheader={
+            <Typography variant="caption" align="center" className={classes.timeWork}>
+              Hoạt động: {moment(Number(last_activity)).format('DD/MM/YYYY')}
+            </Typography>
+          }
+          action={
+            <IconButton color='inherit' aria-label="settings" onClick={() => onCloseChat()} >
+              <CloseIcon />
+            </IconButton>
+          }
+        />
       </div>
     )
   };
 
-  const searchGiphy = async (event: any)=>  { 
+  const searchGiphy = async (event: any) => {
     setValueSearchGiphy(event.target.value)
     let url = `https://api.giphy.com/v1/gifs/search?api_key=UgTMyvovmg74m8fPN6qYiB623nwS1IPc&q=${event.target.value}&limit=20&offset=0&rating=G&lang=vi`
-    .then(function (response) {
-      setGiphyData(response.data.data)
-    })
+      .then(function (response) {
+        setGiphyData(response.data.data)
+      })
   };
 
   let dataSearch: any = [];
-  if(Array.isArray(giphyData)){
+  if (Array.isArray(giphyData)) {
     giphyData.map((item: any, index: number) => {
-      dataSearch.push({ 
+      dataSearch.push({
         image: {
           url: item.images.fixed_width.url,
           height: item.images.fixed_width.height,
           width: item.images.fixed_width.width,
-        }})
+        }
+      })
     })
   };
-  
+
   // Gửi ảnh emoji giphy 
   const setItemGiphy = (index: number, name: string) => {
     setOpenEmojiGiphy(!openEmojiGiphy)
-    if(name == "giphyDefault") {
+    if (name == "giphyDefault") {
       sendMessageChat("", giphyDefault[index].image.url)
-    } else if ( name == "dataSearch") {
+    } else if (name == "dataSearch") {
       sendMessageChat("", dataSearch[index].image.url)
     }
   };
 
   const onClickEmoji = (index: number) => {
-    valueInput = valueInput +  dataEmoji[index].native
+    valueInput = valueInput + dataEmoji[index].native
     setValueInput(valueInput)
   };
 
   const renderEmoji = () => {
-    return ( 
+    return (
       <div className={classes.overflowHeightEmoji}>
         {dataEmoji.map((item: any, index: number) => {
           return (
-            <div 
-              onClick={() => onClickEmoji(index)} 
-              key={index} 
+            <div
+              onClick={() => onClickEmoji(index)}
+              key={index}
               className={classes.itemEmoji}
             >{item.native}</div>
           )
         })}
       </div>
-    )  
+    )
   };
 
   const renderGiphy = () => {
@@ -280,30 +283,31 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
           </ThemeProvider>
         </div>
         <div className={classes.viewSizeGiphy}>
-          {valueSearchGiphy 
+          {valueSearchGiphy
             ? dataSearch.map((item: any, index: number) => {
-                return (
-                  <div className={classes.itemGiphy} >
-                    <img 
-                      className={classes.imgListGiphy} 
-                      alt="giphy" 
-                      src={item.image.url} 
-                      onClick={() => setItemGiphy(index, "dataSearch")} 
-                    />
-                  </div>
-                )
-              })
+              return (
+                <div className={classes.itemGiphy} >
+                  <img
+                    className={classes.imgListGiphy}
+                    alt="giphy"
+                    src={item.image.url}
+                    onClick={() => setItemGiphy(index, "dataSearch")}
+                  />
+                </div>
+              )
+            })
             : giphyDefault.map((item: any, index: number) => { // view giphy default
-                return (
-                  <div className={classes.itemGiphy} >
-                    <img 
-                      className={classes.imgListGiphy} 
-                      alt="giphy" 
-                      src={item.image.url} 
-                      onClick={() => setItemGiphy(index, "giphyDefault")} 
-                    />
-                  </div>
-              )})
+              return (
+                <div className={classes.itemGiphy} >
+                  <img
+                    className={classes.imgListGiphy}
+                    alt="giphy"
+                    src={item.image.url}
+                    onClick={() => setItemGiphy(index, "giphyDefault")}
+                  />
+                </div>
+              )
+            })
           }
         </div>
       </div>
@@ -314,63 +318,65 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     return (
       <div className={classes.emojiGiphy}>
         <div className={classes.marinButtonEmojiGiphy}>
-          <button 
-            className={classes.buttonEmojiGiphy} 
-            onClick={() => setViewEmoji(true)} 
+          <button
+            className={classes.buttonEmojiGiphy}
+            onClick={() => setViewEmoji(true)}
             style={{ backgroundColor: !viewEmoji ? "#aaa" : "" }}
-            
+
           > Biểu tượng</button>
-          <button 
-            className={classes.buttonEmojiGiphy} 
-            onClick={() => setViewEmoji(false)} 
+          <button
+            className={classes.buttonEmojiGiphy}
+            onClick={() => setViewEmoji(false)}
             style={{ backgroundColor: viewEmoji ? "#aaa" : "" }}
           > Ảnh động</button>
         </div>
-        { viewEmoji ? renderEmoji() : renderGiphy()  }
+        {viewEmoji ? renderEmoji() : renderGiphy()}
       </div>
     )
   };
 
   const getConversations = async () => {
-    let response = await apolloClient.query({ query: GET_LIST_MESSAGE, variables: {
+    let response = await apolloClient.query({
+      query: GET_LIST_MESSAGE, variables: {
         "page": 1,
         "limit": 5
-      }})
+      }
+    })
       .then((response: any) => {
         let conversations = _.get(response, "data.conversations", {})
-        if(conversations){
+        if (conversations) {
           setConversations(conversations)
         }
-    })
+      })
   };
 
   React.useEffect(() => {
     checkUserLogin()
     getConversations()
   }, []);
-  
+
   const renderImage = (send_at: string, url: string, role: string) => {
     return (
       <div className={role === 'take' ? classes.viewContentImageTake : classes.viewContentImageSend}>
-        <BootstrapTooltip  title={moment(Number(send_at)).fromNow()} placement="top"> 
+        <BootstrapTooltip title={moment(Number(send_at)).fromNow()} placement="top">
           <img src={url} className={classes.imgGiphy} alt="giphy" />
         </BootstrapTooltip>
       </div>
     )
   };
-  
+
   const renderTextField = (send_at: string, text: string, role: string) => {
     return (
       <BootstrapTooltip title={moment(Number(send_at)).fromNow()} placement="top">
-        <div className={ role == "take" ? classes.viewTextTake : classes.viewTextSend } >
+        <div className={role == "take" ? classes.viewTextTake : classes.viewTextSend} >
           {text.trim()}
         </div>
       </BootstrapTooltip >
-    ) 
+    )
   };
 
-  const renderText = (send_at: string, text: string, role: string ) => {
-    if(role === 'take') {
+  const renderText = (send_at: string, text: string, role: string) => {
+    if (role === 'take') {
       return renderTextField(send_at, text, role);
     }
     return (
@@ -383,7 +389,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
   const renderConversation = () => {
     let created_at = _.get(conversation, "created_at", "");
     return (
-      <div className={ openEmojiGiphy ? classes.openEG : classes.overflowHeightEG } style={{ height: openEmojiGiphy ?  "230px" : "430px" }}  id={'ContainerElementID'} >
+      <div className={openEmojiGiphy ? classes.openEG : classes.overflowHeightEG} style={{ height: openEmojiGiphy ? "230px" : "430px" }} id={'ContainerElementID'} >
         <Element name="myScrollToElement" id={"test_ndm"}>
           <Typography align="center" className={classes.textSizeNewDate}> {moment(Number(created_at)).format('LLL')} </Typography>
           <Divider />
@@ -391,7 +397,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
             let checkNewDate = false
             let oldDate = count > 0 ? moment(Number(chat[count - 1].send_at)).format('YYYY-MM-DD') : ''
             let newDate = moment(Number(chat[count].send_at)).format('YYYY-MM-DD')
-            if(count > 0 && (oldDate !== newDate)) {
+            if (count > 0 && (oldDate !== newDate)) {
               checkNewDate = true
             }
             let url = _.get(element, "message.attachment.payload.url", "")
@@ -401,28 +407,28 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
             let setViewAvatar = send_user_id == props.userLogin ? true : false
             return (
               <div key={count} style={{ display: "block" }}>
-                { checkNewDate && <Typography align="center" className={classes.textSizeNewDate}>
+                {checkNewDate && <Typography align="center" className={classes.textSizeNewDate}>
                   {moment(Number(send_at)).format("LLL")} <Divider /></Typography>}
-                { send_user_id !== props.userLogin
+                {send_user_id !== props.userLogin
                   ? <ThemeProvider theme={themeTextFieldAdmin}>
-                      <div className={classes.viewAvatarChatContent}>
-                        { setViewAvatar && <Avatar className={classes.avatarAdminText} alt="nhadatmoi.net" src={avatarImage} /> }
-                      </div>
-                      <div className={classes.textFieldChatContent}>
-                        { url ? renderImage(send_at, url, "take") : renderText(send_at, text, "take") }
-                      </div>
-                    </ThemeProvider>
+                    <div className={classes.viewAvatarChatContent}>
+                      {setViewAvatar && <Avatar className={classes.avatarAdminText} alt="nhadatmoi.net" src={avatarImage} />}
+                    </div>
+                    <div className={classes.textFieldChatContent}>
+                      {url ? renderImage(send_at, url, "take") : renderText(send_at, text, "take")}
+                    </div>
+                  </ThemeProvider>
                   : <ThemeProvider theme={themeTextFieldUser}>
-                      { url ? renderImage(send_at, url, "send") : renderText(send_at, text, "send") }
-                    </ThemeProvider>
+                    {url ? renderImage(send_at, url, "send") : renderText(send_at, text, "send")}
+                  </ThemeProvider>
                 }
-                <div className={classes.clearFloat}/>
+                <div className={classes.clearFloat} />
               </div>
             )
           })
-          : "" }
+            : ""}
           <div>
-            {!internet && <p className={classes.errInternet}><u>Không thể gửi tin nhắn này. Kiểm tra kết nối internet và thử lại</u></p> }
+            {!internet && <p className={classes.errInternet}><u>Không thể gửi tin nhắn này. Kiểm tra kết nối internet và thử lại</u></p>}
           </div>
           <div> {texting && <p className={classes.texting}>Đang nhập ...</p>}</div>
         </Element>
@@ -435,15 +441,15 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     setViewEmoji(true);
   };
 
-  const apiBaseURL = "https://graph.nhadatmoi.net";
+  const apiBaseURL = "https://google.com";
   const apiUpload = `${apiBaseURL}/private_upload_image_app`;
   const api = (method: Method, url: string, data?: any) => client
     .request({
-      data: JSON.stringify(data), 
-      headers: { 
+      data: JSON.stringify(data),
+      headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-      }, 
+      },
       method,
       url,
       withCredentials: true,
@@ -454,22 +460,22 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     let file = files.target.files[0]
     reader.readAsDataURL(file)
     reader.onload = () => {
-      api("POST", `${apiUpload}`, { 
-        base64_image: reader.result, 
+      api("POST", `${apiUpload}`, {
+        base64_image: reader.result,
         fileName: (new Date()).getTime() + "" + file.name,
         typeUpload: "ad_sell_lease",
       })
-      .then(function (res) {
-        sendMessageChat("", res.location)
-      })
-      .catch(function (err) {
-        alert('HTTP Error: ' + err.message);
-      });
+        .then(function (res) {
+          sendMessageChat("", res.location)
+        })
+        .catch(function (err) {
+          alert('HTTP Error: ' + err.message);
+        });
     };
   };
 
   const setOnKeyDown = (event: any) => {
-    if(event.keyCode == 13){
+    if (event.keyCode == 13) {
       sendMessageChat(valueInput, "");
       setValueInput("");
       setScrollTo();
@@ -480,7 +486,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     let heightChatDiv = 0;
     let elm = document.getElementById("test_ndm");
     if (elm) {
-      heightChatDiv =  elm.offsetHeight;
+      heightChatDiv = elm.offsetHeight;
     }
     scroller.scrollTo('myScrollToElement', {
       duration: 500,
@@ -490,7 +496,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
       offset: heightChatDiv,
     });
   }
-  
+
   const setChangeInput = (value: any) => {
     setValueInput(value);
   };
@@ -499,12 +505,12 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     return (
       <Paper component="form" className={classes.inputBase}>
         <ThemeProvider theme={themeInput}>
-          <Input 
+          <Input
             fullWidth
             disabled={!internet}
             className={classes.inputText}
             margin="dense"
-            id="outlined-basic" 
+            id="outlined-basic"
             autoFocus={true}
             value={valueInput}
             multiline={true}
@@ -513,24 +519,24 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
             placeholder="Nhập tin nhắn ..."
             autoComplete="false"
           />
-          { openEmojiGiphy 
-            ? <BootstrapTooltip  title="Chèn biểu tượng" placement="top"> 
-                <ExpandMoreIcon className={classes.sizeIcon} onClick={onClickOpenEmojiGiphy} color="primary" />
-              </BootstrapTooltip > 
-            : <BootstrapTooltip  title="Chèn biểu tượng" placement="top"> 
-                <TagFacesIcon className={classes.sizeIcon} onClick={onClickOpenEmojiGiphy} color="primary" />
-              </BootstrapTooltip >
+          {openEmojiGiphy
+            ? <BootstrapTooltip title="Chèn biểu tượng" placement="top">
+              <ExpandMoreIcon className={classes.sizeIcon} onClick={onClickOpenEmojiGiphy} color="primary" />
+            </BootstrapTooltip >
+            : <BootstrapTooltip title="Chèn biểu tượng" placement="top">
+              <TagFacesIcon className={classes.sizeIcon} onClick={onClickOpenEmojiGiphy} color="primary" />
+            </BootstrapTooltip >
           }
-          { valueInput
-            ? <BootstrapTooltip  title="Gửi tin nhắn" placement="top">
-                <SendIcon onClick={() => sendMessageChat(valueInput, "")} className={classes.sizeIcon} color="primary" />
-              </BootstrapTooltip >
-            : <BootstrapTooltip  title="Thêm tập tin" placement="top">
-                <div className={classes.inputWrapper}> 
-                  <AddCircleOutlineIcon className={classes.sizeIcon} color="primary"/> 
-                  <input type="file" className={classes.fileInput}  onChange={upLoadImage} /> 
-                </div>
-              </BootstrapTooltip >
+          {valueInput
+            ? <BootstrapTooltip title="Gửi tin nhắn" placement="top">
+              <SendIcon onClick={() => sendMessageChat(valueInput, "")} className={classes.sizeIcon} color="primary" />
+            </BootstrapTooltip >
+            : <BootstrapTooltip title="Thêm tập tin" placement="top">
+              <div className={classes.inputWrapper}>
+                <AddCircleOutlineIcon className={classes.sizeIcon} color="primary" />
+                <input type="file" className={classes.fileInput} onChange={upLoadImage} />
+              </div>
+            </BootstrapTooltip >
           }
         </ThemeProvider>
       </Paper>
@@ -544,7 +550,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
         {({ TransitionProps }) => (
           <Fade {...TransitionProps} timeout={300}>
             <Paper>
-              <div className={classes.viewChat}> 
+              <div className={classes.viewChat}>
                 {renderHeader()}
                 {renderConversation()}
                 {openEmojiGiphy && renderEmojiGiphy()}
@@ -563,18 +569,20 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
   };
 
   const getConversation = async (conversationId: string) => {
-    let conversation = await apolloClient.query({ query: GET_MESSAGE_BY_ID, variables: {
-      "id": conversationId
-    }})
-    .then((response: any) => {
-      let conversation = _.get(response, "data.conversation", {});
-      return conversation;
-    });
+    let conversation = await apolloClient.query({
+      query: GET_MESSAGE_BY_ID, variables: {
+        "id": conversationId
+      }
+    })
+      .then((response: any) => {
+        let conversation = _.get(response, "data.conversation", {});
+        return conversation;
+      });
 
     let chat = _.get(conversation, "chat", []);
     let avatar = _.get(conversation, "target.avatar", "");
     let userId = _.get(conversation, "target.id", "");
-    let name = _.get(conversation, "target.first_name", "") +  _.get(conversation, "target.last_name", "");
+    let name = _.get(conversation, "target.first_name", "") + _.get(conversation, "target.last_name", "");
     let last_activity = _.get(conversation, "target.last_activity", "");
     setChat(chat)
     setAvatarImage(avatar);
@@ -586,16 +594,16 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
   };
 
   const renderListAvatar = (item: any, index: number, numberView: number) => {
-    let avatar  = _.get(item, "node.target.avatar", "");
-    let name    = _.get(item, "node.target.first_name", "") + _.get(item, "node.target.last_name", "");
-    let id      = _.get(item, "node.target.id", "");
-    let status  = _.get(item, "node.target.status", "");
-    let conversationId =_.get(item, "node.id", "");
-    if(index < numberView){
+    let avatar = _.get(item, "node.target.avatar", "");
+    let name = _.get(item, "node.target.first_name", "") + _.get(item, "node.target.last_name", "");
+    let id = _.get(item, "node.target.id", "");
+    let status = _.get(item, "node.target.status", "");
+    let conversationId = _.get(item, "node.id", "");
+    if (index < numberView) {
       return (
-        <div key={index} style={{ bottom: `${index*65 + 80}px` }}
+        <div key={index} style={{ bottom: `${index * 65 + 80}px` }}
           className={id === userId ? classes.renderAvatarBorderRadius : classes.renderAvatar}
-          onClick={() => getConversation(conversationId) }
+          onClick={() => getConversation(conversationId)}
         >
           <BootstrapTooltip title={name} placement="left">
             <StyledBadge
@@ -603,9 +611,9 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               variant={status == "offline" ? "standard" : "dot"}
             >
-              <Avatar 
-                src={avatar} 
-                onClick={() => handleClick("top-start")} 
+              <Avatar
+                src={avatar}
+                onClick={() => handleClick("top-start")}
                 className={classes.large}
                 alt="name"
               />
@@ -616,7 +624,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
     }
   };
 
-  
+
 
   const listAvatar = _.get(conversations, 'edges', []) || [];
   return (
@@ -631,7 +639,7 @@ const Chat: FunctionComponent<ChatProps> = (props: ChatProps) => {
               })}
             </>
           </Hidden>
-          <Hidden smUp> 
+          <Hidden smUp>
             <>
               {Array.isArray(listAvatar) && listAvatar.map((item: any, index: number) => {
                 return renderListAvatar(item, index, 1)

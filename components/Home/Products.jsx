@@ -52,7 +52,7 @@ const Actions = (props) => {
             <Grid container spacing={0}>
                 {products.map((item, index) => {
                     return (
-                        <Grid itrem xs={3} style={{ padding: 10 }} key={index}>
+                        <Grid item xs={3} style={{ padding: 10 }} key={index}>
                             <div className={classes.product}>
                                 <img src={item.image} style={{ height: 200, width: '100%' }} />
                                 <div style={{ padding: '4px 8px' }}>

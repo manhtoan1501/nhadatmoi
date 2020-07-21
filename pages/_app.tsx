@@ -106,9 +106,9 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    if (!Validator.isBlank(pageProps.statusCode) && pageProps.statusCode !== 200) {
-      return <ErrorMainPage statusCode={pageProps.statusCode} />;
-    }
+    // if (!Validator.isBlank(pageProps.statusCode) && pageProps.statusCode !== 200) {
+    //   return <ErrorMainPage statusCode={pageProps.statusCode} />;
+    // }
     return (
       <>
         <Component {...pageProps} />

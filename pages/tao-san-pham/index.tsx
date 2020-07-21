@@ -72,35 +72,45 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
             <Grid container spacing={4}>
               <Grid item xs={6} style={{ padding: "40px 0" }}>
                 <form noValidate autoComplete="off">
-                  <Grid container spacing={4}>
+                  <Grid container spacing={2}>
                     <Grid item xs={6}>
-                      <TextField fullWidth label="Mã sản phẩm" variant="outlined" />
+                      <TextField fullWidth size="small" label="Mã sản phẩm" variant="outlined" />
                     </Grid>
                     <Grid item xs={6}>
-                      <TextField fullWidth label="Tên sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth label="Loại sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth label="Giá sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth label="Loai go" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth label="Giới thiệu" variant="outlined" />
+                      <TextField fullWidth size="small" label="Tên sản phẩm" variant="outlined" />
                     </Grid>
                     <Grid item xs={6}>
                       <Autocomplete
                         id="combo-box-demo"
-                        fullWidth
+                        fullWidth size="small"
                         options={top100Films}
                         getOptionLabel={(option) => option.title}
                         renderInput={(params) => (
-                          <TextField fullWidth {...params} label="Combo box" variant="outlined" />
+                          <TextField fullWidth size="small"  {...params} label="Loại sản phẩm" variant="outlined" />
                         )}
                       />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField fullWidth size="small" label="Giá sản phẩm" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField fullWidth size="small" label="Chất liệu" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField fullWidth size="small" label="Ảnh 1" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField fullWidth size="small" label="Ảnh 2" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField fullWidth size="small" label="Ảnh 3" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <TextField fullWidth size="small" label="Ảnh 4" variant="outlined" />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                      <TextField fullWidth size="small" multiline rows={5} rowsMax={10} label="Giới thiệu" variant="outlined" />
                     </Grid>
                   </Grid>
                 </form>
