@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../../components/Layout/Layout";
 import {
   Grid,
   Typography,
@@ -12,13 +12,13 @@ import {
   TextField,
 } from "@material-ui/core";
 
-import "../../assets/scss/style.scss";
+import "../../../assets/scss/style.scss";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import BannerSliderBlock from "../../components/PageDetail/BannerSliderBlock";
+import BannerSliderBlock from "../../../components/PageDetail/BannerSliderBlock";
 import { NextPage } from "next";
 import { makeStyles } from "@material-ui/core/styles";
-import StringProcess from "./../../modules/stringProcess";
-import { mainURL } from "../../constants";
+import StringProcess from "./../../../modules/stringProcess";
+import { mainURL } from "../../../constants";
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -55,7 +55,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
   const classes = useStyles();
   return (
     <Layout
-      title={"Tạo đơn hàng"}
+      title={"Tạo sản phẩm"}
       description={"metaDescription"}
       {...props}
       image={"imageAvatar"}
@@ -67,7 +67,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
         <Grid item xs={10}>
           <div style={{ padding: "40px 0" }}>
             <Typography color="primary" style={{ fontSize: 20, color: "#1976d2" }}>
-              Tạo sản phẩm
+              Thêm sản phẩm
             </Typography>
             <Grid container spacing={4}>
               <Grid item xs={6} style={{ padding: "40px 0" }}>
