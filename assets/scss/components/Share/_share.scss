@@ -1,7 +1,7 @@
 .share_block {
-  border-radius: 0!important;
+  border-radius: 0 !important;
   .MuiPaper-rounded {
-    border-radius: 0!important;
+    border-radius: 0 !important;
   }
   &__modal {
     width: 100%;
@@ -11,7 +11,7 @@
     background-size: 100%;
     position: relative;
     padding: 0 0;
-    border-radius: 0!important;
+    border-radius: 0 !important;
     &__header {
       width: 100%;
       float: left;
@@ -36,14 +36,13 @@
         right: 5px;
         text-align: right;
       }
-
     }
     &__content {
       width: 100%;
       float: left;
       &__input {
-        width: calc(100% - 40px)!important;
-        margin: 20px!important;
+        width: calc(100% - 40px) !important;
+        margin: 20px !important;
         float: left;
       }
     }
@@ -52,32 +51,32 @@
     }
     .MuiButtonBase-root {
       float: left;
-      margin: 0!important;
+      margin: 0 !important;
       .MuiListItemIcon-root {
         min-width: 30px;
-        display: unset!important;
-        flex-shrink: unset!important;
+        display: unset !important;
+        flex-shrink: unset !important;
         margin: 0 0 -7px 0;
         svg {
           width: 20px;
-          fill: #637381;
-          display: unset!important;
+          fill: #816563;
+          display: unset !important;
           .st0 {
             fill: rgba(0, 0, 0, 0);
           }
           .st1 {
-            fill: #0573ff
+            fill: #0573ff;
           }
 
           .st2 {
-            fill: #0573ff
+            fill: #0573ff;
           }
 
           .st3 {
             fill: none;
             stroke: #0180c7;
             stroke-width: 2;
-            stroke-miterlimit: 10
+            stroke-miterlimit: 10;
           }
         }
       }
@@ -91,7 +90,7 @@
         }
       }
       .MuiTouchRipple-root {
-        display: none!important;
+        display: none !important;
       }
     }
   }
