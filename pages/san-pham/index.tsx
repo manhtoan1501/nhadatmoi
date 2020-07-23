@@ -60,7 +60,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
             <Grid item xs={3} style={{ textAlign: "right" }}>
               <Link href="/san-pham/them-san-pham" as={"/san-pham/them-san-pham"}>
                 <a>
-                  <Button variant="contained">Thêm sản phẩm</Button>
+                  <Button variant="contained">Tạo mới</Button>
                 </a>
               </Link>
             </Grid>
