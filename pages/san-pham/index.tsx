@@ -20,6 +20,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import StringProcess from "./../../modules/stringProcess";
 import { mainURL } from "../../constants";
 import MaterialTable from "../../components/Table";
+import TestTime from './TestTime';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -33,7 +34,10 @@ const useStyles = makeStyles((theme) => ({
 
 const AdSellLeaseDetailPage: NextPage = (props) => {
   const [index, setIndex] = React.useState(0);
+  const [position, setPosition] = React.useState(false);
+  const myRef = React.useRef();
   const classes = useStyles();
+
   return (
     <Layout
       title={"Danh sách sản phẩm"}
@@ -46,6 +50,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
       <Grid container spacing={4} style={{ padding: "40px 0" }}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
+          <TestTime />
           <Typography style={{ fontSize: 25, fontWeight: 700, color: "#1976d2" }}>Danh sách sản phẩm</Typography>
           <Grid container spacing={2}>
             <Grid item xs={3}>
@@ -60,7 +65,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
             <Grid item xs={3} style={{ textAlign: "right" }}>
               <Link href="/san-pham/them-san-pham" as={"/san-pham/them-san-pham"}>
                 <a>
-                  <Button variant="contained">Tạo mới</Button>
+                  <Button style={{ position: 'sticky', top: 0 }} ref={myRef} variant="contained">Tạo mới</Button>
                 </a>
               </Link>
             </Grid>
@@ -69,6 +74,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
             <MaterialTable />
           </div>
         </Grid>
+        <Grid item xs={1}></Grid>
       </Grid>
     </Layout>
   );
