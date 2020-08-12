@@ -6,9 +6,8 @@ import Router from "next/router";
 // @ts-ignore
 import withGA from "next-ga";
 import { googleAnalyticsCode } from '../constants';
-import ErrorPage from "next/error";
-import Validator from "../modules/validator";
-import ErrorMainPage from '../components/Layout/ErrorMainPage';
+// import ErrorPage from "next/error";
+// import Validator from "../modules/validator";
 
 const projectDetailPathname = '/chi-tiet-du-an.aspx';
 const newLandDetailPathname = '/newland/project_detail.aspx';
@@ -106,9 +105,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    // if (!Validator.isBlank(pageProps.statusCode) && pageProps.statusCode !== 200) {
-    //   return <ErrorMainPage statusCode={pageProps.statusCode} />;
-    // }
     return (
       <>
         <Component {...pageProps} />

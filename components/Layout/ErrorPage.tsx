@@ -1,8 +1,8 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import Button from "@material-ui/core/Button";
-import {ListItem, ListItemIcon, ListItemText, Popover, Typography} from "@material-ui/core";
+import { ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@material-ui/core";
 import EcoIcon from "@material-ui/icons/Eco";
 import ViewList from "@material-ui/icons/ViewList";
 import InputBase from "@material-ui/core/InputBase";
@@ -13,8 +13,8 @@ interface ErrorPageProps {
 
 const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps) => {
   const dropdownSearch = [
-    {type: 'du-an-bat-dong-san', name: 'Dự án'},
-    {type: 'tim-tin-rao', name: 'Tin rao'},
+    { type: 'du-an-bat-dong-san', name: 'Dự án' },
+    { type: 'tim-tin-rao', name: 'Tin rao' },
   ];
 
   let searchHomeBodyTitle = 'Nội thất Dodo - Giao dịch kiểu mới';
@@ -23,7 +23,7 @@ const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps
   let placeholderSearch = 'Nhập thông tin tìm kiếm...';
 
   const [typeSearch, setType] = React.useState(dropdownSearch[0]);
-  const handleChangeType = (inputType: {type: string, name: string}) => {
+  const handleChangeType = (inputType: { type: string, name: string }) => {
     setType(inputType);
     handleCloseSearchType();
   };
@@ -71,16 +71,16 @@ const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps
         </div>
 
         <Grid container spacing={0} item xs={12} direction="row"
-              justify="center"
-              alignItems="center">
+          justify="center"
+          alignItems="center">
           <Grid item xs className="error_page__search">
             <div className="search_homepage__body__box">
               <Hidden xsDown>
                 <div className="search_homepage__body__box__select">
                   <Button onClick={handleClickSearchType} aria-describedby={id} >
                     {typeSearch.name}<svg viewBox="0 0 320 512">
-                    <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
-                  </svg>
+                      <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
                   </Button>
                   <Popover
                     id={id}
@@ -100,15 +100,15 @@ const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps
                     <Typography component={'span'}>
                       <ListItem button onClick={(event: React.MouseEvent<HTMLElement>) => handleChangeType(dropdownSearch[0])}>
                         <ListItemIcon>
-                          <EcoIcon/>
+                          <EcoIcon />
                         </ListItemIcon>
-                        <ListItemText primary={dropdownSearch[0].name}/>
+                        <ListItemText primary={dropdownSearch[0].name} />
                       </ListItem>
                       <ListItem button onClick={(event: React.MouseEvent<HTMLElement>) => handleChangeType(dropdownSearch[1])}>
                         <ListItemIcon>
-                          <ViewList/>
+                          <ViewList />
                         </ListItemIcon>
-                        <ListItemText primary={dropdownSearch[1].name}/>
+                        <ListItemText primary={dropdownSearch[1].name} />
                       </ListItem>
                     </Typography>
                   </Popover>
@@ -118,12 +118,12 @@ const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps
                 <InputBase
                   className="search_homepage__body_box_input_base"
                   placeholder={placeholderSearch}
-                  inputProps={{'aria-label': placeholderSearch}}
+                  inputProps={{ 'aria-label': placeholderSearch }}
                   onKeyUp={e => onChangeWards(e)}
                 />
               </div>
               <Button className="search_homepage__body_box_button" variant="outlined" onClick={onClickSearch}>
-                <SearchIcon/>
+                <SearchIcon />
               </Button>
             </div>
           </Grid>

@@ -8,28 +8,28 @@ import GridAdSellLeases from "../../components/GridList/GridAdSellLeases";
 import GridProject from "../../components/GridList/GridProject";
 import LayeredNavigation from "../../components/LayeredNavigation/LayeredNavigation";
 import TopLayered from "../../components/LayeredNavigation/TopLayered";
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import Grid from "@material-ui/core/Grid";
 import SearchKeyword from "../../components/Search/KeywordSlide";
-import PaginationPage from "../../components/Pagination/Pagination";
+// import PaginationPage from "../../components/Pagination/Pagination";
 import LoadingPage from "../../components/Display/LoadingPage";
 import StringProcess from "./../../modules/stringProcess";
 import Validator from "../../modules/validator";
 import CategoryContent from "../../components/Search/CategoryContent";
-import Router, {useRouter} from 'next/router';
+import Router, { useRouter } from 'next/router';
 //Import SCSS
 import "../../assets/scss/style.scss";
-import {apolloClient} from "../../utils";
-import {GET_AD_SELL_LEASES} from "../../graphql/ad_sell_leases/queries";
+import { apolloClient } from "../../utils";
+import { GET_AD_SELL_LEASES } from "../../graphql/ad_sell_leases/queries";
 import EmptyPage from "../../components/Display/EmptyPage";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
-import {useEffect} from "react";
-import {GET_PROJECT_LIST} from "../../graphql/project/queries";
-import {mainURL} from "../../constants";
+import { useEffect } from "react";
+import { GET_PROJECT_LIST } from "../../graphql/project/queries";
+import { mainURL } from "../../constants";
 import urlProcess from "../../modules/urlProcess";
-import {DataLayeredNavigationProps} from '../../interfaces/interface';
-import {adSellLeaseType, adSellLeaseCategory} from "../../constants";
+import { DataLayeredNavigationProps } from '../../interfaces/interface';
+import { adSellLeaseType, adSellLeaseCategory } from "../../constants";
 import Breadcrumbs from "./Breadcrumbs";
 
 interface BreadcrumbsItem {
@@ -70,13 +70,13 @@ interface AdSellLeasesListProps {
 }
 
 interface LocationItemProp {
-  id: string|null;
-  name: string|null;
-  title: string|null;
-  slug: string|null;
-  seo_title: string|null;
-  seo_description: string|null;
-  image: string|null;
+  id: string | null;
+  name: string | null;
+  title: string | null;
+  slug: string | null;
+  seo_title: string | null;
+  seo_description: string | null;
+  image: string | null;
 }
 
 interface SearchPageProp {
@@ -157,7 +157,7 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
     }
 
     if (queryString) {
-      slugAs = slugAs +  '?' + queryString;
+      slugAs = slugAs + '?' + queryString;
     }
     Router.push(urlProcess, slugAs, { shallow: false });
   };
@@ -176,19 +176,21 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
   }, []);
 
   //Process Render Page
-  const processRenderPage = (page: number|null, limit: number|null, filter: string|null) => {
+  const processRenderPage = (page: number | null, limit: number | null, filter: string | null) => {
     setStatusLoading(true);
-    let queryFilterPrepare = filter?filter:queryFilter;
+    let queryFilterPrepare = filter ? filter : queryFilter;
 
     let queryGraphQL = GET_AD_SELL_LEASES;
     if (props.typePage !== 'ad-sell-lease-location' && props.typePage !== 'ad-sell-lease-index') {
       queryGraphQL = GET_PROJECT_LIST;
     }
-    apolloClient.query({query: queryGraphQL, variables: {
+    apolloClient.query({
+      query: queryGraphQL, variables: {
         "page": dataLayeredNavigation.page,
         "limit": dataLayeredNavigation.limit,
         "filter": queryFilterPrepare
-    }}).then(response => {
+      }
+    }).then(response => {
       setStatusLoading(false);
       if (props.typePage !== 'ad-sell-lease-location' && props.typePage !== 'ad-sell-lease-index') {
         //Set Search Data
@@ -250,12 +252,12 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-    setState({...state, [side]: open});
+    setState({ ...state, [side]: open });
   };
 
   // @ts-ignore
   const handleOpenPopup = () => {
-    setState({...state, ["right"]: true});
+    setState({ ...state, ["right"]: true });
   };
 
   //Process Next Page, Previous Page
@@ -289,7 +291,7 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
     image: null
   };
   if (!Validator.isBlank(props.location.city) && !Validator.isBlank(props.location.city.id)) {
-    locationItem =  Object.assign(locationItem, props.location.city);
+    locationItem = Object.assign(locationItem, props.location.city);
   }
   if (!Validator.isBlank(props.location.district) && !Validator.isBlank(props.location.district.id)) {
     locationItem = Object.assign(locationItem, props.location.district);
@@ -484,7 +486,7 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
     return input;
   };
   const convertDescription = (input: string) => {
-    return input.replace(/&#(\d+);/g, function(match, dec) {
+    return input.replace(/&#(\d+);/g, function (match, dec) {
       return String.fromCharCode(dec);
     });
   };
@@ -508,72 +510,72 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
       description={descriptionPage}
       {...props}
       image={imageAvatar}
-      canonical={ canonicalTag }
+      canonical={canonicalTag}
       path={pathForLayout}
     >
       <div className="body_container">
         <Hidden smDown>
-          <LayeredNavigation className="search_layered" updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} typePage={props.typePage}/>
+          <LayeredNavigation className="search_layered" updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} typePage={props.typePage} />
         </Hidden>
         <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-          <LayeredNavigation className="search_layered" updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} typePage={props.typePage}/>
+          <LayeredNavigation className="search_layered" updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} typePage={props.typePage} />
         </Drawer>
         <Grid item className="search_body border">
-          <Breadcrumbs dataBreadcrumbs={dataBreadcrumbs}/>
+          <Breadcrumbs dataBreadcrumbs={dataBreadcrumbs} />
           <TitleBlock
             title={heading}
-            description={"Hiển thị " +  StringProcess.addCommas(Number(totalNumber).toString()) + " kết quả"}
+            description={"Hiển thị " + StringProcess.addCommas(Number(totalNumber).toString()) + " kết quả"}
             type={"h1"}
             path={""}
           />
-          <TopLayered className="top_layered" onOpen={() => handleOpenPopup()} updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation}/>
+          <TopLayered className="top_layered" onOpen={() => handleOpenPopup()} updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} />
 
           {statusLoading &&
-          <LoadingPage className="loading_page" grid={{xl: 3, lg: 4, md: 6, sm: 6, xs: 12}} numberLimit={12}/>
+            <LoadingPage className="loading_page" grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }} numberLimit={12} />
           }
 
           {!statusLoading && searchDataAdSellLease.length == 0 && (props.typePage === 'ad-sell-lease-location' || props.typePage === 'ad-sell-lease-index') &&
-          <EmptyPage title="Không tìm thấy kết quả nào" description="Vui lòng sử dụng từ khóa khác hoặc sử dụng bộ lọc nâng cao để tìm kiếm kết quả phù hợp"/>
+            <EmptyPage title="Không tìm thấy kết quả nào" description="Vui lòng sử dụng từ khóa khác hoặc sử dụng bộ lọc nâng cao để tìm kiếm kết quả phù hợp" />
           }
 
           {!statusLoading && searchDataProject.length == 0 && (props.typePage === 'project-index') &&
-          <EmptyPage title="Không tìm thấy kết quả nào" description="Vui lòng sử dụng từ khóa khác hoặc sử dụng bộ lọc nâng cao để tìm kiếm kết quả phù hợp"/>
+            <EmptyPage title="Không tìm thấy kết quả nào" description="Vui lòng sử dụng từ khóa khác hoặc sử dụng bộ lọc nâng cao để tìm kiếm kết quả phù hợp" />
           }
 
           {!statusLoading && searchDataAdSellLease.length > 0 && (props.typePage === 'ad-sell-lease-location' || props.typePage === 'ad-sell-lease-index') &&
-          <div>
-            <GridAdSellLeases
-              grid={{xl: 3, lg: 4, md: 6, sm: 6, xs: 12}}
-              gridData={searchDataAdSellLease}
-              className="grid__list"
-            />
-            <PaginationPage
-              isNextPage={isNextPage}
-              isPrevPage={isPrevPage}
-              currentPage={2}
-              onNextPage={onNextPage}
-              onPrevPage={onPrevPage}
-            />
-          </div>
+            <div>
+              <GridAdSellLeases
+                grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }}
+                gridData={searchDataAdSellLease}
+                className="grid__list"
+              />
+              <PaginationPage
+                isNextPage={isNextPage}
+                isPrevPage={isPrevPage}
+                currentPage={2}
+                onNextPage={onNextPage}
+                onPrevPage={onPrevPage}
+              />
+            </div>
           }
           {!statusLoading && searchDataProject.length > 0 && (props.typePage === 'project-index') &&
-          <div>
-            <GridProject
-              grid={{xl: 3, lg: 4, md: 6, sm: 6, xs: 12}}
-              gridData={searchDataProject}
-              className="grid__list"
-            />
-            <PaginationPage
+            <div>
+              <GridProject
+                grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }}
+                gridData={searchDataProject}
+                className="grid__list"
+              />
+              {/* <PaginationPage
               isNextPage={isNextPage}
               isPrevPage={isPrevPage}
               currentPage={2}
               onNextPage={onNextPage}
               onPrevPage={onPrevPage}
-            />
-          </div>
+            /> */}
+            </div>
           }
-          <CategoryContent description={contentText}/>
-          <SearchKeyword/>
+          <CategoryContent description={contentText} />
+          <SearchKeyword />
         </Grid>
       </div>
     </Layout>

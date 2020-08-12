@@ -1,10 +1,10 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import Grid from '@material-ui/core/Grid';
 import urlProcess from "../../modules/urlProcess";
 import StringProcess from "../../modules/stringProcess";
-import AslInfo from "../AdSellLeases/AslInfo";
+// import AslInfo from "../AdSellLeases/AslInfo";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import {AdSellLeaseItem} from "../../interfaces/adSellLeaseItem";
+import { AdSellLeaseItem } from "../../interfaces/adSellLeaseItem";
 import ContactBlock from "../PageDetail/ContactBlock";
 import AlbumImageBlock from "../PageDetail/AlbumImageBlock";
 
@@ -79,7 +79,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
               return (
                 <Grid item xs={numberRow} key={"compare_index__" + index}>
                   <div className={'compare_page__container__description'}>
-                    <AslInfo dataObject={compareItem}/>
+                    {/* <AslInfo dataObject={compareItem}/> */}
                   </div>
                 </Grid>
               );
@@ -93,7 +93,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
               let description = freshText(String(compareItem.description));
               return (
                 <Grid item xs={numberRow} key={"compare_index__" + index}>
-                  <div className={'compare_page__container__description'} dangerouslySetInnerHTML={{__html: description}} >
+                  <div className={'compare_page__container__description'} dangerouslySetInnerHTML={{ __html: description }} >
                   </div>
                 </Grid>
               );
@@ -120,7 +120,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
                 lngValue = '105.7531617';
               }
 
-              const MyMapComponent = withScriptjs(withGoogleMap((props: {isMarkerShown: any; googleMapURL: string}) =>
+              const MyMapComponent = withScriptjs(withGoogleMap((props: { isMarkerShown: any; googleMapURL: string }) =>
                 <GoogleMap
                   defaultZoom={13}
                   defaultCenter={{ lat: parseFloat(latValue), lng: parseFloat(lngValue) }}
@@ -136,7 +136,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
                       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDNrtz4-o2IbVO8s7qQKOxq49AiX-gCXCE"
                       loadingElement={<div style={{ height: `100%` }} />}
                       containerElement={<div style={{ height: `400px` }} />}
-                      mapElement={<div style={{ height: `100%` }} />}/>
+                      mapElement={<div style={{ height: `100%` }} />} />
                   </div>
                 </Grid>
               );
@@ -149,7 +149,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
               return (
                 <Grid item xs={numberRow} key={"compare_index__" + index}>
                   <div className="compare_page__container__description">
-                    <AlbumImageBlock images={compareItem.image} imageType={'ad_sell_lease'}/>
+                    <AlbumImageBlock images={compareItem.image} imageType={'ad_sell_lease'} />
                   </div>
                 </Grid>
               );
@@ -163,7 +163,7 @@ const CompareMainPage: FunctionComponent<CompareMainProps> = (props: CompareMain
               return (
                 <Grid item xs={numberRow} key={"compare_index__" + index}>
                   <div className="compare_page__container__description">
-                    <ContactBlock dataObject={compareItem} type={'ad_sell_lease'}/>
+                    <ContactBlock dataObject={compareItem} type={'ad_sell_lease'} />
                   </div>
                 </Grid>
               );

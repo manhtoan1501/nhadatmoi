@@ -11,8 +11,8 @@ const isBlank = (value: any) => {
 };
 
 const isEmpty = (obj: any) => {
-  for(let key in obj) {
-    if(obj.hasOwnProperty(key))
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key))
       return false;
   }
   return true;

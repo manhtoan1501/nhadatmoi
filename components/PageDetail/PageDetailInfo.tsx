@@ -1,10 +1,10 @@
-import React, {FunctionComponent, useEffect} from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import StringProcess from '../../modules/stringProcess';
 import LocationImage from '../../modules/locationImage';
 import UrlProcess from "../../modules/urlProcess";
-import AslInfo from "../AdSellLeases/AslInfo";
-import {AdSellLeaseItem} from '../../interfaces/adSellLeaseItem';
+// import AslInfo from "../AdSellLeases/AslInfo";
+import { AdSellLeaseItem } from '../../interfaces/adSellLeaseItem';
 import validator from "../../modules/validator";
 import Tracking from "../../modules/AdSellLease/Tracking";
 
@@ -43,11 +43,11 @@ const PageDetailInfo: FunctionComponent<ProjectMainProps> = (props: ProjectMainP
 
   //Count Ad Sell Lease
   useEffect(() => {
-    const toDataURL = (url:string, callback: any) => {
+    const toDataURL = (url: string, callback: any) => {
       let xhr = new XMLHttpRequest();
-      xhr.onload = function() {
+      xhr.onload = function () {
         let reader = new FileReader();
-        reader.onloadend = function() {
+        reader.onloadend = function () {
           callback(reader.result);
         };
         reader.readAsDataURL(xhr.response);
@@ -61,13 +61,13 @@ const PageDetailInfo: FunctionComponent<ProjectMainProps> = (props: ProjectMainP
     if (props.dataObject && props.dataObject.contact && props.dataObject.contact.image) {
       brokerAvatar = UrlProcess.processImageUrl(props.dataObject.contact.image, 'broker');
     }
-    toDataURL(brokerAvatar, function(dataUrl: string) {
+    toDataURL(brokerAvatar, function (dataUrl: string) {
       setIconMarker(LocationImage.locationImage(dataUrl));
     });
   }, []);
 
 
-  const MyMapComponent = withScriptjs(withGoogleMap((props: {isMarkerShown: any; googleMapURL: string}) =>
+  const MyMapComponent = withScriptjs(withGoogleMap((props: { isMarkerShown: any; googleMapURL: string }) =>
     <GoogleMap
       defaultZoom={13}
       defaultCenter={{ lat: parseFloat(latValue), lng: parseFloat(lngValue) }}
@@ -92,22 +92,22 @@ const PageDetailInfo: FunctionComponent<ProjectMainProps> = (props: ProjectMainP
       <div className="project-info">
         <h2 className="project-info-title text-active u-margin-bottom-small">Thông tin tổng quan</h2>
 
-        <AslInfo dataObject={props.dataObject}/>
+        {/* <AslInfo dataObject={props.dataObject}/> */}
         <h2 className="project-info-title text-active u-margin-bottom-small">Mô tả</h2>
-        <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{__html: description}} />
+        <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{ __html: description }} />
         {
           props.dataObject.position_content &&
-            <div>
-              <h3 className="project-info-title text-active u-margin-bottom-small">Vị trí</h3>
-              <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{__html: positionContent}} />
-            </div>
+          <div>
+            <h3 className="project-info-title text-active u-margin-bottom-small">Vị trí</h3>
+            <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{ __html: positionContent }} />
+          </div>
         }
 
         {
           props.dataObject.infrastructure_content &&
           <div>
             <h3 className="project-info-title text-active u-margin-bottom-small">Hạ tầng</h3>
-            <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{__html: infrastructureContent}} />
+            <div className="project-info__description u-margin-bottom-medium" dangerouslySetInnerHTML={{ __html: infrastructureContent }} />
           </div>
         }
 
@@ -119,7 +119,7 @@ const PageDetailInfo: FunctionComponent<ProjectMainProps> = (props: ProjectMainP
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDNrtz4-o2IbVO8s7qQKOxq49AiX-gCXCE"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
-            mapElement={<div style={{ height: `100%` }} />}/>
+            mapElement={<div style={{ height: `100%` }} />} />
         </div>
       </div>
     </div>
