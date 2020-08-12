@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, { FunctionComponent } from "react";
 import ReplyIcon from '@material-ui/icons/Reply';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
@@ -6,15 +6,15 @@ import ReportIcon from '@material-ui/icons/Report';
 import Moment from 'react-moment';
 import Button from "@material-ui/core/Button";
 import dynamic from "next/dynamic";
-import {AdSellLeaseItem} from '../../interfaces/adSellLeaseItem';
+import { AdSellLeaseItem } from '../../interfaces/adSellLeaseItem';
 import Validator from "../../modules/validator";
 import Tracking from "../../modules/AdSellLease/Tracking";
 import validator from "../../modules/validator";
-import {apolloClient} from "../../utils";
-import {ADD_AD_SELL_LEASE_WISH_LIST} from "../../graphql/ad_sell_leases/mutation";
-import {ADD_PROJECT_WISH_LIST} from "../../graphql/project/mutation";
+import { apolloClient } from "../../utils";
+import { ADD_AD_SELL_LEASE_WISH_LIST } from "../../graphql/ad_sell_leases/mutation";
+import { ADD_PROJECT_WISH_LIST } from "../../graphql/project/mutation";
 import Router from "next/router";
-import {adSellLeaseCategory, localStorageCompareKey, adSellLeaseType} from '../../constants';
+import { adSellLeaseCategory, localStorageCompareKey, adSellLeaseType } from '../../constants';
 import Breadcrumbs from '../LayeredNavigation/Breadcrumbs';
 const SharePopup = dynamic(() => import('../Share/Share'), {
   ssr: false
@@ -34,8 +34,7 @@ interface CompareDataProps {
   type: string
 }
 
-const TitleBlock: FunctionComponent<ProjectMainProps> = (props: ProjectMainProps) =>
-{
+const TitleBlock: FunctionComponent<ProjectMainProps> = (props: ProjectMainProps) => {
   const [likeStatus, setLikeStatus] = React.useState(props.dataObject.like_status);
 
   const handleTracking = (type: string) => {
@@ -138,28 +137,11 @@ const TitleBlock: FunctionComponent<ProjectMainProps> = (props: ProjectMainProps
     }
     handleTracking('like');
     alert("Đã thêm vào danh sách Yêu thích");
-    if (props.type === 'project') {
-      apolloClient.mutate({mutation: ADD_PROJECT_WISH_LIST, variables: {
-          "input": {
-            "project_id": props.dataObject.id,
-            "status": "like"
-          }
-        }}).then((response: any) => {
-      });
-    } else {
-      apolloClient.mutate({mutation: ADD_AD_SELL_LEASE_WISH_LIST, variables: {
-          "input" : {
-            "ad_sell_lease_id": props.dataObject.id,
-            "status": "like"
-          }
-        }}).then((response: any) => {
-      });
-    }
   };
 
   const handleReport = () => {
     handleTracking('report');
-    alert ("Đã báo cáo thành công!");
+    alert("Đã báo cáo thành công!");
   };
 
   const dataBreadcrumbs = [];
@@ -204,49 +186,49 @@ const TitleBlock: FunctionComponent<ProjectMainProps> = (props: ProjectMainProps
   }
   return (
     <div className="title-project">
-      <Breadcrumbs dataBreadcrumbs={dataBreadcrumbs}/>
+      <Breadcrumbs dataBreadcrumbs={dataBreadcrumbs} />
       <h1 className="title-project__title">{title}</h1>
       {
-        props.dataObject &&  props.dataObject.address && props.dataObject.address.text &&
+        props.dataObject && props.dataObject.address && props.dataObject.address.text &&
         <div className="title-project__address">
           Địa chỉ: {props.dataObject.address.text}</div>
       }
       <div className="title-project__bottom">
 
         <div className="title-project__bottom__share">
-          <div className={(likeStatus)?"title-project__bottom__share__item active":"title-project__bottom__share__item"}>
+          <div className={(likeStatus) ? "title-project__bottom__share__item active" : "title-project__bottom__share__item"}>
             <Button onClick={() => handleFavorite(true)}>
-              <FavoriteIcon/> Yêu thích
+              <FavoriteIcon /> Yêu thích
             </Button>
           </div>
           <div className="title-project__bottom__share__item">
             <Button onClick={() => handleShare(true)}>
-              <ReplyIcon/> Chia sẻ
+              <ReplyIcon /> Chia sẻ
             </Button>
           </div>
           <div className="title-project__bottom__share__item">
             <Button onClick={() => clickAddToCompare()}>
-              <PlaylistAddIcon/> So sánh
+              <PlaylistAddIcon /> So sánh
             </Button>
           </div>
           <div className="title-project__bottom__share__item">
             <Button onClick={() => handleReport()}>
-              <ReportIcon/> Báo cáo
+              <ReportIcon /> Báo cáo
             </Button>
           </div>
         </div>
 
-        <div className="title-project__bottom__publish">{(props.dataObject && props.dataObject.view_count)?props.dataObject.view_count + ' lượt xem - ':''}
+        <div className="title-project__bottom__publish">{(props.dataObject && props.dataObject.view_count) ? props.dataObject.view_count + ' lượt xem - ' : ''}
           {
             props.dataObject &&
             <>
               Ngày đăng <Moment unix format="DD/MM/YYYY">
-              {Number(props.dataObject.created_at)/1000}
-            </Moment>
+                {Number(props.dataObject.created_at) / 1000}
+              </Moment>
             </>
           }
         </div>
-      <SharePopup onClose={() => setStatusShare(false)} statusModal={statusShare} objectUrl={props.objectUrl}/>
+        <SharePopup onClose={() => setStatusShare(false)} statusModal={statusShare} objectUrl={props.objectUrl} />
       </div>
     </div>
   );

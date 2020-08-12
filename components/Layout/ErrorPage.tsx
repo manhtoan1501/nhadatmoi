@@ -129,7 +129,6 @@ const ErrorPageProps: FunctionComponent<ErrorPageProps> = (props: ErrorPageProps
           </Grid>
         </Grid>
       </div>
-
     </>
   );
 };

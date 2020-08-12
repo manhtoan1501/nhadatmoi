@@ -1,5 +1,5 @@
-import {apolloClient} from "../../utils";
-import {GET_LOCATION_FROM_SLUG} from "../../graphql/location/queries";
+import { apolloClient } from "../../utils";
+import { GET_LOCATION_FROM_SLUG } from "../../graphql/location/queries";
 import Validator from "../validator";
 
 const processDataFromQuery = async (query: any, typePage: string, type1ASL: string, type2ASL: string) => {
@@ -20,7 +20,7 @@ const processDataFromQuery = async (query: any, typePage: string, type1ASL: stri
       max: 0,
       min: 0
     },
-    bed_room_number:  {
+    bed_room_number: {
       max: 0,
       min: 0
     },
@@ -45,30 +45,6 @@ const processDataFromQuery = async (query: any, typePage: string, type1ASL: stri
     slug: query.location
   };
   delete query.slug;
-  if (typePage === 'ad-sell-lease-location') {
-    let locationSlug = query.location;
-    let locationObject = await apolloClient.query({query: GET_LOCATION_FROM_SLUG, variables: {
-        "slug": locationSlug
-      }}).then(response => {
-      return response;
-    });
-
-    if (!Validator.isBlank(locationObject.data.location) && !Validator.isBlank(locationObject.data.location.city)) {
-      propObject.location = locationObject.data.location;
-      if (!Validator.isBlank(locationObject.data.location.city.id)) {
-        dataQuery.city = locationObject.data.location.city.id;
-      }
-      if (!Validator.isBlank(locationObject.data.location.district) && !Validator.isBlank(locationObject.data.location.district.id)) {
-        dataQuery.district = locationObject.data.location.district.id;
-      }
-      if (!Validator.isBlank(locationObject.data.location.ward) && !Validator.isBlank(locationObject.data.location.ward.id)) {
-        dataQuery.ward = locationObject.data.location.ward.id;
-      }
-    } else {
-      propObject.statusCode = 404;
-      return propObject;
-    }
-  }
 
   try {
     if (!Validator.isBlank(query.bed_room_number)) {

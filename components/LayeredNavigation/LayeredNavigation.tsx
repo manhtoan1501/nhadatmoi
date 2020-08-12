@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect} from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 //Import Material Libs
 import Grid from "@material-ui/core/Grid";
 import List from '@material-ui/core/List';
@@ -18,14 +18,14 @@ const Slider = dynamic(() => import('@material-ui/core/Slider'), {
   ssr: false
 });
 //Import Apollo Client
-import {apolloClient} from "../../utils";
+import { apolloClient } from "../../utils";
 //Import Query GraphQL
-import {GET_CITY_LIST} from "../../graphql/city/queries"
-import {GET_DISTRICT_LIST} from "../../graphql/district/queries";
-import {GET_WARD_LIST} from "../../graphql/ward/queries";
-import {GET_DIRECTIONS} from "../../graphql/directions/queries";
-import {adSellLeaseType, adSellLeaseCategory} from "../../constants";
-import {DataLayeredNavigationProps} from '../../interfaces/interface';
+import { GET_CITY_LIST } from "../../graphql/city/queries"
+import { GET_DISTRICT_LIST } from "../../graphql/district/queries";
+import { GET_WARD_LIST } from "../../graphql/ward/queries";
+import { GET_DIRECTIONS } from "../../graphql/directions/queries";
+import { adSellLeaseType, adSellLeaseCategory } from "../../constants";
+import { DataLayeredNavigationProps } from '../../interfaces/interface';
 import Validator from "../../modules/validator";
 
 function valueText(value: number) {
@@ -33,9 +33,9 @@ function valueText(value: number) {
 }
 
 const bedRoomNumber = [
-  {node: {id: 1, value: {max: 2, min: 0}, name: '0 - 2 phòng'}},
-  {node: {id: 2, value: {max: 5, min: 3}, name: '3 - 5 phòng'}},
-  {node: {id: 3, value: {max: 100, min: 6}, name: 'trên 5 phòng'}}
+  { node: { id: 1, value: { max: 2, min: 0 }, name: '0 - 2 phòng' } },
+  { node: { id: 2, value: { max: 5, min: 3 }, name: '3 - 5 phòng' } },
+  { node: { id: 3, value: { max: 100, min: 6 }, name: 'trên 5 phòng' } }
 ];
 
 interface LayeredNavigationItem {
@@ -88,8 +88,8 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
   let priceRangeValue = [0, 50];
   //set Price
   if (!Validator.isBlank(props.dataLayeredNavigation.price_range.max) || !Validator.isBlank(props.dataLayeredNavigation.price_range.min)) {
-    let minValue = Number(props.dataLayeredNavigation.price_range.min/1000000000);
-    let maxValue = Number(props.dataLayeredNavigation.price_range.max/1000000000);
+    let minValue = Number(props.dataLayeredNavigation.price_range.min / 1000000000);
+    let maxValue = Number(props.dataLayeredNavigation.price_range.max / 1000000000);
     priceRangeValue = [minValue, maxValue];
   }
 
@@ -118,11 +118,11 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
   const [directionList, setDirectionList] = React.useState<LayeredNavigationItem[]>();
   const [activeBedRoom, setActiveBedRoom] = React.useState<number>(idBedRoomNumber);
   const [activeDirection, setActiveDirection] = React.useState<string>(String(props.dataLayeredNavigation.home_direction));
-  const [typeAdSellLeaseParent, setTypeAddSellLeaseParent] =  React.useState<TypeAdSellLeaseItem[]>();
+  const [typeAdSellLeaseParent, setTypeAddSellLeaseParent] = React.useState<TypeAdSellLeaseItem[]>();
   const [typeAdSellLeaseChild, setTypeAddSellLeaseChild] = React.useState<TypeAdSellLeaseItem[]>();
 
   const closeIcon = (
-    <svg viewBox='0 0 352 512'><path d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z'/></svg>
+    <svg viewBox='0 0 352 512'><path d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' /></svg>
   );
 
   let defaultTypeChild = null;
@@ -218,20 +218,6 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     if (parentUpdateASLSlug) {
       updateASLChildType(parentUpdateASLSlug);
     }
-    apolloClient.query({query: GET_CITY_LIST, variables: {
-      "page": 1,
-      "limit": 1000,
-      "filter": "'{}'"
-    }}).then(response => {
-      if (typeof response.data.citys.edges !== "undefined") {
-        setCitesList(response.data.citys.edges);
-        for (let index in response.data.citys.edges) {
-          if (response.data.citys.edges[index].node.id === props.dataLayeredNavigation.city) {
-            setDefaultCity(response.data.citys.edges[index]);
-          }
-        }
-      }
-    });
 
     if (!Validator.isBlank(props.dataLayeredNavigation.city)) {
       updateDistrictLayeredNavigation(props.dataLayeredNavigation.city);
@@ -239,16 +225,6 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     if (!Validator.isBlank(props.dataLayeredNavigation.district)) {
       updateWardLayeredNavigation(props.dataLayeredNavigation.district);
     }
-
-    apolloClient.query({query: GET_DIRECTIONS, variables: {
-        "page": 1,
-        "limit": 1000,
-        "filter": "'{}'"
-      }}).then(response => {
-      if (typeof response.data.directions.edges !== "undefined") {
-        setDirectionList(response.data.directions.edges);
-      }
-    });
 
     let typeParentASL = [];
 
@@ -310,7 +286,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
 
   const [dataLayeredNavigation, setDataLayeredNavigation] = React.useState<DataLayeredNavigationProps>(props.dataLayeredNavigation);
 
-  const onChangeCites = (value: LayeredNavigationItem|null) => {
+  const onChangeCites = (value: LayeredNavigationItem | null) => {
     if (value) {
       dataLayeredNavigation.city = value.node.id;
       dataLayeredNavigation.slug = value.node.default_slug;
@@ -347,8 +323,8 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
           maxValue = value;
         }
         let dataToFilter = {
-          min: minValue*1000000000,
-          max: maxValue*1000000000
+          min: minValue * 1000000000,
+          max: maxValue * 1000000000
         };
         dataLayeredNavigation.price_range = dataToFilter;
         setDataLayeredNavigation(dataLayeredNavigation);
@@ -380,7 +356,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     }
   };
 
-  let timerId = setTimeout(() => {}, 600);
+  let timerId = setTimeout(() => { }, 600);
   // @ts-ignore
   const delayUpdateLayeredNavigation = (dataLayeredNavigation: DataLayeredNavigationProps) => {
     clearTimeout(timerId);
@@ -389,7 +365,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     }, 600);
   };
 
-  const onChangeDistricts = (value: LayeredNavigationItem|null) => {
+  const onChangeDistricts = (value: LayeredNavigationItem | null) => {
     if (value) {
       dataLayeredNavigation.district = value.node.id;
       dataLayeredNavigation.slug = value.node.default_slug;
@@ -412,7 +388,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     props.updateLayeredNavigation(dataLayeredNavigation);
   };
 
-  const onChangeWards = (value: LayeredNavigationItem|null) => {
+  const onChangeWards = (value: LayeredNavigationItem | null) => {
     if (value) {
       dataLayeredNavigation.ward = value.node.id;
       dataLayeredNavigation.slug = value.node.default_slug;
@@ -433,7 +409,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     props.updateLayeredNavigation(dataLayeredNavigation);
   };
 
-  const onChangeType = (value: TypeAdSellLeaseItem|null, isChild: boolean, isType1: boolean) => {
+  const onChangeType = (value: TypeAdSellLeaseItem | null, isChild: boolean, isType1: boolean) => {
     dataLayeredNavigation.district = '';
     dataLayeredNavigation.ward = '';
     dataLayeredNavigation.city = '';
@@ -579,38 +555,12 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
     props.updateLayeredNavigation(dataLayeredNavigation);
   };
 
-  const updateDistrictLayeredNavigation = (cityId: string|null) => {
-    apolloClient.query({query: GET_DISTRICT_LIST, variables: {
-        "page": 1,
-        "limit": 100,
-        "filter": "{'city_id': '"+cityId+"'}"
-      }}).then(response => {
-      if (typeof response.data.districts.edges !== "undefined") {
-        setDistrictList(response.data.districts.edges);
-        for (let index in response.data.districts.edges) {
-          if (response.data.districts.edges[index].node.id === props.dataLayeredNavigation.district) {
-            setDefaultDistrict(response.data.districts.edges[index]);
-          }
-        }
-      }
-    });
+  const updateDistrictLayeredNavigation = (cityId: string | null) => {
+
   };
 
-  const updateWardLayeredNavigation = (districtId: string|null) => {
-    apolloClient.query({query: GET_WARD_LIST, variables: {
-        "page": 1,
-        "limit": 100,
-        "filter": "{'district_id': '"+districtId+"'}"
-      }}).then(response => {
-      if (typeof response.data.wards.edges !== "undefined") {
-        setWardList(response.data.wards.edges);
-        for (let index in response.data.wards.edges) {
-          if (response.data.wards.edges[index].node.id === props.dataLayeredNavigation.ward) {
-            setDefaultWard(response.data.wards.edges[index]);
-          }
-        }
-      }
-    });
+  const updateWardLayeredNavigation = (districtId: string | null) => {
+
   };
 
   const handleFieldChange = (event: any, title: string, value: string) => {
@@ -661,7 +611,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultAslType1Parent}
             onChange={(event: any, value: TypeAdSellLeaseItem | null) => onChangeType(value, false, true)}
-            renderInput={params => <TextField {...params} label="Hình thức" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Hình thức" fullWidth />}
           />
         </FormControl>
       }
@@ -673,7 +623,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultAslType2Parent}
             onChange={(event: any, value: TypeAdSellLeaseItem | null) => onChangeType(value, false, false)}
-            renderInput={params => <TextField {...params} label="Loại nhà đất" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Loại nhà đất" fullWidth />}
           />
         </FormControl>
       }
@@ -685,7 +635,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultAslType2Child}
             onChange={(event: any, value: TypeAdSellLeaseItem | null) => onChangeType(value, true, false)}
-            renderInput={params => <TextField {...params} label="Chi tiết Loại nhà đất" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Chi tiết Loại nhà đất" fullWidth />}
           />
         </FormControl>
       }
@@ -698,7 +648,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeCites(value)}
             clearOnEscape
             defaultValue={defaultCity}
-            renderInput={params => <TextField {...params} label="Tỉnh/Thành phố" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Tỉnh/Thành phố" fullWidth />}
           />
         }
         {
@@ -708,7 +658,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             {...cityDataSelect}
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeCites(value)}
             clearOnEscape
-            renderInput={params => <TextField {...params} label="Tỉnh/Thành phố" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Tỉnh/Thành phố" fullWidth />}
           />
         }
       </FormControl>
@@ -722,7 +672,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultDistrict}
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeDistricts(value)}
-            renderInput={params => <TextField {...params} label="Quận/Huyện" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Quận/Huyện" fullWidth />}
           />
         </FormControl>
       }
@@ -735,7 +685,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             {...districtDataSelect}
             clearOnEscape
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeDistricts(value)}
-            renderInput={params => <TextField {...params} label="Quận/Huyện" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Quận/Huyện" fullWidth />}
           />
         </FormControl>
       }
@@ -748,7 +698,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultWard}
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeWards(value)}
-            renderInput={params => <TextField {...params} label="Phường/Xã" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Phường/Xã" fullWidth />}
           />
         </FormControl>
       }
@@ -761,7 +711,7 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
             clearOnEscape
             defaultValue={defaultWard}
             onChange={(event: any, value: LayeredNavigationItem | null) => onChangeWards(value)}
-            renderInput={params => <TextField {...params} label="Phường/Xã" fullWidth/>}
+            renderInput={params => <TextField {...params} label="Phường/Xã" fullWidth />}
           />
         </FormControl>
       }
@@ -803,17 +753,17 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
           && directionList.length > 0 &&
           <div>
             <ListItem button onClick={handleClickDirection}>
-              <ListItemText primary="Hướng nhà" className="search_layered__expand"/>
-              {openDirection ? <ExpandLess/> : <ExpandMore/>}
+              <ListItemText primary="Hướng nhà" className="search_layered__expand" />
+              {openDirection ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={openDirection} timeout="auto" unmountOnExit className="search_layered__expand__list">
               {
-                directionList.map((direction: LayeredNavigationItem, index:number) => {
+                directionList.map((direction: LayeredNavigationItem, index: number) => {
                   return <ListItemText
                     key={"layered_second_" + index}
                     primary={"Hướng " + direction.node.name}
                     secondary={closeIcon}
-                    className={(activeDirection === direction.node.id)?'search_layered__expand__list__item active':'search_layered__expand__list__item'}
+                    className={(activeDirection === direction.node.id) ? 'search_layered__expand__list__item active' : 'search_layered__expand__list__item'}
                     onClick={(event: React.MouseEvent<HTMLElement>) => onClickDirection(direction.node.id)}
                   />
                 })
@@ -822,17 +772,17 @@ const LayeredNavigation: FunctionComponent<LayeredNavigationProps> = (props: Lay
           </div>
         }
         <ListItem button onClick={handleClickBedRoom}>
-          <ListItemText primary="Số phòng" className="search_layered__expand"/>
-          {openBedRoom ? <ExpandLess/> : <ExpandMore/>}
+          <ListItemText primary="Số phòng" className="search_layered__expand" />
+          {openBedRoom ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={openBedRoom} timeout="auto" unmountOnExit className="search_layered__expand__list">
           {
-            bedRoomNumber.map((bedRoom: LayeredNavigationBedRoom, index:number) => {
+            bedRoomNumber.map((bedRoom: LayeredNavigationBedRoom, index: number) => {
               return <ListItemText
                 key={"layered_navigation_" + index}
                 primary={bedRoom.node.name}
                 secondary={closeIcon}
-                className={(activeBedRoom === bedRoom.node.id)?'search_layered__expand__list__item active':'search_layered__expand__list__item'}
+                className={(activeBedRoom === bedRoom.node.id) ? 'search_layered__expand__list__item active' : 'search_layered__expand__list__item'}
                 onClick={(event: React.MouseEvent<HTMLElement>) => onClickBedRoom(bedRoom.node.value, bedRoom.node.id)}
               />
             })

@@ -5,12 +5,9 @@ import Layout from '../components/Layout/Layout';
 import SearchHomepage from "../components/Index/SearchHomepage";
 import ContentMenu from "../components/Home/ContenMenu";
 import TitleBlock from "../components/Index/TitleBlock";
-import GridAdSellLeases from "../components/GridList/GridAdSellLeases";
-import GridProject from "../components/GridList/GridProject";
 import { NextPage } from 'next';
 import SearchKeyword from "../components/Search/KeywordSlide";
 import HotLocation from "../components/Index/HotLocation";
-import LoadingPage from "../components/Display/LoadingPage";
 import NewsIndex from "../components/Index/NewsIndex";
 import { Button, Grid, Typography, Icon, IconButton } from '@material-ui/core';
 import AdSellLeaseIndex from '../components/Index/AdSellLeaseIndex';
@@ -82,38 +79,6 @@ const IndexPage = (props) => {
       }
     }
 
-    apolloClient.query({
-      query: GET_AD_SELL_LEASE_WISH_LIST, variables: {
-        "page": 1,
-        "limit": 12,
-        "filter": "'{}'"
-      }
-    }).then(response => {
-      setStatusLoadingAdSellLease(false);
-      if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeaseWishlists.edges)) {
-        let dataWishlistToAdd = [];
-        for (let wishlistIndex in response.data.adSellLeaseWishlists.edges) {
-          let dataToAdd = {
-            node: response.data.adSellLeaseWishlists.edges[wishlistIndex].node.ad_sell_lease
-          };
-          dataWishlistToAdd.push(dataToAdd);
-        }
-        setDataAdSellLeaseWishlist(dataWishlistToAdd);
-      }
-    });
-
-    apolloClient.query({
-      query: HOME_GET_PROJECT_LIST, variables: {
-        "page": 1,
-        "limit": 12,
-        "filter": "'{}'"
-      }
-    }).then(response => {
-      setStatusLoadingProject(false);
-      if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.projects.edges)) {
-        setDataProject(response.data.projects.edges);
-      }
-    });
     //Get Data News
     fetch(newsUrlApi)
       .then(r => r.json())
@@ -154,14 +119,6 @@ const IndexPage = (props) => {
         <HotLocation />
       </>
     )
-  }
-
-  const LoadingPage = () => {
-    if (statusLoadingNews) {
-      return (
-        <LoadingPage className="loading_page" grid={{ xl: 3, lg: 3, md: 4, sm: 6, xs: 12 }} numberLimit={8} />
-      )
-    }
   }
 
   const renderIcon = () => {
@@ -223,7 +180,6 @@ const IndexPage = (props) => {
         {/* {projectWahtched()} */}
         {transactionHot()}
         {/* Tin tức  tổng hợp */}
-        {/* {LoadingPage()} */}
       </div>
       <Partner />
       <SearchKeyword />

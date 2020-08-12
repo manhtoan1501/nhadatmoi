@@ -5,8 +5,6 @@ import { mainURL } from "../../constants";
 import Layout from "../../components/Layout/Layout";
 import ErrorPage from "../../components/Layout/ErrorPage";
 import TitleBlock from "../../components/Index/TitleBlock";
-import LoadingPage from "../../components/Display/LoadingPage";
-import GridAdSellLeases from "../../components/GridList/GridAdSellLeases";
 import Link from "next/link";
 import Button from "@material-ui/core/Button";
 import { apolloClient } from "../../utils";
@@ -24,20 +22,6 @@ const ErrorMainPage: NextPage<ErrorPageProps> = (props: ErrorPageProps) => {
   let pageDescription = 'Hiện đã xảy ra lỗi, vui lòng thử lại sau';
   const [dataAdSellLeases, setDataAdSellLease] = React.useState<AdSellLeasesListProps[]>([]);
   const [statusLoadingAdSellLease, setStatusLoadingAdSellLease] = React.useState<boolean>(true);
-  useEffect(() => {
-    apolloClient.query({
-      query: HOME_GET_AD_SELL_LEASES, variables: {
-        "page": 1,
-        "limit": 8,
-        "filter": "'{}'"
-      }
-    }).then(response => {
-      setStatusLoadingAdSellLease(false);
-      if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeases.edges)) {
-        setDataAdSellLease(response.data.adSellLeases.edges);
-      }
-    });
-  }, []);
   return (
     <Layout
       title={pageTitle}
@@ -48,18 +32,6 @@ const ErrorMainPage: NextPage<ErrorPageProps> = (props: ErrorPageProps) => {
     >
       {/* <ErrorPage/> */}
       <TitleBlock title="Tin rao phù hợp với bạn" description="Xem thêm một số tin rao phù hợp với bạn" path={"/tim-tin-rao"} type={"h2"} />
-      {
-        statusLoadingAdSellLease &&
-        <LoadingPage className="loading_page" grid={{ xl: 3, lg: 3, md: 4, sm: 6, xs: 12 }} numberLimit={8} />
-      }
-      {
-        !statusLoadingAdSellLease &&
-        <>
-          <GridAdSellLeases grid={{ xl: 3, lg: 3, md: 4, sm: 6, xs: 12 }} gridData={dataAdSellLeases} className="grid__list" />
-          <div className="content_index_button">
-            <Link href="/[slug]" as={'/tim-tin-rao'}><Button>Xem thêm</Button></Link></div>
-        </>
-      }
     </Layout>
   );
 };

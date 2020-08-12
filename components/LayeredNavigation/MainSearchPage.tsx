@@ -4,15 +4,12 @@ import Layout from '../../components/Layout/Layout';
 import processQueryUrl from "../../modules/LayeredNavigation/processQueryFromData";
 //Import Components
 import TitleBlock from "../../components/Index/TitleBlock";
-import GridAdSellLeases from "../../components/GridList/GridAdSellLeases";
-import GridProject from "../../components/GridList/GridProject";
 import LayeredNavigation from "../../components/LayeredNavigation/LayeredNavigation";
 import TopLayered from "../../components/LayeredNavigation/TopLayered";
 import { NextPage } from 'next';
 import Grid from "@material-ui/core/Grid";
 import SearchKeyword from "../../components/Search/KeywordSlide";
 // import PaginationPage from "../../components/Pagination/Pagination";
-import LoadingPage from "../../components/Display/LoadingPage";
 import StringProcess from "./../../modules/stringProcess";
 import Validator from "../../modules/validator";
 import CategoryContent from "../../components/Search/CategoryContent";
@@ -184,60 +181,6 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
     if (props.typePage !== 'ad-sell-lease-location' && props.typePage !== 'ad-sell-lease-index') {
       queryGraphQL = GET_PROJECT_LIST;
     }
-    apolloClient.query({
-      query: queryGraphQL, variables: {
-        "page": dataLayeredNavigation.page,
-        "limit": dataLayeredNavigation.limit,
-        "filter": queryFilterPrepare
-      }
-    }).then(response => {
-      setStatusLoading(false);
-      if (props.typePage !== 'ad-sell-lease-location' && props.typePage !== 'ad-sell-lease-index') {
-        //Set Search Data
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.projects.edges)) {
-          setSearchDataProject(response.data.projects.edges);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.projects.edges)) {
-          setTotalNumber(response.data.projects.edges.length);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.projects.pageInfo.hasNextPage)) {
-          setNextPage(response.data.projects.pageInfo.hasNextPage);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.projects.pageInfo.hasPreviousPage)) {
-          setPrevPage(response.data.projects.pageInfo.hasPreviousPage);
-        }
-
-        //If Blank
-        if (Validator.isBlank(response.data) || Validator.isBlank(response.data.projects.edges)) {
-          setSearchDataProject([]);
-          setTotalNumber(0);
-          setNextPage(false);
-          setPrevPage(false);
-        }
-      } else {
-        //Set Search Data
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeases.edges)) {
-          setSearchDataAdSellLease(response.data.adSellLeases.edges);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeases.edges)) {
-          setTotalNumber(response.data.adSellLeases.edges.length);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeases.pageInfo.hasNextPage)) {
-          setNextPage(response.data.adSellLeases.pageInfo.hasNextPage);
-        }
-        if (!Validator.isBlank(response.data) && !Validator.isBlank(response.data.adSellLeases.pageInfo.hasPreviousPage)) {
-          setPrevPage(response.data.adSellLeases.pageInfo.hasPreviousPage);
-        }
-
-        //If Blank
-        if (Validator.isBlank(response.data) || Validator.isBlank(response.data.adSellLeases.edges)) {
-          setSearchDataAdSellLease([]);
-          setTotalNumber(0);
-          setNextPage(false);
-          setPrevPage(false);
-        }
-      }
-    });
   };
 
   //Process Open Left Layered Navigation
@@ -530,10 +473,6 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
           />
           <TopLayered className="top_layered" onOpen={() => handleOpenPopup()} updateLayeredNavigation={updateLayeredNavigation} dataLayeredNavigation={dataLayeredNavigation} />
 
-          {statusLoading &&
-            <LoadingPage className="loading_page" grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }} numberLimit={12} />
-          }
-
           {!statusLoading && searchDataAdSellLease.length == 0 && (props.typePage === 'ad-sell-lease-location' || props.typePage === 'ad-sell-lease-index') &&
             <EmptyPage title="Không tìm thấy kết quả nào" description="Vui lòng sử dụng từ khóa khác hoặc sử dụng bộ lọc nâng cao để tìm kiếm kết quả phù hợp" />
           }
@@ -544,11 +483,6 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
 
           {!statusLoading && searchDataAdSellLease.length > 0 && (props.typePage === 'ad-sell-lease-location' || props.typePage === 'ad-sell-lease-index') &&
             <div>
-              <GridAdSellLeases
-                grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }}
-                gridData={searchDataAdSellLease}
-                className="grid__list"
-              />
               <PaginationPage
                 isNextPage={isNextPage}
                 isPrevPage={isPrevPage}
@@ -556,22 +490,6 @@ const MainSearchPage: NextPage<SearchPageProp> = (props: SearchPageProp) => {
                 onNextPage={onNextPage}
                 onPrevPage={onPrevPage}
               />
-            </div>
-          }
-          {!statusLoading && searchDataProject.length > 0 && (props.typePage === 'project-index') &&
-            <div>
-              <GridProject
-                grid={{ xl: 3, lg: 4, md: 6, sm: 6, xs: 12 }}
-                gridData={searchDataProject}
-                className="grid__list"
-              />
-              {/* <PaginationPage
-              isNextPage={isNextPage}
-              isPrevPage={isPrevPage}
-              currentPage={2}
-              onNextPage={onNextPage}
-              onPrevPage={onPrevPage}
-            /> */}
             </div>
           }
           <CategoryContent description={contentText} />

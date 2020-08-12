@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import GridNews from "../GridList/GridNews";
+import React, { FunctionComponent } from 'react';
+// import GridNews from "../GridList/GridNews";
 
 interface NewsIndexProps {
   newsData: NewsItem[]
@@ -19,7 +19,7 @@ interface NewsItem {
 const NewsIndex: FunctionComponent<NewsIndexProps> = (props: NewsIndexProps) => {
   return (
     <>
-      <GridNews grid={{xl: 3, lg: 3, md: 4, sm: 6, xs:12}} gridData={props.newsData} className={"grid__list"}/>
+      {/* <GridNews grid={{xl: 3, lg: 3, md: 4, sm: 6, xs:12}} gridData={props.newsData} className={"grid__list"}/> */}
     </>
   );
 };

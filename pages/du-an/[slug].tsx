@@ -78,18 +78,6 @@
 //     metaDescription = convertDescription(metaDescription);
 //     metaDescription = StringProcess.truncateString(metaDescription, 255, '');
 //   }
-
-//   //Count Ad Sell Lease
-//   useEffect(() => {
-//     let projectId = props.projectDetail.data.project.id;
-//     apolloClient.mutate({mutation: COUNT_VIEW_PROJECT, variables: {
-//         "input": {
-//           "id": projectId
-//         }
-//       }}).then((response: any) => {
-//     });
-//   }, []);
-
 //   return (
 //     <Layout
 //       title={metaTitle}
@@ -108,20 +96,6 @@
 //       />
 //     </Layout>
 //   );
-// };
-
-// // @ts-ignore
-// ProjectDetailPage.getInitialProps = async function(props: QueryProp) {
-//   let projectSlug = props.query.slug;
-//   let projectDetail = await apolloClient.query({query: GET_PROJECT_BY_SLUG, variables: {
-//       "slug": projectSlug
-//     }}).then(response => {
-//     return response;
-//   });
-//   return {
-//     projectDetail: projectDetail,
-//     slug: projectSlug
-//   };
 // };
 
 // export default ProjectDetailPage;
