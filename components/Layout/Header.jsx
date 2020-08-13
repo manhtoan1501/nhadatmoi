@@ -42,6 +42,7 @@ import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
+import HttpsIcon from '@material-ui/icons/Https';
 
 const useStyles = makeStyles((theme) => ({
   rootPopover: {
@@ -49,6 +50,18 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     marginTop: 10,
     overflow: 'auto',
+  },
+  menus: {
+    display: 'inline-block',
+    color: 'white',
+    padding: 8,
+    // fontWeight: 500,
+    cursor: 'pointer',
+    // fontFamily: 'Sans-serif',
+    "&:hover": {
+      // color: '#33eaff',
+      textDecoration: 'underline',
+    }
   },
   listItem: {
     display: 'block',
@@ -93,33 +106,20 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     marginRight: theme.spacing(2)
-  }
+  },
 }));
 
-
+const menus = [
+  { name: 'Giường ngủ' }, { name: 'Tủ quàn áo' },
+  { name: 'Bàn trà phòng khách' }, { name: 'Kệ tủ tivi' },
+  { name: 'Bàn ăn' }, { name: 'Bàn trang điểm' },
+  { name: 'Tủ giày' }, { name: 'Bàn trang điểm' },
+]
 const Actions = (props) => {
   const classes = useStyles();
   const [countMenu, setCountMenu] = React.useState(null);
   const [openMenu, setOpenMenu] = React.useState(false);
   const anchorRef = React.useRef(null);
-
-  const handleToggle = (index) => {
-    setOpenMenu(prevOpen => !prevOpen);
-  };
-
-  const handleClose = event => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-    setOpenMenu(false);
-  };
-
-  function handleListKeyDown(event) {
-    if (event.key === "Tab") {
-      event.preventDefault();
-      setOpenMenu(false);
-    }
-  }
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(openMenu);
@@ -139,51 +139,16 @@ const Actions = (props) => {
           style={{ color: 'white', fontWeight: 500, padding: '0 20px', display: 'flex', alignItems: 'center' }}
         >
           <GamepadIcon style={{ padding: '0 4px' }} /> Nội Thất Dodo
-                </Typography>
+        </Typography>
       </Grid>
       <Grid item xs={8}>
-        <div className={classes.root}>
-          <Typography
-            ref={anchorRef}
-            aria-controls={openMenu ? "menu-list-grow" : undefined}
-            aria-haspopup="true"
-            onMouseEnter={handleToggle}
-            className={classes.title}
-          // style={{ textDecoration: indexOpen === index ? 'underline ' : 'none' }}
-          // onMouseLeave={popoverClose}
-          >
-            Button
-                    </Typography>
-          <Popper
-            open={openMenu}
-            anchorEl={anchorRef.current}
-            role={undefined}
-            transition
-            disablePortal
-            style={{ zIndex: 9999 }}
-          >
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList
-                      autoFocusItem={openMenu}
-                      id="menu-list-grow"
-                      onKeyDown={handleListKeyDown}
-                    >
-                      <MenuItem onClick={handleClose}>Profile</MenuItem>
-                      <MenuItem onClick={handleClose}>My account</MenuItem>
-                      <MenuItem onClick={handleClose}>Logout</MenuItem>
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Popper>
-        </div>
+        {menus.map((item, index) => {
+          return (
+            <Typography key={index} className={classes.menus}>
+              {item.name}
+            </Typography>
+          );
+        })}
       </Grid>
       <Grid item xs={2}>
         <ModalLogin />

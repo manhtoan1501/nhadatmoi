@@ -24,6 +24,7 @@ import PopoverFilter from "../components/Popover/Index";
 import ListMenu from '../components/Home/ListMenu';
 import GamepadIcon from '@material-ui/icons/Gamepad';
 import Product from '../components/Home/Products';
+import TitleBase from '../components/Public/Title';
 //Import SCSS
 import "../assets/scss/style.scss";
 //Import Const
@@ -93,21 +94,6 @@ const IndexPage = (props) => {
     setModal(data);
   };
 
-  const List = () => {
-    return (
-      <>
-        <AdSellLeaseIndex filter={"{'type2':'5e7d5f543f663879c6750927,5e11b046521813a78cde85ac,5e11b046521813a78cde85aa,5e7d61323f663879c6750997,5e11b046521813a78cde85ab'}"} title={'Bán nhà'} type={'h2'} href={'/[slug]'} path={'/mua-ban-nha'} />
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e11b046521813a78cde85ae,5e67077e1fea273a985d1d36,5e67070f1fea273a985d1d35,5e11b046521813a78cde85ad,5e6707981fea273a985d1d37'}"} title={'Bán đất'} type={'h2'} href={'/[slug]'} path={'/mua-ban-dat'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e11b046521813a78cde85a9,5e7d620f3f663879c67509f8,5e7d622d3f663879c6750a07,5e7d624b3f663879c6750a15,5e7d626b3f663879c6750a23,5e7d628b3f663879c6750a34,5e7d62a53f663879c6750a42,5e7d62cc3f663879c6750a51,5e7d62fc3f663879c6750a6a,5e7d63193f663879c6750a7b,5e7d632f3f663879c6750a8d,5e9924f6716ee964b5fdcc23'}"} title={'Bán căn hộ chung cư'} type={'h2'} href={'/[slug]'} path={'/mua-ban-can-ho-chung-cu'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e7d63683f663879c6750ab6,5e9122948c71d25a879d30e6,5e7d64ae3f663879c6750aef,5e7d64c53f663879c6750afe,5e7d64e23f663879c6750b0b,5e7d658a3f663879c6750b70,5e7d65103f663879c6750b27,5e7d655e3f663879c6750b51,5e7d65b83f663879c6750b8a'}"} title={'Bán biệt thự'} type={'h2'} href={'/[slug]'} path={'/mua-ban-biet-thu'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e6707c21fea273a985d1d38,5e6707e01fea273a985d1d39,5e6707f81fea273a985d1d3a,5e11b046521813a78cde85b0,5e11b046521813a78cde85af'}"} title={'Bán các loại bất động sản khác'} type={'h2'} href={'/[slug]'} path={'/mua-ban-bat-dong-san-khac'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type1':'5e11af04411e1ea72a1fcbdf'}"} title={'Nhà đất cho thuê'} type={'h2'} href={'/[slug]'} path={'/nha-dat-thue'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e11af04411e1ea72a1fcbe0'}"} title={'Nhà đất cần mua'} type={'h2'} href={'/[slug]'} path={'/nha-dat-can-mua'}/> */}
-        {/* <AdSellLeaseIndex filter={"{'type2':'5e11af04411e1ea72a1fcbe1'}"} title={'Nhà đất cần thuê'} type={'h2'} href={'/[slug]'} path={'/nha-dat-can-thue'}/> */}
-      </>
-    )
-  }
-
   const transactionHot = () => {
     return (
       <>
@@ -167,13 +153,13 @@ const IndexPage = (props) => {
             <What />
           </div>
           <ButtonViews />
-          {/* <Product /> */}
+          <TitleBase title={'Sản phẩm bán chạy'} />
+          <Product />
         </Grid>
         <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
       </Grid>
 
       <div className="body_container">
-        {/* <List /> */}
         {/* Sản phẩm đã xem */}
         {/* Sản phẩm bạn thích */}
         {/* Sản phẩm HOT */}
