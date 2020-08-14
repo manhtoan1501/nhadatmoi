@@ -40,7 +40,7 @@ const currencies = [
     },
 ];
 
-const AdSellLeaseDetailPage: NextPage = (props) => {
+const CreateProduction: NextPage = (props) => {
     return (
         <Layout
             title={"Tạo đơn hàng"}
@@ -90,3 +90,18 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
                                                     label="Loại sản phẩm"
                                                     fullWidth
                                                     variant="outlined"
+                                                />
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </form>
+        </Layout>
+    )
+}
+
+export default CreateProduction;
