@@ -37,7 +37,177 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
   const [position, setPosition] = React.useState(false);
   const myRef = React.useRef();
   const classes = useStyles();
+  const times = [
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+    {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    }, {
+      time: 'Time',
+      messages: [
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+        { message: 'message' }, { message: 'message' },
+      ],
+    },
+  ];
+  const [timeState, setTimeState] = React.useState(2020);
+  const onwheel = () => {
+    console.log('kkkkkkkkkkkk ', myRef.current);
+  }
 
+  const onClick = () => {
+    window.scrollTo(0, 0);
+  }
   return (
     <Layout
       title={"Danh sách sản phẩm"}
@@ -47,7 +217,58 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
       canonical={mainURL + "/tin-rao/" + "slung"}
       path={"tin-rao"}
     >
-      <Grid container spacing={4} style={{ padding: "40px 0" }}>
+      <h1
+        style={{
+          padding: 10, textAlign: 'center', alignItems: 'center',
+          alignContent: 'center', position: 'fixed',
+          top: 0, marginLeft: 620, height: 40,
+          borderRadius: 20, width: 250, backgroundColor: 'orange',
+        }}
+      >
+        {timeState}
+      </h1>
+      <Grid
+        container
+        spacing={4}
+        justify='center'
+        alignContent='center'
+        alignItems='center'
+        style={{ margin: '0 auto', display: 'inline-block', textAlign: 'center', backgroundColor: '#aaa' }}
+      >
+        <Grid item xs={12}>
+          {times.map((item, index) => {
+            const { time, messages } = item;
+            return (
+              <div key={index} onWheel={onwheel} onClick={onClick} ref={myRef}>
+                <h1
+                  style={{
+                    padding: 10, marginLeft: 600, height: 40,
+                    width: 250, borderRadius: 20, backgroundColor: 'white'
+                  }}
+                >
+                  {time}: {index}
+                </h1>
+                {messages.map((element, count) => {
+                  const { message } = element;
+                  return (
+                    <div key={count}>
+                      <h2>{message}</h2>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </Grid>
+      </Grid>
+    </Layout>
+  );
+};
+
+export default AdSellLeaseDetailPage;
+
+
+{/* <Grid container spacing={4} style={{ padding: "40px 0" }}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
           <TestTime />
@@ -75,9 +296,4 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
           </div>
         </Grid>
         <Grid item xs={1}></Grid>
-      </Grid>
-    </Layout>
-  );
-};
-
-export default AdSellLeaseDetailPage;
+      </Grid> */}

@@ -323,7 +323,7 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.carbs}</TableCell>
                       <TableCell align="right">{row.protein}</TableCell>
                       <TableCell align="right">
-                        {/* <DialogBase /> */}
+                        <DialogBase />
                       </TableCell>
                       <TableCell align="right">
                         <IconButton>

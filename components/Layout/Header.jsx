@@ -120,7 +120,6 @@ const Actions = (props) => {
   const [countMenu, setCountMenu] = React.useState(null);
   const [openMenu, setOpenMenu] = React.useState(false);
   const anchorRef = React.useRef(null);
-
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(openMenu);
   React.useEffect(() => {
@@ -138,7 +137,8 @@ const Actions = (props) => {
           aria-haspopup="true"
           style={{ color: 'white', fontWeight: 500, padding: '0 20px', display: 'flex', alignItems: 'center' }}
         >
-          <GamepadIcon style={{ padding: '0 4px' }} /> Nội Thất Dodo
+          <GamepadIcon style={{ padding: '0 4px' }} />
+          Nội Thất Dodo
         </Typography>
       </Grid>
       <Grid item xs={8}>
