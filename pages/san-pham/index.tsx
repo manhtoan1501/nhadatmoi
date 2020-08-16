@@ -22,6 +22,7 @@ import { mainURL } from "../../constants";
 import MaterialTable from "../../components/Table";
 import TestTime from './TestTime';
 import Test from '../../components/Test';
+import IndexProductions from '../../components/Productions';
 
 const useStyles = makeStyles((theme) => ({
   product: {
