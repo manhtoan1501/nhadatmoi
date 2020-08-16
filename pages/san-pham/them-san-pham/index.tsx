@@ -19,6 +19,7 @@ import { NextPage } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import StringProcess from "./../../../modules/stringProcess";
 import { mainURL } from "../../../constants";
+import CreateProductions from '../../../components/Productions/CreateProductions';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -50,6 +51,7 @@ const imgProduct = [
     img: "https://khungtranhtreotuong.com/wp-content/uploads/bo-7-tranh-treo-tuong-scandinavian-MS079-3.jpg",
   },
 ];
+
 const AdSellLeaseDetailPage: NextPage = (props) => {
   const [index, setIndex] = React.useState(0);
   const classes = useStyles();
@@ -62,111 +64,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
       canonical={mainURL + "/tin-rao/" + "slung"}
       path={"tin-rao"}
     >
-      <Grid container spacing={4}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={10}>
-          <div style={{ padding: "40px 0" }}>
-            <Typography color="primary" style={{ fontSize: 20, color: "#1976d2" }}>
-              Thêm sản phẩm
-            </Typography>
-            <Grid container spacing={4}>
-              <Grid item xs={6} style={{ padding: "40px 0" }}>
-                <form noValidate autoComplete="off">
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <TextField fullWidth size="small" label="Mã sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth size="small" label="Tên sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Autocomplete
-                        id="combo-box-demo"
-                        fullWidth
-                        size="small"
-                        options={top100Films}
-                        getOptionLabel={(option) => option.title}
-                        renderInput={(params) => (
-                          <TextField fullWidth size="small" {...params} label="Loại sản phẩm" variant="outlined" />
-                        )}
-                      />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth size="small" label="Giá sản phẩm" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField fullWidth size="small" label="Chất liệu" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField fullWidth size="small" label="Ảnh 1" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField fullWidth size="small" label="Ảnh 2" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField fullWidth size="small" label="Ảnh 3" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField fullWidth size="small" label="Ảnh 4" variant="outlined" />
-                    </Grid>
-
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        size="small"
-                        multiline
-                        rows={5}
-                        rowsMax={10}
-                        label="Giới thiệu"
-                        variant="outlined"
-                      />
-                    </Grid>
-                  </Grid>
-                </form>
-              </Grid>
-              <Grid item xs={6}>
-                <div
-                  style={{
-                    textAlign: "center",
-                  }}
-                >
-                  {imgProduct.map((item, count) => {
-                    return (
-                      <div key={count} style={{ display: "inline" }}>
-                        {index === count && (
-                          <div>
-                            <Typography align="center" style={{ color: "#1976d2", fontSize: 20, fontStyle: "italic" }}>
-                              {item.title}
-                            </Typography>
-                            <img src={item.img} style={{ width: "100%", height: 400 }} />
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-                <div style={{ textAlign: "center" }}>
-                  {imgProduct.map((item, count) => {
-                    return (
-                      <div
-                        style={{ height: 50, width: 80, display: "inline", borderRadius: 2, padding: 4 }}
-                        onClick={() => setIndex(count)}
-                      >
-                        <img
-                          key={count}
-                          className={classes.product}
-                          src={item.img}
-                          style={{ width: 80, height: 50, border: index === count ? "2px solid #00e5ff" : null }}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </Grid>
-            </Grid>
-          </div>
-        </Grid>
-      </Grid>
+      <CreateProductions />
     </Layout>
   );
 };
