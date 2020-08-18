@@ -52,20 +52,13 @@ const imgProduct = [
   },
 ];
 
-const AdSellLeaseDetailPage: NextPage = (props) => {
+const AdSellLeaseDetailPage = (props) => {
   const [index, setIndex] = React.useState(0);
   const classes = useStyles();
   return (
-    <Layout
-      title={"Tạo sản phẩm"}
-      description={"metaDescription"}
-      {...props}
-      image={"imageAvatar"}
-      canonical={mainURL + "/tin-rao/" + "slung"}
-      path={"tin-rao"}
-    >
+    <div>
       <CreateProductions />
-    </Layout>
+    </div>
   );
 };
 

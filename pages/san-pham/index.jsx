@@ -20,9 +20,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import StringProcess from "./../../modules/stringProcess";
 import { mainURL } from "../../constants";
 import MaterialTable from "../../components/Table";
-import TestTime from './TestTime';
 import Test from '../../components/Test';
-import IndexProductions from '../../components/Productions';
+import IndexProductions from '../../components/Productions/Index';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -34,25 +33,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdSellLeaseDetailPage: NextPage = (props) => {
+const Index = (props) => {
   const [index, setIndex] = React.useState(0);
   const [position, setPosition] = React.useState(false);
   const classes = useStyles();
   return (
-    <Layout
-      title={"Danh sách sản phẩm"}
-      description={"metaDescription"}
-      {...props}
-      image={"imageAvatar"}
-      canonical={mainURL + "/tin-rao/" + "slung"}
-      path={"tin-rao"}
-    >
+    <>
       <IndexProductions />
-    </Layout>
+    </>
   );
 };
 
-export default AdSellLeaseDetailPage;
+export default Index;
 
 
 {/* <Grid container spacing={4} style={{ padding: "40px 0" }}>

@@ -6,10 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Link from 'next/link';
 import {FunctionComponent} from 'react';
 
-interface IFooterProps {
-
-}
-const FooterPage: FunctionComponent<IFooterProps> = (props: IFooterProps) => {
+const FooterPage = (props) => {
   return (
       <Grid container spacing={0} item xs={12} className="footer" direction="row"
           justify="center"

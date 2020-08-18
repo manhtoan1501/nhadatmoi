@@ -7,6 +7,7 @@ import Router from "next/router";
 import withGA from "next-ga";
 import { googleAnalyticsCode } from '../constants';
 import ThemeContext from '../components/ThemeContext';
+import Layout from '../components/Layout/Layout';
 import { color } from '../constants';
 const projectDetailPathname = '/chi-tiet-du-an.aspx';
 const newLandDetailPathname = '/newland/project_detail.aspx';
@@ -106,7 +107,15 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <ThemeContext.Provider value={{ color: color }}>
-        <Component {...pageProps} />
+        <Layout
+          title={'Nội thất Dodo'}
+          description={'Nội thất Dodo sự lựa chọn hoàn hảo'}
+          // {...props}
+          canonical={'https://nhadatmoi.net'}
+          path={''}
+        >
+          <Component {...pageProps} />
+        </Layout>
       </ThemeContext.Provider>
     )
   }

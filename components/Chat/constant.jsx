@@ -383,7 +383,7 @@ const themeTextFieldUser = createMuiTheme({
   
 });
 
-const useStylesBootstrap = makeStyles((theme: Theme) => ({
+const useStylesBootstrap = makeStyles((theme) => ({
   arrow: {
     color: "#444",
   },
@@ -392,7 +392,7 @@ const useStylesBootstrap = makeStyles((theme: Theme) => ({
   },
 }));
 
-const StyledBadge = withStyles((theme: Theme) =>
+const StyledBadge = withStyles((theme) =>
   createStyles({
     badge: {
       backgroundColor: '#44b700',
@@ -423,7 +423,7 @@ const StyledBadge = withStyles((theme: Theme) =>
   }),
 )(Badge);
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       width: 550,

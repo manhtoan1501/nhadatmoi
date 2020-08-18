@@ -48,10 +48,10 @@ import { AdSellLeasesListProps, ProjectListProps } from "../interfaces/interface
 
 const IndexPage = (props) => {
   const classes = indexPageStyle;
-  const [statusModal, setModal] = React.useState(false);
-  const updateModal = (data: any) => {
-    setModal(data);
-  };
+  // const [statusModal, setModal] = React.useState(false);
+  // const updateModal = (data: any) => {
+  //   setModal(data);
+  // };
 
   const renderIcon = () => {
     return (
@@ -76,15 +76,7 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout
-      title={'Nội thất Dodo'}
-      description={'Nội thất Dodo sự lựa chọn hoàn hảo'}
-      {...props}
-      statusModal={statusModal}
-      updateModal={updateModal}
-      canonical={mainURL}
-      path={''}
-    >
+    <div>
       <Grid container spacing={0} justify='center'>
         <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
         <Grid item xs={2} style={{ textAlign: 'center' }}>
@@ -107,14 +99,14 @@ const IndexPage = (props) => {
         {/* Sản phẩm đã xem */}
         {/* Sản phẩm bạn thích */}
         {/* Sản phẩm HOT */}
-        <HotLocation />
+        {/* <HotLocation /> */}
         {/* Tin tức  tổng hợp */}
       </div>
       <Partner />
       <SearchKeyword />
       <ListProduct />
       {renderIcon()}
-    </Layout>
+    </div>
   )
 };
 

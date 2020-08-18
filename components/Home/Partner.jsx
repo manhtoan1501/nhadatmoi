@@ -196,7 +196,6 @@ const KeywordSlide = (props) => {
     { img: a9 }
   ]
 
-
   return (
     <div className="partner" style={{ height: 200 }} >
       <Typography style={{ fontSize: 20, padding: 10, fontWeight: 700, color: '#1976d2' }}>
