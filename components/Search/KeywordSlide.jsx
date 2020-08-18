@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 const KeywordSlide = (props) => {
   const classes = useStyles();
+
   const NextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -119,32 +120,32 @@ const KeywordSlide = (props) => {
   return (
     <div className="keyword-search">
       <Typography style={{ fontSize: 20, padding: 10, fontWeight: 700, color: '#1976d2' }}>Từ khóa tìm kiếm HOT</Typography>
-        <Slider {...settings}>
-          {
-            dataSearch.map((searchObject, index) => {
-              return (
-                <div key={index}>
-                  <Link href={searchObject.path} as={searchObject.path}>
-                    <a>
-                      <div
-                        style={{
-                          backgroundColor: "#1976d2",
-                          color: 'white',
-                          alignItems: 'center',
-                          display: 'flex',
-                          fontSize: 16,
-                          fontWeight: 400,
-                        }}
-                        className="keyword-search__item"
-                      >{searchObject.title}
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              );
-            })
-          }
-        </Slider>
+      <Slider {...settings}>
+        {
+          dataSearch.map((searchObject, index) => {
+            return (
+              <div key={index}>
+                <Link href={searchObject.path} as={searchObject.path}>
+                  <a>
+                    <div
+                      style={{
+                        backgroundColor: "#1976d2",
+                        color: 'white',
+                        alignItems: 'center',
+                        display: 'flex',
+                        fontSize: 16,
+                        fontWeight: 400,
+                      }}
+                      className="keyword-search__item"
+                    >{searchObject.title}
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })
+        }
+      </Slider>
     </div>
   );
 };

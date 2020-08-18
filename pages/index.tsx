@@ -85,9 +85,7 @@ const IndexPage = (props) => {
         </Grid>
         <Grid item xs={8}>
           <SearchHomepage />
-          <div style={{ padding: '20px 0' }}>
-            <What />
-          </div>
+          <div style={{ padding: '20px 0' }}> <What /> </div>
           <ButtonViews />
           <TitleBase title={'Sản phẩm bán chạy'} />
           <Product />

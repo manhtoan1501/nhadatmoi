@@ -40,20 +40,19 @@
     background: #e0e0e0;
     cursor: pointer;
   }
+  
   &__prev__arrow, &__next__arrow {
-    background: rgba(221, 221, 235, 0.664);
+    background: #1976d2;
     width: 30px;
-    height: 100px;
+    height: 30px;
     left: 0;
-    top: 0;
+    top: 30px;
     position: absolute;
     z-index: 300;
     cursor: pointer;
     border-radius: 50%;
     svg {
-      width: 30px;
-      height: 80px;
-      margin: 10px 0;
+      margin-top: 4px;
       fill: #fff;
     }
   }

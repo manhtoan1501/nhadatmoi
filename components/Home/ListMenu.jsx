@@ -35,33 +35,39 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 14,
         paddingRight: 20,
     },
-    popover: {
-        pointerEvents: 'none', // none
-    },
 }));
 
-function NestedList() {
+const NestedList = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [indexMenu, setIndexMenu] = React.useState(null);
-    const [countMenu, setCountMenu] = React.useState(null);
+    const [indexMenu, setIndex] = React.useState(null);
+    const [countMenu, setCount] = React.useState(null);
+    const [indexItem, setIndexItem] = React.useState(0);
     const handlePopoverOpen = (event, index) => {
         setAnchorEl(event.currentTarget);
-        setOpen(event.currentTarget);
-        setCountMenu(index);
-        setIndexMenu(index);
+        setOpen(true);
+        setCount(index);
+        setIndex(index);
+        setIndexItem(0)
     };
 
     const handlePopoverClose = () => {
         setAnchorEl(null);
         setOpen(false);
-        setIndexMenu(null);
+        setIndex(null);
     };
 
     const setHoverMenu = (count) => {
-        setCountMenu(count)
+        setIndexItem(count)
     }
+
+    const onWheel = () => {
+        setAnchorEl(null);
+        setOpen(false);
+        setIndex(null);
+    }
+
     const id = open ? indexMenu : undefined;
     return (
         <List
@@ -73,11 +79,18 @@ function NestedList() {
             {listMenu.map((item, index) => {
                 const { rooms } = item
                 return (
-                    <div key={index}>
+                    <div key={index} onWheel={onWheel} >
                         <ListItem
-                            className={classes.listItem} button id={id}
+                            className={classes.listItem}
+                            button
+                            id={id}
                             onMouseEnter={(event) => handlePopoverOpen(event, index)}
-                            style={{ backgroundColor: countMenu === index ? '#90caf9' : '#e3f2fd', height: 35, padding: '0 4px' }}
+                            style={{
+                                backgroundColor: countMenu === index ? '#90caf9' : '#e3f2fd',
+                                height: 35,
+                                padding: '0 4px',
+                                pointerEvents: 'auto'
+                            }}
                         >
                             <GamepadIcon style={{ fontSize: 25, color: '#1976d2', padding: 4 }} />
                             <Typography className={classes.textItem}>
@@ -89,12 +102,12 @@ function NestedList() {
                             <Popover
                                 id={id}
                                 className={classes.popover}
+                                style={{ pointerEvents: 'none' }}
                                 open={open}
                                 anchorEl={anchorEl}
                                 anchorOrigin={{ vertical: 'right', horizontal: 'right' }} // Ghim
                                 transformOrigin={{ vertical: 'top', horizontal: 'left' }} // Vi tri hien thi
-                                // onMouseLeave={handlePopoverClose}
-                            // onMouseOut={handlePopoverClose}
+                                onMouseLeave={handlePopoverClose}
                             >
                                 <List
                                     component="nav"
@@ -108,7 +121,7 @@ function NestedList() {
                                                     autoFocus={true}
                                                     button={true}
                                                     onClick={(count) => setHoverMenu(count)}
-                                                    style={{ backgroundColor: countMenu === count ? '#90caf9' : '#e3f2fd', height: 35, padding: '0 4px' }}
+                                                    style={{ backgroundColor: indexItem === count ? '#90caf9' : '#e3f2fd', height: 35, padding: '0 4px' }}
                                                     onMouseEnter={() => setHoverMenu(count)}
                                                 >
                                                     <GamepadIcon style={{ fontSize: 25, color: '#1976d2', padding: 4 }} />

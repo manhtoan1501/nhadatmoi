@@ -43,18 +43,15 @@
   &__prev__arrow, &__next__arrow {
     background: rgba(221, 221, 235, 0.664);
     width: 30px;
-    height: 80px; // Chiều cao cái bóng đen next, prev 
+    height: 30px; // Chiều cao cái bóng đen next, prev 
     left: 0;
-    top: 0;
+    top: 24px;
     position: absolute;
     z-index: 300;
     cursor: pointer;
     border-radius: 50%;
     svg {
-      width: 30px;
-      border-radius: 10px;
-      height: 60px; // hiêu cao 2 icon next, prev
-      margin: 10px 0;
+      margin-top: 4px;
       fill: #fff;
     }
   }
