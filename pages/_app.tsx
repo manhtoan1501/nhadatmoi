@@ -6,9 +6,8 @@ import Router from "next/router";
 // @ts-ignore
 import withGA from "next-ga";
 import { googleAnalyticsCode } from '../constants';
-// import ErrorPage from "next/error";
-// import Validator from "../modules/validator";
-
+import ThemeContext from '../components/ThemeContext';
+import { color } from '../constants';
 const projectDetailPathname = '/chi-tiet-du-an.aspx';
 const newLandDetailPathname = '/newland/project_detail.aspx';
 const newLandAdSellLeasePathname = '/newland/properties_detail.aspx';
@@ -106,9 +105,9 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <>
+      <ThemeContext.Provider value={{ color: color }}>
         <Component {...pageProps} />
-      </>
+      </ThemeContext.Provider>
     )
   }
 }

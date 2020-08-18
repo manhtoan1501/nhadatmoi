@@ -1,6 +1,10 @@
 import React from "react";
 import {
   Grid,
+  Typography,
+  TextField,
+  Button,
+
 } from "@material-ui/core";
 import Link from "next/link";
 import "../../assets/scss/style.scss";
@@ -9,6 +13,8 @@ import BannerSliderBlock from "../PageDetail/BannerSliderBlock";
 import { makeStyles } from "@material-ui/core/styles";
 import StringProcess from "./../../modules/stringProcess";
 import Test from './Test';
+import MaterialTable from '../Table';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const useStyles = makeStyles((theme) => ({
   product: {
@@ -32,17 +38,9 @@ const IndexProductions = (props) => {
 
   return (
     <div>
-      <Test />
-    </div>
-  );
-};
-
-export default IndexProductions;
-
-{/* <Grid container spacing={4} style={{ padding: "40px 0" }}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={10}>
-          <TestTime />
+      {/* <Test /> */}
+      <Grid container spacing={4} style={{ padding: 40 }}>
+        <Grid item xs={12}>
           <Typography style={{ fontSize: 25, fontWeight: 700, color: "#1976d2" }}>Danh sách sản phẩm</Typography>
           <Grid container spacing={2}>
             <Grid item xs={3}>
@@ -65,6 +63,20 @@ export default IndexProductions;
           <div style={{ padding: "40px 0" }}>
             <MaterialTable />
           </div>
+          <Button color="primary" variant="contained" >
+            <Link href="/" as={"/"}>
+              <a>
+                <ArrowBackIosIcon style={{ color: 'white', fontSize: 15 }} />
+                Back
+              </a>
+            </Link>
+          </Button>
         </Grid>
-        <Grid item xs={1}></Grid>
-      </Grid> */}
+      </Grid>
+
+    </div>
+  );
+};
+
+export default IndexProductions;
+

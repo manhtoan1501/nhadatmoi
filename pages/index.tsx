@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { useEffect } from "react";
-//Import Components
+
 import Layout from '../components/Layout/Layout';
 import SearchHomepage from "../components/Index/SearchHomepage";
 import ContentMenu from "../components/Home/ContenMenu";
@@ -10,7 +9,6 @@ import SearchKeyword from "../components/Search/KeywordSlide";
 import HotLocation from "../components/Index/HotLocation";
 import NewsIndex from "../components/Index/NewsIndex";
 import { Button, Grid, Typography, Icon, IconButton } from '@material-ui/core';
-import AdSellLeaseIndex from '../components/Index/AdSellLeaseIndex';
 import Link from 'next/link';
 import { localStorageViewed, mainURL, localStorageProjectViewed } from "../constants";
 import { indexPageStyle } from '../style/IndexPage'
@@ -49,63 +47,11 @@ import { AdSellLeasesListProps, ProjectListProps } from "../interfaces/interface
 // }
 
 const IndexPage = (props) => {
-  const [dataAdSellLeasesViewed, setDataAdSellLeaseViewed] = React.useState([]);
-  const [dataProjectViewed, setDataProjectViewed] = React.useState([]);
-  const [dataAdSellLeaseWishlist, setDataAdSellLeaseWishlist] = React.useState([]);
-  const [dataProject, setDataProject] = React.useState([]);
-  const [statusLoadingAdSellLease, setStatusLoadingAdSellLease] = React.useState(true);
-  const [dataNews, setDataNews] = React.useState([]);
-  const [statusLoadingProject, setStatusLoadingProject] = React.useState(true);
-  const [statusLoadingNews, setStatusLoadingNews] = React.useState(true);
-  let newsUrlApi = 'https://nhadatmoi.net/tin-tuc/wp-json/wp/v2/posts?per_page=8';
   const classes = indexPageStyle;
-
-  useEffect(() => {
-    let viewedItem = localStorage.getItem(localStorageViewed);
-    if (viewedItem && !Validator.isBlank(viewedItem)) {
-      try {
-        let viewedItemObject = JSON.parse(viewedItem);
-        setDataAdSellLeaseViewed(viewedItemObject);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    let viewedProjectItem = localStorage.getItem(localStorageProjectViewed);
-    if (viewedProjectItem && !Validator.isBlank(viewedProjectItem)) {
-      try {
-        let viewedItemObject = JSON.parse(viewedProjectItem);
-        setDataProjectViewed(viewedItemObject);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    //Get Data News
-    fetch(newsUrlApi)
-      .then(r => r.json())
-      .then(data => {
-        setDataNews(data);
-        setStatusLoadingNews(false);
-      });
-  }, []);
-
   const [statusModal, setModal] = React.useState(false);
   const updateModal = (data: any) => {
     setModal(data);
   };
-
-  const transactionHot = () => {
-    return (
-      <>
-        <TitleBlock
-          title="Sản phẩm thiết kế nội thất hiện đại"
-          description="Tổng hợp những mẫu thiết kế hiện đại"
-          type={"h2"} path={"/du-an-bat-dong-san"}
-        />
-        <HotLocation />
-      </>
-    )
-  }
 
   const renderIcon = () => {
     return (
@@ -129,12 +75,10 @@ const IndexPage = (props) => {
     );
   }
 
-  let pageTitle = 'Nội thất Dodo';
-  let pageDescription = 'Nội thất Dodo đón đầu xu hướng';
   return (
     <Layout
-      title={pageTitle}
-      description={pageDescription}
+      title={'Nội thất Dodo'}
+      description={'Nội thất Dodo sự lựa chọn hoàn hảo'}
       {...props}
       statusModal={statusModal}
       updateModal={updateModal}
@@ -163,8 +107,7 @@ const IndexPage = (props) => {
         {/* Sản phẩm đã xem */}
         {/* Sản phẩm bạn thích */}
         {/* Sản phẩm HOT */}
-        {/* {projectWahtched()} */}
-        {transactionHot()}
+        <HotLocation />
         {/* Tin tức  tổng hợp */}
       </div>
       <Partner />
