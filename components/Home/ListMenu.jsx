@@ -49,7 +49,7 @@ function NestedList() {
     const handlePopoverOpen = (event, index) => {
         setAnchorEl(event.currentTarget);
         setOpen(event.currentTarget);
-        setCountMenu(0);
+        setCountMenu(index);
         setIndexMenu(index);
     };
 
@@ -76,7 +76,7 @@ function NestedList() {
                     <div key={index}>
                         <ListItem
                             className={classes.listItem} button id={id}
-                            // onMouseEnter={(event) => handlePopoverOpen(event, index)}
+                            onMouseEnter={(event) => handlePopoverOpen(event, index)}
                             style={{ backgroundColor: countMenu === index ? '#90caf9' : '#e3f2fd', height: 35, padding: '0 4px' }}
                         >
                             <GamepadIcon style={{ fontSize: 25, color: '#1976d2', padding: 4 }} />
@@ -93,7 +93,7 @@ function NestedList() {
                                 anchorEl={anchorEl}
                                 anchorOrigin={{ vertical: 'right', horizontal: 'right' }} // Ghim
                                 transformOrigin={{ vertical: 'top', horizontal: 'left' }} // Vi tri hien thi
-                                onMouseLeave={handlePopoverClose}
+                                // onMouseLeave={handlePopoverClose}
                             // onMouseOut={handlePopoverClose}
                             >
                                 <List

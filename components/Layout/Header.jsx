@@ -7,6 +7,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import InfoIcon from '@material-ui/icons/Info';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
+import Link from 'next/link'
 import { I18n } from 'react-redux-i18n';
 import {
   IconButton,
@@ -23,7 +24,13 @@ import {
   Hidden,
   Popover,
 } from '@material-ui/core';
-
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import HttpsIcon from '@material-ui/icons/Https';
 import CloseIcon from '@material-ui/icons/Close';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import List from '@material-ui/core/List';
@@ -35,14 +42,6 @@ import GamepadIcon from '@material-ui/icons/Gamepad';
 import ModalLogin from '../Login/Modal';
 import moment from 'moment';
 import _ from 'lodash';
-
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import Popper from "@material-ui/core/Popper";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import HttpsIcon from '@material-ui/icons/Https';
 
 const useStyles = makeStyles((theme) => ({
   rootPopover: {
@@ -110,10 +109,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menus = [
-  { name: 'Giường ngủ' }, { name: 'Tủ quàn áo' },
-  { name: 'Bàn trà phòng khách' }, { name: 'Kệ tủ tivi' },
-  { name: 'Bàn ăn' }, { name: 'Bàn trang điểm' },
-  { name: 'Tủ giày' }, { name: 'Bàn trang điểm' },
+  { name: 'Giường ngủ', link: 'giuong-ngu' },
+  { name: 'Tủ quàn áo', link: 'tu-quan-ao' },
+  { name: 'Bàn trà phòng khách', link: 'ban-tra-phong-khach' },
+  { name: 'Kệ tủ tivi', link: 'ke-tivi' },
+  { name: 'Bàn ăn', link: 'ban-an'},
+  { name: 'Bàn trang điểm', link: 'ban-trang-diem'},
+  { name: 'Tủ giày', link: 'tu-giay'},
+  { name: 'Bàn trang điểm', link: 'ban-trang-diem' },
+  { name: 'Sản phẩm', link: 'san-pham' },
+  { name: 'Tin tức', link: 'tin-tuc' },
 ]
 const Actions = (props) => {
   const classes = useStyles();
@@ -138,14 +143,21 @@ const Actions = (props) => {
           style={{ color: 'white', fontWeight: 500, padding: '0 20px', display: 'flex', alignItems: 'center' }}
         >
           <GamepadIcon style={{ padding: '0 4px' }} />
-          Nội Thất Dodo
+            <Link href="/">
+              <a style={{color: 'white'}}>
+                Nội Thất Dodo
+              </a>
+            </Link>
         </Typography>
       </Grid>
       <Grid item xs={8}>
-        {menus.map((item, index) => {
+        {menus.map((element, index) => {
+          const {name, link} = element;
           return (
             <Typography key={index} className={classes.menus}>
-              {item.name}
+              <Link href={`/${link}`}>
+                <a style={{color: 'white'}}>{name}</a>
+              </Link>
             </Typography>
           );
         })}

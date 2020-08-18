@@ -31,13 +31,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdSellLeaseDetailPage: NextPage = (props) => {
+const AdSellLeaseDetailPage = (props) => {
   const [index, setIndex] = React.useState(0);
   const [position, setPosition] = React.useState(false);
   const myRef = React.useRef();
   const classes = useStyles();
   const onWheel = (e) => {
-    console.log(' >>>>> >>>> >>>> >>>> >>>> ', e.pageY);
     if (e.pageY > 250) {
       setPosition(true);
     } else {
@@ -45,14 +44,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
     }
   }
   return (
-    <Layout
-      title={"Danh sách sản phẩm"}
-      description={"metaDescription"}
-      {...props}
-      image={"imageAvatar"}
-      canonical={mainURL + "/tin-rao/" + "slung"}
-      path={"tin-rao"}
-    >
+    <div>
     <Grid container spacing={4} style={{ padding: "40px 0" }}>
       <Grid item xs={1}></Grid>
       <Grid item xs={10}>
@@ -81,7 +73,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
       </Grid>
       <Grid item xs={1}></Grid>
     </Grid>
-    // </Layout>
+    // </div>
   );
 };
 

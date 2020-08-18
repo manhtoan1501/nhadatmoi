@@ -50,18 +50,11 @@ const imgProduct = [
     img: "https://khungtranhtreotuong.com/wp-content/uploads/bo-7-tranh-treo-tuong-scandinavian-MS079-3.jpg",
   },
 ];
-const AdSellLeaseDetailPage: NextPage = (props) => {
+const AdSellLeaseDetailPage = (props) => {
   const [index, setIndex] = React.useState(0);
   const classes = useStyles();
   return (
-    <Layout
-      title={"Tạo sản phẩm"}
-      description={"metaDescription"}
-      {...props}
-      image={"imageAvatar"}
-      canonical={mainURL + "/tin-rao/" + "slung"}
-      path={"tin-rao"}
-    >
+    <div>
       <Grid container spacing={4}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
@@ -167,7 +160,7 @@ const AdSellLeaseDetailPage: NextPage = (props) => {
           </div>
         </Grid>
       </Grid>
-    </Layout>
+    </div>
   );
 };
 
