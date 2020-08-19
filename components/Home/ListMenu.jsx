@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
 import {
     List,
     Divider,
@@ -12,6 +12,8 @@ import {
     Popover,
     Typography,
     MenuItem,
+    Tooltip,
+
 
 } from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -35,7 +37,77 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 14,
         paddingRight: 20,
     },
+    arrow: {
+        color: 'orange',
+    },
+    tooltip: {
+        backgroundColor: 'orange',
+        color: '#1976d2',
+        cursor: 'pointer'
+    },
 }));
+
+const useStylesBootstrap = makeStyles((theme) => ({
+    arrow: {
+        color: theme.palette.common.black,
+    },
+    tooltip: {
+        backgroundColor: theme.palette.common.black,
+    },
+}));
+
+function BootstrapTooltip(props) {
+    const classes = useStylesBootstrap();
+    return <Tooltip enterNextDelay={0} enterTouchDelay={0} placement='right-start' interactive arrow classes={classes} {...props} />;
+}
+
+const RenderXX = (props) => {
+    const { rooms } = props;
+    const classes = useStyles();
+    return (
+        <List
+            component="nav"
+            className={classes.popover}
+            aria-labelledby="nested-list-subheader"
+            style={{ padding: 0, pointerEvents: 'auto', corsor: 'pointer' }}
+        >
+            {
+                rooms.map((element, count) => {
+                    const { room } = element;
+                    return <div key={count}>
+                        <ListItem
+                            autoFocus={true}
+                            button={true}
+                            onClick={(count) => setHoverMenu(count)}
+                            style={{ backgroundColor: '#90caf9', height: 35, padding: '0 4px' }}
+                        >
+                            <GamepadIcon style={{ fontSize: 25, color: '#1976d2', padding: 4 }} />
+                            <Typography className={classes.textItem}>
+                                {room}
+                            </Typography>
+                        </ListItem >
+                        <Divider />
+                    </div>
+                })
+            }
+        </List>
+    );
+}
+
+function CustomizedTooltips(props) {
+    const { item } = props;
+    const { rooms } = item;
+    const classes = useStyles();
+    return (
+        <div>
+            <BootstrapTooltip title={<RenderXX rooms={rooms} />}>
+                <Typography className={classes.textItem}>
+                    {props.title}
+                </Typography>
+            </BootstrapTooltip>
+        </div>
+    );
+}
 
 const NestedList = () => {
     const classes = useStyles();
@@ -84,7 +156,6 @@ const NestedList = () => {
                             className={classes.listItem}
                             button
                             id={id}
-                            onMouseEnter={(event) => handlePopoverOpen(event, index)}
                             style={{
                                 backgroundColor: countMenu === index ? '#90caf9' : '#e3f2fd',
                                 height: 35,
@@ -93,12 +164,13 @@ const NestedList = () => {
                             }}
                         >
                             <GamepadIcon style={{ fontSize: 25, color: '#1976d2', padding: 4 }} />
-                            <Typography className={classes.textItem}>
+                            {/* <Typography className={classes.textItem}>
                                 {item.title}
-                            </Typography>
+                            </Typography> */}
+                            <CustomizedTooltips title={item.title} item={item} className={classes.textItem} />
                         </ListItem>
                         <Divider />
-                        {indexMenu === index &&
+                        {/* {indexMenu === index &&
                             <Popover
                                 id={id}
                                 className={classes.popover}
@@ -135,7 +207,7 @@ const NestedList = () => {
                                     }
                                 </List>
                             </Popover>
-                        }
+                        } */}
                     </div>
                 );
             })}

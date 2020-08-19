@@ -41,7 +41,7 @@
     cursor: pointer;
   }
   &__prev__arrow, &__next__arrow {
-    background: rgba(221, 221, 235, 0.664);
+    background: $baseColor;
     width: 30px;
     height: 30px; // Chiều cao cái bóng đen next, prev 
     left: 0;

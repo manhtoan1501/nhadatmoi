@@ -73,7 +73,6 @@ const IndexProductions = (props) => {
           </Button>
         </Grid>
       </Grid>
-
     </div>
   );
 };

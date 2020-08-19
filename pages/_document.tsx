@@ -44,7 +44,7 @@ class MyDocument extends Document {
   }
   render() {
     // @ts-ignore
-    let urlString = this.props.url_string;
+    let urlString = this.props.url_string || '';
     return (
       <html lang={"vi-VN"}>
         <Head />
