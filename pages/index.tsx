@@ -78,13 +78,14 @@ const IndexPage = (props) => {
   return (
     <div>
       <Grid container spacing={0} justify='center'>
+        <Grid item xs={12}>
+          <ListMenu />
+        </Grid>
         <Grid item xs={1} style={{ textAlign: 'center' }}></Grid>
         <Grid item xs={2} style={{ textAlign: 'center' }}>
-          <ListMenu />
           <NewHot />
         </Grid>
         <Grid item xs={8}>
-          <SearchHomepage />
           <div style={{ padding: '20px 0' }}> <What /> </div>
           <ButtonViews />
           <TitleBase title={'Sản phẩm bán chạy'} />

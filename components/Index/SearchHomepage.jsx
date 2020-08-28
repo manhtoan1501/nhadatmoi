@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
     searchHome: {
         width: '100%',
-        minHeight: '400px',
+        minHeight: '395px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         opacity: '1',
