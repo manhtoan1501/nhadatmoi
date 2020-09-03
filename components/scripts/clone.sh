@@ -12,7 +12,7 @@
 . ./modules.sh
 
 cd ../..
-if [ ! -d snw-modules ];
+if [ ! -d snw-modules ]; # -d dir: Thư mục có tồn tại và không phải là một tệp
 then
     # Control will enter here if $DIRECTORY doesn't exist.
     mkdir -p snw-modules;
