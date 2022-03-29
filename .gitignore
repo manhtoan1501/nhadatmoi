@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/yarn.lock
+/yarn-error.log
 
 # testing
 /coverage
@@ -12,6 +14,7 @@
 /.next/
 /.next
 /.vscode/
+/.vscode
 /out/
 
 # production
