@@ -1,6 +1,3 @@
-/// <reference types="next" />
-/// <reference types="next/types/global" />
-
 declare module "fslightbox-react" {
   const FsLightBox: any;
   export default FsLightBox;

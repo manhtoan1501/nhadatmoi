@@ -1,12 +1,7 @@
 import * as React from 'react';
-import { NextPage } from 'next';
-import Link from 'next/link';
-import { indexPageStyle } from '../style/IndexPage'
 import "../assets/scss/style.scss";
 
 const IndexPage = (props) => {
-  const classes = indexPageStyle;
-
   const renderIcon = () => {
     return (
       <div style={{ position: 'fixed', bottom: 30, right: 30 }}>
