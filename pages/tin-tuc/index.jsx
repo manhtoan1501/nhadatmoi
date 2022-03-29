@@ -14,7 +14,6 @@ import {
 import Link from "next/link";
 import "../../assets/scss/style.scss";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import BannerSliderBlock from "../../components/PageDetail/BannerSliderBlock";
 import { NextPage } from "next";
 import { makeStyles } from "@material-ui/core/styles";
 import StringProcess from "../../modules/stringProcess";

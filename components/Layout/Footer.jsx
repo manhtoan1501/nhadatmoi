@@ -2,9 +2,7 @@ import * as React from 'react'
 import Grid from "@material-ui/core/Grid";
 import PhoneIphone from "@material-ui/icons/PhoneIphone";
 import EmailIcon from "@material-ui/icons/Email";
-import Hidden from '@material-ui/core/Hidden';
 import Link from 'next/link';
-import { FunctionComponent } from 'react';
 
 const FooterPage = (props) => {
   return (

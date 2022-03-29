@@ -2,12 +2,6 @@ import React from "react";
 
 import { NextPage } from 'next';
 import Layout from '../components/Layout/Layout';
-
-// import Banner from "../components/LandingPage/Banner";
-// import Cards from "../components/LandingPage/Cards";
-// import Mission from "../components/LandingPage/Mission";
-// import Strengths from "../components/LandingPage/Strengths";
-// import AboutUs from "../components/LandingPage/AboutUs";
 import "../assets/scss/style.scss";
 import { mainURL } from "../constants";
 

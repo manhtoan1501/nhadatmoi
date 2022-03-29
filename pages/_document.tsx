@@ -2,7 +2,7 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import Url from 'url';
 const Querystring = require('querystring');
-import Validator from "../modules/validator";
+// import Validator from "../modules/validator";
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
@@ -14,9 +14,6 @@ class MyDocument extends Document {
     let dataUrl = '';
     if (typeof urlObject.query === "string") {
       let urlString = Querystring.parse(urlObject.query);
-      if (urlString && !Validator.isBlank(urlString.url)) {
-        dataUrl = (urlString.url);
-      }
     }
 
     const sheets = new ServerStyleSheets();

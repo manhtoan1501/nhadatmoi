@@ -1,46 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import InfoIcon from '@material-ui/icons/Info';
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
 import Link from 'next/link'
-import { I18n } from 'react-redux-i18n';
-import {
-  IconButton,
-  Icon,
-  Tooltip,
-  Button,
-  Card,
-  Grid,
-  CardContent,
-  CardActions,
-  Typography,
-  AppBar,
-  Toolbar,
-  Hidden,
-  Popover,
-} from '@material-ui/core';
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Grow from "@material-ui/core/Grow";
-import Paper from "@material-ui/core/Paper";
-import Popper from "@material-ui/core/Popper";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import HttpsIcon from '@material-ui/icons/Https';
-import CloseIcon from '@material-ui/icons/Close';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import { titles } from '../../constants/index';
+import { Grid, Typography } from '@material-ui/core';
 import GamepadIcon from '@material-ui/icons/Gamepad';
-import ModalLogin from '../Login/Modal';
-import moment from 'moment';
 import _ from 'lodash';
 
 const useStyles = makeStyles((theme) => ({
@@ -109,12 +71,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menus = [
-  { name: 'Sản phẩm', link: 'san-pham' },
   { name: 'Tin tức', link: 'tin-tuc' },
 ]
 const Actions = (props) => {
   const classes = useStyles();
-  const [countMenu, setCountMenu] = React.useState(null);
   const [openMenu, setOpenMenu] = React.useState(false);
   const anchorRef = React.useRef(null);
   // return focus to the button when we transitioned from !open -> open
@@ -139,9 +99,6 @@ const Actions = (props) => {
             </Typography>
           );
         })}
-      </Grid>
-      <Grid item xs={2} style={{ marginTop: -36 }}>
-        <ModalLogin />
       </Grid>
     </Grid>
   )
