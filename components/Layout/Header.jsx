@@ -109,14 +109,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menus = [
-  { name: 'Giường ngủ', link: 'giuong-ngu' },
-  { name: 'Tủ quàn áo', link: 'tu-quan-ao' },
-  { name: 'Bàn trà phòng khách', link: 'ban-tra-phong-khach' },
-  { name: 'Kệ tủ tivi', link: 'ke-tivi' },
-  { name: 'Bàn ăn', link: 'ban-an' },
-  { name: 'Bàn trang điểm', link: 'ban-trang-diem' },
-  { name: 'Tủ giày', link: 'tu-giay' },
-  { name: 'Bàn trang điểm', link: 'ban-trang-diem' },
   { name: 'Sản phẩm', link: 'san-pham' },
   { name: 'Tin tức', link: 'tin-tuc' },
 ]
@@ -136,20 +128,6 @@ const Actions = (props) => {
 
   return (
     <Grid container spacing={0} className={classes.header} alignItems='center' justify='center' direction='row' >
-      <Grid item xs={2}>
-        <Typography color='inherit'
-          aria-owns={openMenu ? 'mouse-over-popover' : undefined}
-          aria-haspopup="true"
-          style={{ color: 'white', fontWeight: 500, padding: '0 20px', display: 'flex', alignItems: 'center', marginTop: -34 }}
-        >
-          <GamepadIcon style={{ padding: '0 4px' }} />
-          <Link href="/">
-            <a style={{ color: 'white' }}>
-              Nội Thất Dodo
-              </a>
-          </Link>
-        </Typography>
-      </Grid>
       <Grid item xs={8}>
         {menus.map((element, index) => {
           const { name, link } = element;
