@@ -6,6 +6,7 @@ import { googleAnalyticsCode } from '../constants';
 import ThemeContext from '../components/ThemeContext';
 import Layout from '../components/Layout/Layout';
 import { color } from '../constants';
+import "../assets/scss/style.scss";
 
 class MyApp extends App {
 
